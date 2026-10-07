@@ -32,7 +32,7 @@ langLinks();
 window.addEventListener('hashchange', langLinks);
 
 /* データは data/ の JSON から読み込む。
-   catalog.json: 資料の種類・確認区分の名前と全件の行 / order.json: 読む順の章立て(記事は URL で指す) / picks.json: 厳選 100
+   catalog.json: 資料の種類・確認区分の名前と全件の行 / order.json: テーマ別の章立て(記事は URL で指す) / picks.json: 厳選 100
    形式は README.md を参照 */
 function load(path){
   return fetch(path).then(function(res){
@@ -120,7 +120,7 @@ D.rows.forEach(function(x, i){
   rows.push(o);
 });
 D.cats.forEach(function(c,i){ catIndex[c] = i; });
-/* 読む順は URL で記事を指す。行の番号に置き換え、見つからない URL は飛ばす */
+/* テーマ別は URL で記事を指す。行の番号に置き換え、見つからない URL は飛ばす */
 function rowOf(url, where){
   var i = rowByUrl[url];
   if (i === undefined) warn(where + ' の URL が catalog.json に無い: ' + url);
@@ -225,7 +225,7 @@ function rowEl(r, withTags){
   return li;
 }
 
-/* ====================== 読む順 ====================== */
+/* ====================== テーマ別 ====================== */
 var themesEl = $('themes'), tnav = $('tnav');
 (function(){
   D.order.forEach(function(th, ti){
@@ -619,7 +619,7 @@ document.querySelector('.views').addEventListener('click', function(e){
   try { history.replaceState(null, '', '#' + b.dataset.view); } catch (err) {}
   langLinks();
 });
-/* #picks #order #index で表示を選ぶ。#p-12 は厳選の 12 番、#t-… は読む順のテーマへ */
+/* #picks #order #index で表示を選ぶ。#p-12 は厳選の 12 番、#t-… はテーマ別のテーマへ */
 function fromHash(initial){
   var h = location.hash.slice(1), t;
   try { h = decodeURIComponent(h); } catch (err) {}

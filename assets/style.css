@@ -1,6 +1,6 @@
 :root{color-scheme:light}
-/* Layout: 上に 3 つの出典の集計。その下で「読む順」と「全件索引」を切り替える。
-   読む順はテーマごとの章立て(まず読む → 続けて読む → あわせて使う資料)。索引は一行一件の目録。 */
+/* Layout: 上に 3 つの出典の集計。その下で「テーマ別」と「全件索引」を切り替える。
+   テーマ別はテーマごとの章立て(まず読む → 続けて読む → あわせて使う資料)。索引は一行一件の目録。 */
 :root{
   --paper:#f2f5f0;
   --surface:#fbfcfa;
@@ -63,7 +63,7 @@ h1{margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(28px
 .views button[aria-pressed="true"]{color:var(--board);border-bottom-color:var(--board)}
 .views button small{font-family:var(--font-mono);font-size:11.5px;font-weight:400;margin-left:6px}
 
-/* 読む順 */
+/* テーマ別 */
 .order-intro{margin:22px 0 0;display:flex;flex-direction:column;gap:10px}
 .order-intro p{margin:0;max-width:44em}
 .order-intro .how{font-size:13.5px;color:var(--ink-soft)}
