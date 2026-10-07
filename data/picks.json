@@ -2,6 +2,7 @@
   {
     "no": 1,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/blogs/machine-learning/training-llama-3-3-swallow-a-japanese-sovereign-llm-on-amazon-sagemaker-hyperpod/",
     "title": "Training Llama 3.3 Swallow: A Japanese sovereign LLM on Amazon SageMaker HyperPod(AWS Machine Learning Blog)",
@@ -11,12 +12,16 @@
     "level": 400,
     "jp": true,
     "why": "東京科学大学の研究室が、SageMaker HyperPod(Slurm、ml.p5.48xlarge 32 台、EFA)と S3 連携の FSx for Lustre で 700 億パラメータの日本語 LLM を Megatron-LM の 4D 並列と非同期チェックポイントで学習し、Prometheus と Grafana で GPU・ネットワークを監視した構成と実測値が分かる。",
+    "why_en": "Shows the setup and measured results of a lab at Institute of Science Tokyo training a 70-billion-parameter Japanese LLM on SageMaker HyperPod (Slurm, 32 ml.p5.48xlarge instances, EFA) with S3-linked FSx for Lustre, using Megatron-LM 4D parallelism and asynchronous checkpointing, with GPU and network monitoring in Prometheus and Grafana.",
     "synopsis": "東京科学大学の岡崎研・横田研と産総研が、Llama 3.3 を基に 700 億パラメータの日本語 LLM を学習した事例である。Slurm 構成の Amazon SageMaker HyperPod で P5 インスタンス 32 台を EFA でつなぎ、Amazon S3 連携の Amazon FSx for Lustre にデータを置き、Prometheus と Grafana で GPU とネットワークを監視する。Megatron-LM の 4D 並列、非同期チェックポイント、CloudFormation テンプレートが示され、約 3,140 億トークンを 16 日 6 時間で学習した。既定値を超えるクォータが要ると述べられる。",
-    "caveat": ""
+    "synopsis_en": "A case study in which the Okazaki and Yokota labs at Institute of Science Tokyo and AIST trained a 70-billion-parameter Japanese LLM based on Llama 3.3. On Amazon SageMaker HyperPod in a Slurm configuration, 32 P5 instances are connected with EFA, data is placed on Amazon FSx for Lustre linked to Amazon S3, and GPUs and the network are monitored with Prometheus and Grafana. Megatron-LM 4D parallelism, asynchronous checkpointing, and CloudFormation templates are shown; about 314 billion tokens were trained in 16 days and 6 hours. It notes that quotas above the defaults are required.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 2,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/jp/blogs/news/aws-summit-japan-2025-genai-education/",
     "title": "[AWS Summit Japan 2025] 生成 AI を用いた教育業界向けソリューションデモのご紹介",
@@ -26,12 +31,16 @@
     "level": 200,
     "jp": true,
     "why": "成績データを自然文から SQL に変換して Redshift に問い合わせる分析エージェント、Web 検索を使う教材作成エージェント、学習指導要領を RAG で参照して指導計画を個別化する TP2(Nova、Aurora Serverless、DynamoDB)の構成が分かる。",
+    "why_en": "Shows the architecture of an analytics agent that converts natural-language questions about grade data into SQL and queries Redshift, a teaching-material creation agent that uses web search, and TP2 (Nova, Aurora Serverless, DynamoDB), which personalizes teaching plans by referencing the national Course of Study via RAG.",
     "synopsis": "AWS Summit Japan 2025 で展示した教育向け生成 AI デモ 2 件の紹介である。Education AI Assistant は Amazon Bedrock Agents が Amazon Redshift の成績データを Knowledge Bases の構造化 RAG で問い合わせ、SQL 静的解析の AWS Lambda、Web 検索、学習指導要領の RAG を使う。特別支援学校向けの TP2 は Amazon Nova で生徒ごとの指導計画を作り、Aurora Serverless をベクトル DB、DynamoDB を生徒情報に使う。TP2 は CDK で IaC 化と書かれ、スライド PDF はあるがリポジトリへのリンクはない。",
-    "caveat": ""
+    "synopsis_en": "An introduction to two generative AI demos for education exhibited at AWS Summit Japan 2025. Education AI Assistant uses Amazon Bedrock Agents to query grade data in Amazon Redshift through structured RAG in Knowledge Bases, along with AWS Lambda for static SQL analysis, web search, and RAG over the national Course of Study. TP2, for special needs schools, creates per-student teaching plans with Amazon Nova, using Aurora Serverless as the vector DB and DynamoDB for student information. TP2 is described as implemented as IaC with CDK; a slide PDF is available but there is no link to a repository.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 3,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/jp/builders-flash/202406/bedrock-english-conversation-service/",
     "title": "オンライン英会話のレッスンレポート作成を生成 AI で置き換え ~レアジョブ英会話における生成 AI の実装(builders.flash)",
@@ -41,12 +50,16 @@
     "level": 200,
     "jp": true,
     "why": "オンライン英会話のレッスン後レポートを Bedrock で生成するために、API Gateway、Lambda、DynamoDB の共通基盤と ECS の検証用アプリを分けた構成、顧客データを自社 AWS 内で扱う判断、JSON 出力を指定するプロンプト、講師の既存フィードバックとの比較による評価の進め方が分かる。",
+    "why_en": "Shows, for generating post-lesson reports for online English conversation lessons with Bedrock, an architecture that separates a shared API Gateway, Lambda, and DynamoDB platform from a verification app on ECS, the decision to handle customer data within the company's own AWS environment, a prompt that specifies JSON output, and an evaluation approach that compares results against tutors' existing feedback.",
     "synopsis": "レアジョブ英会話で、講師がレッスン後のフィードバックを十分に作れないという課題を生成 AI で一部置き換える試みを、同社 CTO が書いている。Amazon API Gateway、AWS Lambda、Amazon DynamoDB のサーバーレスな共通基盤と、Amazon ECS で作るベータ版の検証用アプリを分けた構成である。1 回 2〜4 万トークンの処理と顧客データを自社の AWS 内で扱う要件から Amazon Bedrock の Claude を選び、JSON 出力を指定して文章校正と理由文に絞ったプロンプト、講師のフィードバックと比べる評価の進め方を示す。執筆時点ではプロジェクト別のコスト計算ができないことが課題に挙がる。",
-    "caveat": ""
+    "synopsis_en": "The CTO of RareJob Eikaiwa writes about an attempt to use generative AI to partially replace the task of writing post-lesson feedback, which tutors could not produce adequately. The architecture separates a shared serverless platform built on Amazon API Gateway, AWS Lambda, and Amazon DynamoDB from a beta verification app built on Amazon ECS. Claude on Amazon Bedrock was chosen because each run processes 20,000–40,000 tokens and customer data had to stay within the company's own AWS environment; the post shows a prompt that specifies JSON output and narrows the task to proofreading and reasons, and an evaluation approach that compares output against tutors' feedback. At the time of writing, the inability to calculate costs per project is raised as an issue.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 4,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/jp/blogs/news/publicsector-generative-ai-education-building-ai-solutions-using-course-lecture-content/",
     "title": "教育における生成系 AI: 授業コンテンツを活用した AI ソリューションの構築",
@@ -56,12 +69,16 @@
     "level": 200,
     "jp": true,
     "why": "講義の配信・録画(IVS)から文字起こし、要約と検索用インデックス、問題生成、授業用チャットボット、自動採点、画像生成までの 6 つの構成図を日本語で示し、Transcribe、Bedrock、Kendra、Lex、DynamoDB の役割分担が分かる。",
+    "why_en": "Presents six architecture diagrams in Japanese, from lecture streaming and recording (IVS) through transcription, summarization and search indexing, question generation, a classroom chatbot, automated grading, and image generation, showing the respective roles of Transcribe, Bedrock, Kendra, Lex, and DynamoDB.",
     "synopsis": "e ラーニングの普及を受け、授業の配信・録画コンテンツを生成 AI で活用する方法を構成図で示す英語記事の日本語訳である。Amazon IVS で配信・録画した授業を Amazon Transcribe で文字起こしし、Amazon Bedrock による要約、Amazon Kendra の検索インデックス、宿題・テスト問題の生成、Amazon Lex と AWS Lambda による授業チャットボット、Amazon DynamoDB の正解データを使う自動採点、挿絵の画像生成へと広げる。コードや IaC は載っておらず、GitHub の MediaSearch ソリューションへの言及がある。",
-    "caveat": ""
+    "synopsis_en": "A Japanese translation of an English article that uses architecture diagrams to show how to put streamed and recorded class content to use with generative AI, in response to the spread of e-learning. Classes streamed and recorded with Amazon IVS are transcribed with Amazon Transcribe, then extended to summarization with Amazon Bedrock, a search index in Amazon Kendra, generation of homework and test questions, a classroom chatbot built with Amazon Lex and AWS Lambda, automated grading using answer-key data in Amazon DynamoDB, and image generation for illustrations. No code or IaC is included; the MediaSearch solution on GitHub is mentioned.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 5,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/jp/government-education/worldwide/japan/public-sector-generative-ai/use-case/test_creation/",
     "title": "テストの問題を自動で生成する(公共機関における生成 AI の活用案)",
@@ -71,12 +88,16 @@
     "level": 200,
     "jp": true,
     "why": "教材、学習指導要領、過去問を Amazon Kendra で参照して生成 AI がテスト問題を作り、解答と正答率を蓄積して出題を調整する構成。構成図の PDF へのリンクがある。",
+    "why_en": "An architecture in which generative AI creates test questions by referencing teaching materials, the national Course of Study, and past exams through Amazon Kendra, then accumulates answers and correct-answer rates to adjust the questions it sets. Includes a link to a PDF of the architecture diagram.",
     "synopsis": "毎年新しいテスト問題を作るのが難しいという学校の教員の悩みを取り上げた、公共機関向け生成 AI 活用案の 1 ページである。既存の教材、学習指導要領、過去問を Amazon Kendra で参照して生成 AI が問題を作る構成を示す。生成した問題を解いた正答率やフィードバックを蓄積して次の問題作りに使い、生徒が苦手な問題は類題を増やす。Few-shot で精度を上げられること、参照データは学校・科目・教員に合わせて用意することに触れ、構成図の PDF をダウンロードできる。",
-    "caveat": ""
+    "synopsis_en": "One page from a set of generative AI use-case proposals for public institutions, addressing school teachers' difficulty in creating new test questions every year. It shows an architecture in which generative AI creates questions by referencing existing teaching materials, the national Course of Study, and past exams through Amazon Kendra. Correct-answer rates and feedback on the generated questions are accumulated and used to create the next questions, and more similar questions are generated for areas where students struggle. It mentions that few-shot prompting can improve accuracy and that reference data should be prepared per school, subject, and teacher; a PDF of the architecture diagram can be downloaded.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 6,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/jp/government-education/worldwide/japan/public-sector-generative-ai/use-case/auto_scoring/",
     "title": "生徒の解答を自動で採点・添削する(公共機関における生成 AI の活用案)",
@@ -86,12 +107,16 @@
     "level": 200,
     "jp": true,
     "why": "生徒の提出をきっかけに、S3 の教材と RDS の問題情報を Amazon Kendra で参照して生成 AI が採点・添削し、教員が結果を確かめる構成。構成図の PDF へのリンクがある。",
+    "why_en": "An architecture in which a student's submission triggers generative AI to grade and correct the answer by referencing teaching materials in S3 and question information in RDS through Amazon Kendra, with teachers then verifying the results. Includes a link to a PDF of the architecture diagram.",
     "synopsis": "教員が一人で数百人分の課題やテストを採点・添削する負担を取り上げた、公共機関向け生成 AI 活用案の 1 ページである。生徒の提出をきっかけに、Amazon S3 の教科書データと Amazon RDS の問題・解答・採点ポイントを Amazon Kendra で参照し、生成 AI が記述式の解答を採点・添削する。教員は完了後にアプリケーションで解答と採点結果を確認する。選択式はルールベースで採点したほうが正答率もコスト効率も高いとしており、構成図の PDF をダウンロードできる。",
-    "caveat": ""
+    "synopsis_en": "One page from a set of generative AI use-case proposals for public institutions, addressing the burden on a single teacher of grading and correcting assignments and tests for hundreds of students. Triggered by a student's submission, generative AI grades and corrects free-response answers by referencing textbook data in Amazon S3 and the questions, answers, and grading points in Amazon RDS through Amazon Kendra. After completion, the teacher reviews the answers and grading results in the application. It states that multiple-choice questions are better graded with rules, for both accuracy and cost efficiency; a PDF of the architecture diagram can be downloaded.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 7,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://github.com/aws-samples/sample-multiagent-orchestration-on-agentcore-for-education",
     "title": "aws-samples/sample-multiagent-orchestration-on-agentcore-for-education",
@@ -101,12 +126,16 @@
     "level": 400,
     "jp": false,
     "why": "大学の学生・教員・事務の利用者を判別して、履修や成績、学費、事務手続きの各エージェントに振り分けるオーケストレーターを AgentCore Runtime と Memory、Lambda のツール、Cognito、Knowledge Bases で組む実装を、配備スクリプトと模擬データで試せる。",
+    "why_en": "Lets you try, with deployment scripts and mock data, an implementation of an orchestrator that identifies whether a university user is a student, faculty member, or staff and routes them to agents for enrollment, grades, tuition, and administrative procedures, built with AgentCore Runtime and Memory, Lambda tools, Cognito, and Knowledge Bases.",
     "synopsis": "教育機関の学生・教員・管理者が使うアシスタントのサンプルである。オーケストレーターが学業、教員業務、支払い、事務、一般質問の 5 エージェントに振り分け、Amazon Bedrock AgentCore の Runtime・Memory・Gateway、ツール用の AWS Lambda、Amazon Cognito、Knowledge Base、Systems Manager を使う。deploy.sh による配備(約 10〜15 分)、模擬データ生成、テスト用スクリプトが含まれ、モデルは openai.gpt-oss-20b-1:0 である。固定パスワードのデモ利用者を含むため本番に配備しないよう明記されている。",
-    "caveat": ""
+    "synopsis_en": "A sample assistant for students, faculty, and administrators at educational institutions. An orchestrator routes requests to five agents (academics, faculty tasks, payments, administration, and general questions), using the Runtime, Memory, and Gateway of Amazon Bedrock AgentCore, AWS Lambda for tools, Amazon Cognito, Knowledge Base, and Systems Manager. It includes deployment via deploy.sh (about 10–15 minutes), mock data generation, and test scripts; the model is openai.gpt-oss-20b-1:0. Because it contains demo users with fixed passwords, it explicitly states that it must not be deployed to production.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 8,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/blogs/machine-learning/trinity-agentic-ai-powered-transition-planning-for-students-with-disabilities/",
     "title": "Trinity: Agentic AI-powered transition planning for students with disabilities(AWS Machine Learning Blog)",
@@ -116,12 +145,16 @@
     "level": 300,
     "jp": false,
     "why": "障害のある生徒が IEP 書式の記入に代えて対話で IDEA に沿った進路移行計画を作る仕組みを、Bedrock の 6 エージェント階層構成、3 つの Knowledge Bases、Lambda、DynamoDB、API Gateway WebSocket で作る設計と、Canvas LTI 1.3 連携の Cognito 認証、KMS による PII のフィールド暗号化、役割別アクセス制御が分かる。",
+    "why_en": "Shows the design of a system in which students with disabilities create IDEA-aligned transition plans through conversation instead of filling in IEP forms, built with a hierarchy of six Bedrock agents, three Knowledge Bases, Lambda, DynamoDB, and API Gateway WebSocket, along with Cognito authentication integrated with Canvas LTI 1.3, field-level encryption of PII with KMS, and role-based access control.",
     "synopsis": "University Startups の Trinity は、米国で障害のある中高生が対話を通じて IDEA に沿った進路移行計画を作るサービスである。Amazon Bedrock の Claude 3.5 Sonnet で統括役と大学・就労・職業訓練・地域活動・自立生活の 6 エージェントを階層化し、3 つの Knowledge Bases は 4 要素の配点で候補を絞る。AWS Lambda、Amazon DynamoDB、API Gateway WebSocket、Canvas LTI 1.3 と Amazon Cognito の認証、AWS KMS による PII の暗号化と役割別アクセス制御が説明される。コードやリポジトリは公開されていない。",
-    "caveat": ""
+    "synopsis_en": "Trinity, by University Startups, is a service in the US through which middle and high school students with disabilities create IDEA-aligned transition plans through conversation. Using Claude 3.5 Sonnet on Amazon Bedrock, it arranges a supervisor agent and six agents (college, employment, vocational training, community activities, and independent living) in a hierarchy, and three Knowledge Bases narrow down candidates with a four-factor scoring scheme. It explains AWS Lambda, Amazon DynamoDB, API Gateway WebSocket, authentication with Canvas LTI 1.3 and Amazon Cognito, encryption of PII with AWS KMS, and role-based access control. No code or repository is published.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 9,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/blogs/publicsector/transforming-university-lecture-content-into-an-enriched-course-using-generative-ai-on-aws/",
     "title": "Transforming university lecture content into an enriched course using generative AI on AWS",
@@ -131,12 +164,16 @@
     "level": 300,
     "jp": false,
     "why": "UTS の講義録画を Transcribe のタイムスタンプ付き文字起こしから 3 段階で章に分け、Bedrock の構造化出力で要約・小テストを作り、教員が下書きを確認してから公開する構成(Lambda、RDS PostgreSQL、S3 Vectors、Knowledge Bases)と、長文の分割や TF-IDF による時刻復元のコードが分かる。",
+    "why_en": "Shows an architecture that splits UTS lecture recordings into chapters in three stages from timestamped Transcribe transcripts, creates summaries and quizzes with Bedrock structured output, and publishes only after instructors review the drafts (Lambda, RDS PostgreSQL, S3 Vectors, Knowledge Bases), along with code for splitting long text and restoring timestamps with TF-IDF.",
     "synopsis": "受講生約 500 人の科目で 60〜120 分の講義録画が見られず、つまずきも見えないという UTS の課題を扱う。Amazon Transcribe の文字起こしを AWS Lambda で処理し、Amazon Bedrock の Claude Haiku で段落化、Claude Sonnet で章分けして、構造化出力で要約と小テストを作る。50,000 文字単位の分割や TF-IDF で段落に時刻を戻す Python コードが載る。単一プロンプトでは安定せずモデル更新で JSON 形式が変わったことが述べられ、生成物は下書きとして教員の確認後に公開される。",
-    "caveat": ""
+    "synopsis_en": "Addresses a challenge at UTS, where in a subject with about 500 students the 60–120 minute lecture recordings went unwatched and points of difficulty were invisible. Amazon Transcribe transcripts are processed with AWS Lambda, Claude Haiku on Amazon Bedrock splits them into paragraphs, Claude Sonnet divides them into chapters, and structured output produces summaries and quizzes. Python code for splitting text in 50,000-character units and restoring timestamps to paragraphs with TF-IDF is included. It notes that a single prompt was not stable and that the JSON format changed with model updates; generated content is published as a draft after instructor review.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 10,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/blogs/publicsector/student-attentiveness-and-engagement-analysis-in-live-classrooms-with-generative-ai/",
     "title": "Student attentiveness and engagement analysis in live classrooms with generative AI",
@@ -146,12 +183,16 @@
     "level": 300,
     "jp": false,
     "why": "IVS のライブ授業から一定間隔で画面を取得し、SQS、Lambda、Bedrock で内容を判定して小テストを作り生徒に配信する構成と、空画面・重複スライドの除外、S3 ライフサイクルでの 1 日削除などの設定が分かり、SAM で配備できる。",
+    "why_en": "Shows an architecture that captures the screen at regular intervals from an IVS live class, assesses the content with SQS, Lambda, and Bedrock, creates quizzes, and delivers them to students, along with settings such as excluding blank screens and duplicate slides and deleting captures after one day with an S3 lifecycle rule; it can be deployed with SAM.",
     "synopsis": "オンラインのライブ授業では、カメラを切る生徒も多く、教員が理解度や集中の様子をつかみにくいという課題を扱う。Amazon IVS の配信から 30 秒ごと(1〜300 秒で変更可)に画面を S3 に保存し、Amazon SQS 経由で AWS Lambda が Amazon Bedrock の Claude Sonnet 4.0 で内容を読み取り、空画面や既出と似た画面を除いて小テストを作り Amazon DynamoDB に保存する。AWS SAM で配備するサンプルリポジトリと、画面を 1 日で消す S3 ライフサイクル設定が示される。本番向けではなく追加開発が要ると明記されている。",
-    "caveat": ""
+    "synopsis_en": "Addresses the difficulty instructors have in gauging understanding and attention in live online classes, where many students turn off their cameras. Screens are saved to S3 from an Amazon IVS stream every 30 seconds (adjustable from 1 to 300 seconds); via Amazon SQS, AWS Lambda reads the content with Claude Sonnet 4.0 on Amazon Bedrock, excludes blank screens and screens similar to earlier ones, creates quizzes, and stores them in Amazon DynamoDB. A sample repository deployed with AWS SAM and an S3 lifecycle setting that deletes screens after one day are shown. It explicitly states that it is not production-ready and needs further development.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 11,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/blogs/messaging-and-targeting/build-an-ai-powered-course-recommender-using-amazon-bedrock-and-aws-end-user-messaging/",
     "title": "Build an AI-powered course recommender using Amazon Bedrock and AWS End User Messaging(AWS Messaging Blog)",
@@ -161,12 +202,16 @@
     "level": 300,
     "jp": false,
     "why": "WhatsApp の会話を End User Messaging、SNS、Lambda で受け、Bedrock Agents と OpenSearch Serverless のベクトル検索で講座を推薦・予約させ、S3、Glue、Athena、QuickSight で会話を分析する EdTech 向け構成を CDK で組む方法が分かる。",
+    "why_en": "Shows how to build, with CDK, an architecture for EdTech providers that receives WhatsApp conversations through End User Messaging, SNS, and Lambda, has Bedrock Agents recommend and book courses using vector search in OpenSearch Serverless, and analyzes conversations with S3, Glue, Athena, and QuickSight.",
     "synopsis": "EdTech 事業者が講座を会話で案内する仕組みを扱う。WhatsApp のメッセージを AWS End User Messaging で受け、Amazon SNS 経由で AWS Lambda が処理し、Claude 3 Haiku を使う Amazon Bedrock Agents が講座の検索、詳細提示、予約を進める。講座検索は Titan Embeddings と OpenSearch Serverless のベクトル検索で、会話は S3 に保存し Glue、Athena、QuickSight で分析する。Python の CDK コード片とサンプルリポジトリが示され、既存の WhatsApp Business アカウントが前提である。",
-    "caveat": "Amazon QuickSight は現在 Amazon Quick Sight に名称が変わっている(ページ内では両方の表記が混在し、名称変更の説明はない)。"
+    "synopsis_en": "Covers a system for EdTech providers to guide users to courses through conversation. WhatsApp messages are received with AWS End User Messaging, processed by AWS Lambda via Amazon SNS, and Amazon Bedrock Agents using Claude 3 Haiku handle course search, details, and booking. Course search uses Titan Embeddings and vector search in OpenSearch Serverless; conversations are stored in S3 and analyzed with Glue, Athena, and QuickSight. Python CDK code snippets and a sample repository are shown; an existing WhatsApp Business account is a prerequisite.",
+    "caveat": "Amazon QuickSight は現在 Amazon Quick Sight に名称が変わっている(ページ内では両方の表記が混在し、名称変更の説明はない)。",
+    "caveat_en": "Amazon QuickSight has since been renamed Amazon Quick Sight (the page mixes both spellings and does not explain the name change)."
   },
   {
     "no": 12,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/blogs/machine-learning/responsible-ai-how-powerschool-safeguards-millions-of-students-with-ai-powered-content-filtering-using-amazon-sagemaker-ai/",
     "title": "Responsible AI: How PowerSchool safeguards millions of students with AI-powered content filtering using Amazon SageMaker AI(AWS Machine Learning Blog)",
@@ -176,12 +221,16 @@
     "level": 300,
     "jp": false,
     "why": "K-12 向け AI アシスタントの入出力フィルタとして、SageMaker JumpStart で Llama 3.1 8B を LoRA 調整し ml.g5.12xlarge のエンドポイントを授業時間帯のアクセス集中に備えて自動スケールさせる構成と、学習ジョブのコード例、教育文脈を考慮した判定精度の実測値が分かる。",
+    "why_en": "Shows an architecture for an input/output filter for a K-12 AI assistant, in which Llama 3.1 8B is LoRA-tuned in SageMaker JumpStart and an ml.g5.12xlarge endpoint auto-scales for the surge of access during class hours, along with sample code for the training job and measured classification accuracy that accounts for educational context.",
     "synopsis": "PowerSchool の AI アシスタント PowerBuddy で、第二次世界大戦やホロコーストのような授業上の話題を誤って遮断せずに有害な内容を見分けるという課題を扱う。Amazon SageMaker JumpStart で Llama 3.1 8B を LoRA で指示調整し、ml.g5.12xlarge のエンドポイントを授業時間帯の周期的な負荷に合わせて自動スケールさせる構成である。学習ジョブのハイパーパラメータ付きコード片と、正解率約 93%(従来 89%)、誤検知 3.75% 未満、平均応答 1.5 秒などの実測値が示される。",
-    "caveat": ""
+    "synopsis_en": "Addresses the challenge, in PowerSchool's AI assistant PowerBuddy, of detecting harmful content without mistakenly blocking classroom topics such as World War II or the Holocaust. The architecture instruction-tunes Llama 3.1 8B with LoRA in Amazon SageMaker JumpStart and auto-scales an ml.g5.12xlarge endpoint to match the periodic load of class hours. It includes a code snippet for the training job with hyperparameters and measured results such as about 93% accuracy (up from 89%), a false-positive rate under 3.75%, and an average response time of 1.5 seconds.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 13,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/blogs/machine-learning/build-and-scale-adoption-of-ai-agents-for-education-with-strands-agents-amazon-bedrock-agentcore-and-librechat/",
     "title": "Build and scale adoption of AI agents for education with Strands Agents, Amazon Bedrock AgentCore, and LibreChat(AWS Machine Learning Blog)",
@@ -191,12 +240,16 @@
     "level": 300,
     "jp": false,
     "why": "ECS Fargate 上の LibreChat から API Gateway と Lambda を経て AgentCore Runtime の Strands Agents を呼ぶ構成、Aurora PostgreSQL・DocumentDB・EFS の役割、多段の認証の流れ、LibreChat のカスタムエンドポイント設定が分かり、大学向けの履修相談などのエージェントを載せる土台になる。",
+    "why_en": "Shows an architecture that calls Strands Agents on AgentCore Runtime from LibreChat on ECS Fargate via API Gateway and Lambda, the roles of Aurora PostgreSQL, DocumentDB, and EFS, the multi-layer authentication flow, and the LibreChat custom endpoint configuration; it serves as a foundation for hosting agents such as course advising for universities.",
     "synopsis": "単純なチャットでは足りない、学内データとつながる AI エージェントを教育機関に広げる方法を扱う。Amazon ECS on AWS Fargate の LibreChat から API Gateway と AWS Lambda を経て AgentCore Runtime 上の Strands Agents を呼び、Aurora PostgreSQL をベクトル DB、DocumentDB を会話データ、EFS を検索インデックスに使う。学内認証・API キー・IAM ロールを重ねる認証、LibreChat のカスタムエンドポイント設定、CloudFormation とリポジトリが示される。実装例は利用ログ分析のエージェントで、履修相談は用途例にとどまる。",
-    "caveat": ""
+    "synopsis_en": "Covers how to roll out, across an educational institution, AI agents connected to campus data, which simple chat cannot provide. LibreChat on Amazon ECS on AWS Fargate calls Strands Agents on AgentCore Runtime via API Gateway and AWS Lambda, with Aurora PostgreSQL as the vector DB, DocumentDB for conversation data, and EFS for the search index. It shows layered authentication combining campus authentication, API keys, and IAM roles, the LibreChat custom endpoint configuration, CloudFormation, and a repository. The implemented example is an agent for analyzing usage logs; course advising is only given as an example use case.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 14,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/blogs/machine-learning/building-an-ai-driven-course-content-generation-system-using-amazon-bedrock/",
     "title": "Building an AI-driven course content generation system using Amazon Bedrock(AWS Machine Learning Blog)",
@@ -206,12 +259,16 @@
     "level": 300,
     "jp": false,
     "why": "コースの学習成果から週ごとの概要、読み物、動画台本、小テストを生成する仕組みを、API Gateway WebSocket のルート設計、SQS と Lambda による非同期処理、Cognito JWT の Lambda オーソライザー、WAF で組み、CDK で配備する手順が分かる。",
+    "why_en": "Shows how to build a system that generates weekly overviews, readings, video scripts, and quizzes from a course's learning outcomes, using API Gateway WebSocket route design, asynchronous processing with SQS and Lambda, a Lambda authorizer for Cognito JWTs, and WAF, and how to deploy it with CDK.",
     "synopsis": "教員が教材と小テストの作成に何日も費やすという高等教育の課題を扱う。学習成果ごとに週単位の科目構成、読み物、3 分の動画台本 3 本、選択式問題を Amazon Bedrock の Claude 3.5 Sonnet で生成する。API Gateway WebSocket の 3 ルート、Amazon SQS と AWS Lambda の非同期処理、Amazon Cognito の JWT を検証する Lambda オーソライザー、AWS WAF で構成する。Python の AWS CDK による配備手順とリポジトリが示され、既定では 4 週分を生成する。",
-    "caveat": ""
+    "synopsis_en": "Addresses the higher education challenge of instructors spending days creating teaching materials and quizzes. For each learning outcome, Claude 3.5 Sonnet on Amazon Bedrock generates a weekly course structure, readings, three 3-minute video scripts, and multiple-choice questions. The architecture consists of three API Gateway WebSocket routes, asynchronous processing with Amazon SQS and AWS Lambda, a Lambda authorizer that validates Amazon Cognito JWTs, and AWS WAF. Deployment steps using AWS CDK in Python and a repository are shown; by default it generates four weeks of content.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 15,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/blogs/machine-learning/automate-the-creation-of-handout-notes-using-amazon-bedrock-data-automation/",
     "title": "Automate the creation of handout notes using Amazon Bedrock Data Automation(AWS Machine Learning Blog)",
@@ -221,12 +278,16 @@
     "level": 300,
     "jp": false,
     "why": "講義や発表の録画から、Bedrock Data Automation でスライド切り替えと文字起こしを取り出し、Step Functions の待機・Map 状態と Lambda(FFmpeg、python-pptx)で画面写真付きの配布資料を作る構成とコードが分かる。",
+    "why_en": "Shows the architecture and code for extracting slide transitions and transcripts from lecture or presentation recordings with Bedrock Data Automation, and creating handouts with screenshots using Step Functions wait and Map states and Lambda (FFmpeg, python-pptx).",
     "synopsis": "教育機関や企業研修で、発表の録画を見返してスライドの切り替わりを探し、話を書き起こし、画面写真を整理して配布資料を作る手間を減らす仕組みを扱う。Amazon S3 への動画アップロードを Amazon EventBridge が検知し、AWS Step Functions が Amazon Bedrock Data Automation によるショット検出と文字起こしの完了を待ち、Map 状態で並列処理する。AWS Lambda が FFmpeg で各ショットの画面を切り出し、時刻で発話を対応付け、python-pptx で画面写真と整えた文字起こしをノートに入れた PowerPoint を作る。AWS CDK スタックと出力例を含むリポジトリが示される。",
-    "caveat": ""
+    "synopsis_en": "Covers a system that reduces the effort, in educational institutions and corporate training, of reviewing presentation recordings to find slide transitions, transcribing the talk, and organizing screenshots into handouts. Amazon EventBridge detects a video upload to Amazon S3, AWS Step Functions waits for shot detection and transcription by Amazon Bedrock Data Automation to complete, and a Map state processes them in parallel. AWS Lambda extracts the screen for each shot with FFmpeg, matches speech by timestamp, and uses python-pptx to create a PowerPoint file with screenshots and cleaned-up transcripts in the notes. A repository including an AWS CDK stack and sample output is shown.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 16,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/blogs/publicsector/aligning-education-state-standards-to-content-for-k12-with-graphrag-on-aws/",
     "title": "Aligning education state standards to content for K12 with GraphRAG on AWS",
@@ -236,12 +297,16 @@
     "level": 300,
     "jp": false,
     "why": "教材と州の学習標準の対応付けを、取り込み・意味付け・照合・人の確認の 4 段階に分け、Fargate ワーカーと SQS、Neptune のグラフと OpenSearch のベクトルを併用し、Bedrock で候補約 40 件を強・中・弱に判定する設計が分かる。",
+    "why_en": "Shows a design that divides the alignment of teaching materials to state learning standards into four stages (ingestion, semantic enrichment, matching, and human review), uses Fargate workers with SQS, combines a Neptune graph with OpenSearch vectors, and has Bedrock classify about 40 candidates as strong, moderate, or weak.",
     "synopsis": "EdTech 企業などが教材と州の学習標準の対応付けをスプレッドシートで手作業しており、ばらつきや重複が生じるという課題を扱う。処理を取り込み・意味付け・照合・人の確認の 4 段階に分け、段階ごとの Amazon SQS キューを AWS Fargate のワーカーが処理し、Amazon Neptune に階層関係、Amazon OpenSearch に埋め込みを置く。教材ごとに類似する標準を約 40 件取り出し、Amazon Bedrock の LLM が強・中・弱・なしに分類したうえで専門家が画面で確定する。構成と流れの説明のみで、コード、IaC、精度や費用の数値はなく、関係 DB から Neptune へのデータ変換は対象外である。",
-    "caveat": ""
+    "synopsis_en": "Addresses the problem that EdTech companies and others align teaching materials to state learning standards manually in spreadsheets, causing inconsistency and duplication. Processing is divided into four stages (ingestion, semantic enrichment, matching, and human review); AWS Fargate workers process an Amazon SQS queue for each stage, with hierarchical relationships in Amazon Neptune and embeddings in Amazon OpenSearch. For each piece of content, about 40 similar standards are retrieved, an LLM on Amazon Bedrock classifies them as strong, moderate, weak, or none, and experts confirm them on screen. It explains only the architecture and flow; there is no code, IaC, or figures for accuracy or cost, and converting data from a relational DB to Neptune is out of scope.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 17,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/blogs/machine-learning/how-bqa-streamlines-education-quality-reporting-using-amazon-bedrock/",
     "title": "How BQA streamlines education quality reporting using Amazon Bedrock(AWS Machine Learning Blog)",
@@ -251,12 +316,16 @@
     "level": 300,
     "jp": false,
     "why": "バーレーンの教育質保証機関が学校・大学の自己評価報告書を審査する業務で、S3、SQS、Lambda、Textract で証拠資料を取り出し、Llama で要約、Bedrock で評価基準ごとに「不適合」「推奨付き適合」「適合」の 3 段階の判定を返す構成とプロンプト設計が分かる。",
+    "why_en": "Shows the architecture and prompt design used by Bahrain's education quality assurance authority to review self-evaluation reports from schools and universities: evidence documents are extracted with S3, SQS, Lambda, and Textract, summarized with Llama, and Bedrock returns a three-level judgment per evaluation criterion of \"non-compliant,\" \"compliant with recommendations,\" or \"compliant.\"",
     "synopsis": "バーレーンの教育訓練質保証機関(BQA)は、学校・大学が出す自己評価報告書と証拠資料の手作業での確認に時間がかかっていた。概念実証では S3 の資料を SQS・Lambda・Amazon Textract で文字にし、SageMaker JumpStart の Llama で要約し、Amazon Bedrock の Titan Express で評価基準ごとに「不適合」「推奨付き適合」「適合」を返す。プロンプト構成と TypeScript の Lambda コード片、証拠分析時間 30% 削減などの数字があり、コード全体は GitHub(bahrain-bp/bqa-genai-challenge)にある。",
-    "caveat": ""
+    "synopsis_en": "The Education and Training Quality Authority (BQA) in Bahrain spent a long time manually checking the self-evaluation reports and evidence documents submitted by schools and universities. In the proof of concept, documents in S3 are converted to text with SQS, Lambda, and Amazon Textract, summarized with Llama in SageMaker JumpStart, and Titan Express on Amazon Bedrock returns \"non-compliant,\" \"compliant with recommendations,\" or \"compliant\" for each evaluation criterion. It includes the prompt structure, TypeScript Lambda code snippets, and figures such as a 30% reduction in evidence analysis time; the full code is on GitHub (bahrain-bp/bqa-genai-challenge).",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 18,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/blogs/machine-learning/build-a-serverless-exam-generator-application-from-your-own-lecture-content-using-amazon-bedrock/",
     "title": "Build a serverless exam generator application from your own lecture content using Amazon Bedrock(AWS Machine Learning Blog)",
@@ -266,12 +335,16 @@
     "level": 300,
     "jp": false,
     "why": "講義 PDF から Bedrock で選択式・正誤式の問題を JSON で作り、教員用と学生用に分けた Cognito ユーザープール、ECS Fargate の Streamlit 画面での採点、DynamoDB への成績保存と Lambda・SNS での成績通知までを SAM で配備する手順が分かる。",
+    "why_en": "Shows the steps to deploy with SAM a system that creates multiple-choice and true/false questions in JSON from lecture PDFs with Bedrock, with separate Cognito user pools for instructors and students, grading in a Streamlit UI on ECS Fargate, storage of scores in DynamoDB, and score notifications via Lambda and SNS.",
     "synopsis": "試験や小テストの問題、とくに選択式の誤答肢を作る教員の手間を減らす仕組みを扱う。講義 PDF を Amazon S3 に置き、AWS Lambda から Amazon Bedrock の Claude v2.1 を呼んで正誤式と選択式の問題を JSON で作る。教員用と学生用の Amazon Cognito ユーザープール、Amazon ECS on AWS Fargate 上の試験作成用と受験用の 2 つの画面、Amazon DynamoDB の成績、Amazon SNS のメール通知で構成し、AWS SAM の配備コマンドとリポジトリが示される。独自ドメインと ACM 証明書 2 枚が前提で、文書は 1 回に 1 件しかアップロードできない。",
-    "caveat": ""
+    "synopsis_en": "Covers a system that reduces the effort instructors spend creating exam and quiz questions, especially distractors for multiple-choice questions. Lecture PDFs are placed in Amazon S3, and AWS Lambda calls Claude v2.1 on Amazon Bedrock to create true/false and multiple-choice questions in JSON. The architecture consists of Amazon Cognito user pools for instructors and students, two UIs on Amazon ECS on AWS Fargate for creating and taking exams, scores in Amazon DynamoDB, and email notifications via Amazon SNS; AWS SAM deployment commands and a repository are shown. A custom domain and two ACM certificates are prerequisites, and only one document can be uploaded at a time.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 19,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/blogs/publicsector/germanys-international-university-of-applied-sciences-automates-creation-of-educational-videos-using-generative-ai-serverless-on-aws/",
     "title": "Germany's International University of Applied Sciences automates creation of educational videos using generative AI, serverless on AWS",
@@ -281,12 +354,16 @@
     "level": 300,
     "jp": false,
     "why": "IU 国際応用科学大学が教科書から講義動画を量産するため、S3、Lambda、SQS で章分割と要約生成を行い、EventBridge のファンアウトで画像生成・アバター動画・Transcribe による時刻合わせを並列に流す構成と、API 制限に合わせた Lambda 予約同時実行やプロンプトカタログの設計が分かる。",
+    "why_en": "Shows the architecture IU International University of Applied Sciences uses to mass-produce lecture videos from textbooks: chapter splitting and summary generation with S3, Lambda, and SQS, with EventBridge fan-out running image generation, avatar video, and Transcribe-based timing alignment in parallel, plus the design of Lambda reserved concurrency matched to API limits and a prompt catalog.",
     "synopsis": "学生 13 万人超の IU 国際応用科学大学は 2024 年に講義動画を 24,000 本以上作る必要があり、従来の半自動の仕組みは失敗が多かった。S3 の教科書を Lambda で章に分け、SQS 経由で LLM が章ごとに要約し、EventBridge で Amazon Bedrock の SDXL による画像生成と外部サービスのアバター動画生成へ並列に流し、Amazon Transcribe の時刻でスライドを動画に埋め込む。LLM の接続先とプロンプトを DynamoDB に置くカタログと、RPM 上限に合わせた Lambda の予約同時実行やバックオフの設計が説明される。コードや IaC はない。",
-    "caveat": ""
+    "synopsis_en": "IU International University of Applied Sciences, with over 130,000 students, needed to produce more than 24,000 lecture videos in 2024, and its previous semi-automated system failed often. Lambda splits textbooks in S3 into chapters, an LLM summarizes each chapter via SQS, EventBridge fans out in parallel to image generation with SDXL on Amazon Bedrock and avatar video generation by an external service, and slides are embedded in the video using Amazon Transcribe timestamps. It explains a catalog that stores LLM endpoints and prompts in DynamoDB, and the design of Lambda reserved concurrency and backoff matched to RPM limits. No code or IaC is included.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 20,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://aws.amazon.com/blogs/publicsector/build-a-personalized-student-companion-powered-by-generative-ai-on-amazon-bedrock/",
     "title": "Build a personalized student companion powered by generative AI on Amazon Bedrock",
@@ -296,12 +373,16 @@
     "level": 300,
     "jp": false,
     "why": "Aurora Serverless の履修・成績データから Bedrock で学生ごとのプロファイル(得意分野、強み、課題)を作り、Knowledge Bases の Retrieve API で取った教材と組み合わせて説明の難易度を変える手順を Python コードで示している。",
+    "why_en": "Shows, in Python code, the steps to create per-student profiles (areas of strength, strengths, and challenges) with Bedrock from enrollment and grade data in Aurora Serverless, and combine them with teaching materials retrieved via the Knowledge Bases Retrieve API to vary the difficulty of explanations.",
     "synopsis": "学生の学習ニーズは多様だが、教員が個別に支援する余力は限られるという課題を扱う。Amazon Aurora Serverless(PostgreSQL)の履修科目と成績から、Amazon Bedrock の Claude 3 Sonnet で専門分野・強み・伸ばす点からなる学生プロファイルを作る。Amazon S3 の教材を Knowledge Bases for Amazon Bedrock の Retrieve API で取り出し、プロファイルと合わせて説明の深さを変える。boto3 と psycopg2 を使う Python コードとプロンプトの雛形が載るが、IaC やリポジトリはなく、Amazon Cognito の設定は対象外とされている。",
-    "caveat": ""
+    "synopsis_en": "Addresses the challenge that students' learning needs are diverse while instructors have limited capacity to support them individually. From enrolled courses and grades in Amazon Aurora Serverless (PostgreSQL), Claude 3 Sonnet on Amazon Bedrock creates a student profile consisting of specialization, strengths, and areas to improve. Teaching materials in Amazon S3 are retrieved with the Retrieve API of Knowledge Bases for Amazon Bedrock and combined with the profile to vary the depth of explanations. Python code using boto3 and psycopg2 and prompt templates are included, but there is no IaC or repository, and Amazon Cognito configuration is out of scope.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 21,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://github.com/aws-samples/sample-ai-tutor",
     "title": "aws-samples/sample-ai-tutor",
@@ -311,12 +392,16 @@
     "level": 300,
     "jp": false,
     "why": "授業動画を S3 に置くと EventBridge と Lambda が Transcribe と Bedrock を呼び、章分け・要約・ブルームの分類に沿った確認問題を作る仕組みを CDK で配備し、Streamlit 画面で試せる。",
+    "why_en": "Lets you deploy with CDK, and try in a Streamlit UI, a system in which placing a class video in S3 triggers EventBridge and Lambda to call Transcribe and Bedrock, splitting it into chapters, summarizing it, and creating review questions aligned with Bloom's taxonomy.",
     "synopsis": "アップロードした動画を短い章に分け、学習用の内容を付け加える AI チューターのサンプルである。Amazon S3 に動画を置くと Amazon EventBridge が AWS Lambda を起動し、Amazon Transcribe で文字起こしし、Amazon Bedrock で章の切り出しと内容の追加を行う。各章にブルームの分類に沿った確認問題と要約が作られる。cdk deploy で配備し、streamlit run ui.py で開発用の画面を試せるが、README に関連記事へのリンクや詳しい説明はない。",
-    "caveat": ""
+    "synopsis_en": "A sample AI tutor that splits an uploaded video into short chapters and adds learning content. When a video is placed in Amazon S3, Amazon EventBridge starts AWS Lambda, which transcribes it with Amazon Transcribe and uses Amazon Bedrock to extract chapters and add content. Each chapter gets review questions aligned with Bloom's taxonomy and a summary. It is deployed with cdk deploy, and a development UI can be tried with streamlit run ui.py, but the README has no links to related articles or detailed explanation.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 22,
     "section": "生成 AI で授業と学習を支える",
+    "section_en": "Supporting teaching and learning with generative AI",
     "theme": "genai",
     "url": "https://github.com/aws-samples/assessment-generator",
     "title": "aws-samples/assessment-generator",
@@ -326,12 +411,16 @@
     "level": 300,
     "jp": false,
     "why": "教員がコース・難易度別の出題テンプレート・参考資料を登録し、Bedrock の Claude 3.5 Sonnet と Titan Embeddings で参考資料から評価問題を生成して学生が受験する仕組みを、フロントエンド、文書取り込み、問題生成の 3 つの構成で CDK から配備でき、CloudFront の URL から使える。",
+    "why_en": "A system in which instructors register courses, question templates by difficulty, and reference materials, Claude 3.5 Sonnet and Titan Embeddings on Bedrock generate assessment questions from the reference materials, and students take the assessments; it can be deployed from CDK in three components (frontend, document ingestion, and question generation) and used from a CloudFront URL.",
     "synopsis": "授業の参考資料や講義ノートから評価問題を作るサンプルアプリケーションである。教員はコース、難易度(易・中・難)ごとの問題数を決めた評価テンプレート、参考資料を登録し、学生は用意された評価を受けて結果を見直す。構成はフロントエンド、文書取り込み、問題生成の 3 ブロックで、Amazon Bedrock の Titan Embeddings G1 - Text と Claude 3.5 Sonnet を使う。npm と CDK のコマンドで配備し、出力される Amazon CloudFront の URL から教員・学生のアカウントを作って使う。Bedrock のモデルを使えるリージョンで配備する必要がある。",
-    "caveat": ""
+    "synopsis_en": "A sample application that creates assessment questions from course reference materials and lecture notes. Instructors register courses, assessment templates that set the number of questions per difficulty level (easy, medium, hard), and reference materials; students take the prepared assessments and review their results. The architecture has three blocks (frontend, document ingestion, and question generation) and uses Titan Embeddings G1 - Text and Claude 3.5 Sonnet on Amazon Bedrock. It is deployed with npm and CDK commands, and instructor and student accounts are created from the Amazon CloudFront URL in the output. It must be deployed in a region where the Bedrock models are available.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 23,
     "section": "LMS・試験・学習基盤",
+    "section_en": "LMS, exams, and learning platforms",
     "theme": "lms",
     "url": "https://github.com/aws-samples/sample-moodle-integrations-on-aws",
     "title": "aws-samples/sample-moodle-integrations-on-aws",
@@ -341,12 +430,16 @@
     "level": 400,
     "jp": false,
     "why": "Moodle に Bedrock 翻訳ブロック、EventBridge へイベントを送るプラグイン、LTI 1.3 のツール、Web サービス経由の教材のベクトル索引を足す Python CDK・Lambda・React のサンプル一式で、IAM Roles Anywhere を含む認証の注意点とデプロイ手順が分かる。",
+    "why_en": "A complete set of Python CDK, Lambda, and React samples that add to Moodle a Bedrock translation block, a plugin that sends events to EventBridge, an LTI 1.3 tool, and a vector index of teaching materials via web services; shows authentication considerations including IAM Roles Anywhere and the deployment steps.",
     "synopsis": "Moodle と AWS の連携パターンをまとめたサンプルで、Amazon Bedrock で翻訳するブロック、イベントを EventBridge に送るプラグイン、LTI 1.3 のツール、Moodle の教材を Bedrock Knowledge Base に索引する Lambda の 4 つを含む。インフラは Python の AWS CDK、LTI の画面は React で、mise のコマンドでデプロイする。Moodle の認証には長期アクセスキーを使わない IAM Roles Anywhere を推奨している。本番では使わないデモ用コードで、本番以外の Moodle 環境が前提である。",
-    "caveat": ""
+    "synopsis_en": "A sample collecting integration patterns between Moodle and AWS, containing four components: a block that translates with Amazon Bedrock, a plugin that sends events to EventBridge, an LTI 1.3 tool, and a Lambda function that indexes Moodle teaching materials into a Bedrock Knowledge Base. The infrastructure is AWS CDK in Python, the LTI UI is React, and deployment uses mise commands. For Moodle authentication it recommends IAM Roles Anywhere, which avoids long-term access keys. It is demo code not for production use and assumes a non-production Moodle environment.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 24,
     "section": "LMS・試験・学習基盤",
+    "section_en": "LMS, exams, and learning platforms",
     "theme": "lms",
     "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/lms-integration-with-aws/next-steps.html",
     "title": "Implementation examples(LMS 連携ガイド)",
@@ -356,12 +449,16 @@
     "level": 400,
     "jp": false,
     "why": "Moodle のブロックプラグインから Lambda Authorizer 付き API Gateway 経由で Bedrock Converse を呼ぶ実装、LTI 1.3 の login・launch エンドポイント、Moodle のイベントを EventBridge に送るローカルプラグイン、Moodle Web サービスから Knowledge Bases に取り込む Lambda のコードと設定手順が分かる。",
+    "why_en": "Shows the code and configuration steps for an implementation that calls Bedrock Converse from a Moodle block plugin via API Gateway with a Lambda Authorizer, LTI 1.3 login and launch endpoints, a local plugin that sends Moodle events to EventBridge, and a Lambda function that ingests content from Moodle web services into Knowledge Bases.",
     "synopsis": "Moodle を例に、LMS 連携の実装をコード片と設定手順で示す章である。翻訳ブロックは Moodle のトークンを付けて API Gateway を呼び、Lambda Authorizer の確認後に Bedrock の Converse API で翻訳する。LTI 1.3 の /login・/launch・/key と JWT 検証、成績返却の流れ、Moodle のイベントを EventBridge に送るプラグイン、教材を Knowledge Bases に取り込む Lambda も示す。コードは簡略化されており、Moodle への呼び出し過多を防ぐ予約同時実行の注意がある。",
-    "caveat": ""
+    "synopsis_en": "A chapter that uses Moodle as an example to show LMS integration implementations with code snippets and configuration steps. The translation block calls API Gateway with a Moodle token, and after verification by a Lambda Authorizer, translates with the Bedrock Converse API. It also shows the LTI 1.3 /login, /launch, and /key endpoints with JWT validation, the grade passback flow, a plugin that sends Moodle events to EventBridge, and a Lambda function that ingests teaching materials into Knowledge Bases. The code is simplified, and there is a note on reserved concurrency to prevent excessive calls to Moodle.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 25,
     "section": "LMS・試験・学習基盤",
+    "section_en": "LMS, exams, and learning platforms",
     "theme": "lms",
     "url": "https://docs.aws.amazon.com/pdfs/prescriptive-guidance/latest/lms-integration-with-aws/lms-integration-with-aws.pdf",
     "title": "Integrating Learning Management Systems (LMS) with AWS(AWS Prescriptive Guidance・PDF 版)",
@@ -371,12 +468,16 @@
     "level": 300,
     "jp": false,
     "why": "Moodle・Canvas・Blackboard と AWS をつなぐ 5 方式の構成図とトレードオフ、Bedrock を LMS に組み込む 4 パターン、PHP のプラグインと Python の Lambda のコード例、責任ある AI の考慮点を一冊で確認できる。",
+    "why_en": "Lets you review in a single document architecture diagrams and trade-offs for five ways of connecting Moodle, Canvas, and Blackboard to AWS, four patterns for embedding Bedrock in an LMS, code examples for a PHP plugin and a Python Lambda function, and responsible AI considerations.",
     "synopsis": "LMS と AWS の連携を計画する技術者向けの 62 ページのガイド(2026-06-10 版)である。ネイティブプラグイン、LTI、API 連携、イベント駆動、ETL/ELT の 5 方式を AWS サービスと利点・欠点で比べ、Amazon Bedrock の組み込みを直接呼び出し、Moodle 4.5 の AI サブシステム、Knowledge Bases、Agents の 4 パターンで説明する。PHP のプラグインと Python の Lambda のコード例があり、本体は aws-samples/sample-moodle-integrations-on-aws にある。責任ある AI や LMS への負荷の注意も書かれている。",
-    "caveat": ""
+    "synopsis_en": "A 62-page guide (2026-06-10 edition) for engineers planning LMS integration with AWS. It compares five approaches (native plugins, LTI, API integration, event-driven, and ETL/ELT) by AWS services and their advantages and disadvantages, and explains embedding Amazon Bedrock in four patterns: direct invocation, the Moodle 4.5 AI subsystem, Knowledge Bases, and Agents. It includes code examples for a PHP plugin and a Python Lambda function, with the full code in aws-samples/sample-moodle-integrations-on-aws. It also covers responsible AI and cautions about load on the LMS.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 26,
     "section": "LMS・試験・学習基盤",
+    "section_en": "LMS, exams, and learning platforms",
     "theme": "lms",
     "url": "https://aws.amazon.com/blogs/publicsector/building-an-identity-verified-remote-assessment-platform-on-aws/",
     "title": "Building an identity-verified remote assessment platform on AWS",
@@ -386,12 +487,16 @@
     "level": 300,
     "jp": false,
     "why": "Bedrock AgentCore のエージェントから Lambda 経由で Rekognition の顔照合、Transcribe と話者埋め込みの声照合、Textract の身分証読み取りを呼び、入試・語学試験の本人確認を行う構成と閾値をコード付きで示す。",
+    "why_en": "Shows, with code, the architecture and thresholds for verifying identity in entrance examinations and language tests, in which an agent on Bedrock AgentCore calls, via Lambda, Rekognition face matching, voice matching with Transcribe and speaker embeddings, and ID document reading with Textract.",
     "synopsis": "ある入学選考で記録された留学生のビデオ面接 2 万件超のうち 1.3% に不正が確認された状況を受け、英国の大学のオンライン面接や語学の音読試験で本人確認を行う仕組みを扱う。Amazon Bedrock AgentCore 上の複数エージェントが Lambda のツールを呼び、Amazon Textract で身分証を読み、Amazon Rekognition の顔照合(80% 以上)と Resemblyzer の話者埋め込みによる声照合(0.60 以上)を行う。音読は Amazon Transcribe の信頼度スコアと文の一致度をもとにエージェントが採点する。Python と JavaScript のコード片があり、IaC やリポジトリはない。照合失敗は人の確認に回し、生体データは S3 のライフサイクルで保存期間後に消せると書かれている。",
-    "caveat": ""
+    "synopsis_en": "Prompted by a situation in which fraud was confirmed in 1.3% of more than 20,000 recorded video interviews of international students in one admissions process, this covers a system for verifying identity in online interviews and read-aloud language tests at UK universities. Multiple agents on Amazon Bedrock AgentCore call Lambda tools to read ID documents with Amazon Textract, match faces with Amazon Rekognition (80% or higher), and match voices using Resemblyzer speaker embeddings (0.60 or higher). For reading aloud, an agent scores based on Amazon Transcribe confidence scores and sentence match. Python and JavaScript code snippets are included; there is no IaC or repository. It states that failed matches are routed to human review and that biometric data can be deleted after the retention period with an S3 lifecycle rule.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 27,
     "section": "LMS・試験・学習基盤",
+    "section_en": "LMS, exams, and learning platforms",
     "theme": "lms",
     "url": "https://aws.amazon.com/blogs/publicsector/modernize-moodle-lms-with-aws-serverless-services/",
     "title": "Modernize Moodle LMS with AWS serverless services",
@@ -401,12 +506,16 @@
     "level": 300,
     "jp": false,
     "why": "CloudFront と WAF、ALB、Fargate と Fargate Spot の 3 対 1 の併用、EFS の moodledata、Aurora Serverless、ElastiCache Serverless(Valkey)で Moodle を組む構成が分かり、CDK サンプルの手順はリポジトリの README にある。",
+    "why_en": "Shows an architecture for running Moodle with CloudFront and WAF, ALB, Fargate and Fargate Spot combined in a 3:1 ratio, moodledata on EFS, Aurora Serverless, and ElastiCache Serverless (Valkey); the steps for the CDK sample are in the repository README.",
     "synopsis": "物理サーバーや仮想環境で Moodle を動かしてきた機関の、拡張性、運用の簡素化、費用削減の要望を扱う。CloudFront と AWS WAF、ALB、ECS on Fargate、moodledata を置く Amazon EFS、Aurora Serverless、ElastiCache Serverless(Valkey)で組み、4 タスク中 3 つを Fargate Spot にして中断時も 1 タスクが残るようにする。データベースやキャッシュの種類は選べる。CDK のコードは aws-samples/aws-cdk-ecs-refarch-moodle にあり、デプロイ手順はその README に任せている。",
-    "caveat": ""
+    "synopsis_en": "Addresses the demands for scalability, simpler operations, and cost reduction from institutions that have run Moodle on physical servers or virtual environments. The architecture uses CloudFront and AWS WAF, ALB, ECS on Fargate, Amazon EFS for moodledata, Aurora Serverless, and ElastiCache Serverless (Valkey), running 3 of 4 tasks on Fargate Spot so that one task remains during interruptions. The database and cache types can be chosen. The CDK code is in aws-samples/aws-cdk-ecs-refarch-moodle, and deployment steps are left to its README.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 28,
     "section": "LMS・試験・学習基盤",
+    "section_en": "LMS, exams, and learning platforms",
     "theme": "lms",
     "url": "https://aws.amazon.com/blogs/publicsector/accelerating-innovation-in-education-implementing-the-prometheus-x-data-space-connector-on-aws/",
     "title": "Accelerating innovation in education: Implementing the Prometheus-X Data Space Connector on AWS",
@@ -416,12 +525,16 @@
     "level": 300,
     "jp": false,
     "why": "教育・スキル分野のデータスペース用コネクタ(Prometheus-X PDC)を EC2 の Docker で動かし、S3、Glue、Athena、QuickSight とつなぐ構成と、ユーザーデータによる構築手順が分かる。",
+    "why_en": "Shows an architecture that runs the data space connector for the education and skills sector (Prometheus-X PDC) in Docker on EC2 and connects it to S3, Glue, Athena, and QuickSight, with build steps using user data.",
     "synopsis": "教育・スキル分野のデータスペース Prometheus-X に参加するための接続部品 PDC を AWS で動かす方法を扱う。PDC は EC2 上の Docker で動き、Route 53・ALB・ACM で要求を受け、S3 のデータを AWS Glue で整形し、Lambda でカタログ登録し、Athena と Amazon QuickSight で分析する。EC2 のユーザーデータで Docker、PDC、Nginx を導入する手順が示され、フランスの EdTech 企業 Edtake の事例が紹介される。VisionsTrust のアカウントが前提で、本番では ECS や EKS を使うよう勧めている。",
-    "caveat": "Amazon QuickSight は現在 Amazon Quick Sight に名称が変わっているが、記事は旧名で記載している。"
+    "synopsis_en": "Covers how to run on AWS the PDC, the connector component for participating in Prometheus-X, a data space for the education and skills sector. The PDC runs in Docker on EC2, receives requests through Route 53, ALB, and ACM, shapes data in S3 with AWS Glue, registers it in a catalog with Lambda, and analyzes it with Athena and Amazon QuickSight. Steps for installing Docker, the PDC, and Nginx via EC2 user data are shown, and a case study of the French EdTech company Edtake is introduced. A VisionsTrust account is a prerequisite, and it recommends using ECS or EKS in production.",
+    "caveat": "Amazon QuickSight は現在 Amazon Quick Sight に名称が変わっているが、記事は旧名で記載している。",
+    "caveat_en": "Amazon QuickSight has since been renamed Amazon Quick Sight, but the article uses the old name."
   },
   {
     "no": 29,
     "section": "LMS・試験・学習基盤",
+    "section_en": "LMS, exams, and learning platforms",
     "theme": "lms",
     "url": "https://aws.amazon.com/blogs/publicsector/implementing-a-unified-search-platform-for-educational-content-on-amazon-opensearch-service/",
     "title": "Implementing a unified search platform for educational content on Amazon OpenSearch Service",
@@ -431,12 +544,16 @@
     "level": 300,
     "jp": false,
     "why": "S3 に置いた講義動画・PDF・スライドを Lambda で振り分け、Transcribe・Textract で文字にして Bedrock で要約し、DynamoDB Streams 経由で OpenSearch に索引する教材横断検索の構成とコード片が分かる。",
+    "why_en": "Shows the architecture and code snippets for cross-material search of teaching content, in which lecture videos, PDFs, and slides placed in S3 are routed by Lambda, converted to text with Transcribe and Textract, summarized with Bedrock, and indexed in OpenSearch via DynamoDB Streams.",
     "synopsis": "増え続ける教材データを横断して探しにくいという一般的な課題を扱い、特定の機関の事例ではない。S3 に置いた動画、PDF、スライド、HTML を Lambda が種類ごとに処理し、Amazon Transcribe や Amazon Textract などで文字にして Amazon Bedrock で要約し、DynamoDB に保存する。DynamoDB Streams から Lambda で Amazon OpenSearch Service に索引し、API Gateway 越しに検索させる。DynamoDB の項目や OpenSearch の検索クエリのコード片はあるが、IaC、リポジトリ、費用の数字はない。",
-    "caveat": ""
+    "synopsis_en": "Addresses the general challenge of searching across an ever-growing body of teaching material data; it is not a case study of a specific institution. Lambda processes videos, PDFs, slides, and HTML placed in S3 by type, converts them to text with Amazon Transcribe, Amazon Textract, and other services, summarizes them with Amazon Bedrock, and stores the results in DynamoDB. Lambda indexes them from DynamoDB Streams into Amazon OpenSearch Service, and searches are served through API Gateway. Code snippets for DynamoDB items and OpenSearch search queries are included, but there is no IaC, repository, or cost figures.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 30,
     "section": "LMS・試験・学習基盤",
+    "section_en": "LMS, exams, and learning platforms",
     "theme": "lms",
     "url": "https://github.com/aws-samples/aws-refarch-moodle",
     "title": "aws-samples/aws-refarch-moodle",
@@ -446,12 +563,16 @@
     "level": 300,
     "jp": false,
     "why": "Moodle 4.4 を EC2 Auto Scaling、Aurora、ElastiCache(Serverless を含む)、Elastic スループットの EFS、CloudFront で組む入れ子の CloudFormation で、CPU 75%/25% のスケーリング設定や導入時の CPU 急増の注意点が分かる。",
+    "why_en": "Nested CloudFormation templates that build Moodle 4.4 with EC2 Auto Scaling, Aurora, ElastiCache (including Serverless), EFS with Elastic throughput, and CloudFront; shows the 75%/25% CPU scaling settings and cautions about CPU spikes during installation.",
     "synopsis": "Moodle 4.4 を AWS に立てる入れ子の CloudFormation テンプレート集で、最新はリリース 2.0.2(2024-04-25)である。ALB、EC2 Auto Scaling、Aurora、ElastiCache(Serverless も可)、Elastic スループットの EFS、CloudFront、Route 53 で構成する。00-main.yaml の作成からウィザード、SSM パラメータ変更、CodePipeline 実行までの手順と、CPU 75% 超で増やし 25% 未満で減らす設定が示される。ウィザード中の CPU 急増で想定外にスケールする点などの注意がある。",
-    "caveat": ""
+    "synopsis_en": "A set of nested CloudFormation templates for standing up Moodle 4.4 on AWS; the latest is release 2.0.2 (2024-04-25). The architecture consists of ALB, EC2 Auto Scaling, Aurora, ElastiCache (Serverless also possible), EFS with Elastic throughput, CloudFront, and Route 53. It shows the steps from creating 00-main.yaml through the wizard, changing SSM parameters, and running CodePipeline, and settings that scale out above 75% CPU and scale in below 25%. There are cautions such as unexpected scaling caused by CPU spikes during the wizard.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 31,
     "section": "LMS・試験・学習基盤",
+    "section_en": "LMS, exams, and learning platforms",
     "theme": "lms",
     "url": "https://aws.amazon.com/blogs/publicsector/how-to-scale-and-optimize-moodle-lms-on-aws/",
     "title": "How to scale and optimize Moodle LMS on AWS",
@@ -461,12 +582,16 @@
     "level": 300,
     "jp": false,
     "why": "CloudFormation の Moodle 参照構成をもとに、移行時の Aurora MySQL への切り替え、Moodle が出す JMeter 計画と Distributed Load Testing による負荷試験、ElastiCache と RDS が費用の大半を占めていた状態から 2 週間で日額費用を 59% 下げた例が分かる。",
+    "why_en": "Shows, based on the CloudFormation Moodle reference architecture, switching to Aurora MySQL during migration, load testing with the JMeter plan generated by Moodle and Distributed Load Testing, and an example in which daily cost was cut by 59% in two weeks from a state where ElastiCache and RDS accounted for most of the cost.",
     "synopsis": "既存の Moodle を移行し、数千人の学生を支えつつ費用を抑える方法を扱う。Moodle 3.8.3 前提の CloudFormation 参照構成(EC2、Aurora、ElastiCache、S3)を使い、テンプレートの修正点と AWS DMS・AWS SCT によるデータ移行を説明する。Moodle が生成する JMeter の試験計画を EC2 か Distributed Load Testing on AWS で流し、当初は ElastiCache と RDS が主な費用要因だったが、2 週間で日額費用を 59% 下げた。プラグインの互換性や、Aurora MySQL へ移す際のバックアップ修正が注意点として挙がる。",
-    "caveat": ""
+    "synopsis_en": "Covers how to migrate an existing Moodle and keep costs down while supporting thousands of students. Using the CloudFormation reference architecture for Moodle 3.8.3 (EC2, Aurora, ElastiCache, S3), it explains template modifications and data migration with AWS DMS and AWS SCT. The JMeter test plan generated by Moodle is run on EC2 or with Distributed Load Testing on AWS; ElastiCache and RDS were initially the main cost drivers, but daily cost was cut by 59% in two weeks. Plugin compatibility and fixing backups when moving to Aurora MySQL are raised as points to watch.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 32,
     "section": "LMS・試験・学習基盤",
+    "section_en": "LMS, exams, and learning platforms",
     "theme": "lms",
     "url": "https://github.com/aws-samples/sample-ai-grade-assistant",
     "title": "aws-samples/sample-ai-grade-assistant",
@@ -476,12 +601,16 @@
     "level": 300,
     "jp": false,
     "why": "Moodle から学生の提出物を取り込み、Bedrock の Claude で自動採点する仕組みを、CloudFront の React 画面、Cognito、API Gateway、Lambda、DynamoDB で組んだ CDK サンプルで、npm のコマンドで立てられる。",
+    "why_en": "A CDK sample that ingests student submissions from Moodle and grades them automatically with Claude on Bedrock, built with a React UI on CloudFront, Cognito, API Gateway, Lambda, and DynamoDB; it can be stood up with npm commands.",
     "synopsis": "Moodle から学生の課題提出物を取り込み、生成 AI で自動採点する AI Grading Assistant のサンプルである。React の画面を S3 と CloudFront で配信し、Amazon Cognito で利用者を管理し、API Gateway 経由の Lambda が Amazon Bedrock の Claude v3 などを呼び、設定は DynamoDB に置く。インフラは TypeScript の CDK で、npm run deploy で立て npm run destroy で消せる。README に Moodle との接続設定の詳しい説明はなく、本番で使わないよう求める免責がある。",
-    "caveat": ""
+    "synopsis_en": "A sample AI Grading Assistant that ingests student assignment submissions from Moodle and grades them automatically with generative AI. A React UI is served with S3 and CloudFront, users are managed with Amazon Cognito, Lambda via API Gateway calls Claude v3 and other models on Amazon Bedrock, and settings are stored in DynamoDB. The infrastructure is CDK in TypeScript, stood up with npm run deploy and removed with npm run destroy. The README has no detailed explanation of the connection settings for Moodle, and a disclaimer asks that it not be used in production.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 33,
     "section": "LMS・試験・学習基盤",
+    "section_en": "LMS, exams, and learning platforms",
     "theme": "lms",
     "url": "https://github.com/aws-samples/enable-lti",
     "title": "aws-samples/enable-lti",
@@ -491,12 +620,16 @@
     "level": 300,
     "jp": false,
     "why": "LMS からの LTI 1.3 の起動要求を受けて検証し、学習ツールへ転送する仲介サービスのサンプルで、既存のツールを Blackboard、Canvas、D2L、Moodle、Open edX につなげる方法が分かる。",
+    "why_en": "A sample intermediary service that receives, validates, and forwards LTI 1.3 launch requests from an LMS to learning tools; shows how to connect existing tools to Blackboard, Canvas, D2L, Moodle, and Open edX.",
     "synopsis": "既存の学習ツールを LTI 1.3 に対応させ、複数の LMS と連携させるサービス Enable LTI(eLTI)のサンプルである。eLTI は LMS からの LTI 1.3 の要求を受けて検証し、要求のデータから転送先を引いて、認証済みの利用者を学習ツールへリダイレクトする。対象の例として Blackboard、Canvas、D2L、Moodle、Open edX が挙がる。学習ツールには OpenID Connect による受け入れと REST API を呼ぶ機能が必要で、構成・実装・設定の詳細は別サイト aws-samples.github.io/enable-lti にある。",
-    "caveat": ""
+    "synopsis_en": "A sample of Enable LTI (eLTI), a service that makes existing learning tools LTI 1.3 compatible and integrates them with multiple LMSs. eLTI receives and validates LTI 1.3 requests from the LMS, looks up the forwarding destination from the request data, and redirects the authenticated user to the learning tool. Blackboard, Canvas, D2L, Moodle, and Open edX are given as example targets. The learning tool needs to accept OpenID Connect and be able to call REST APIs; details of the architecture, implementation, and configuration are on a separate site, aws-samples.github.io/enable-lti.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 34,
     "section": "LMS・試験・学習基盤",
+    "section_en": "LMS, exams, and learning platforms",
     "theme": "lms",
     "url": "https://docs.aws.amazon.com/architecture-diagrams/latest/open-edx-for-high-availability-on-aws/open-edx-for-high-availability-on-aws.html",
     "title": "Open edX on AWS(リファレンスアーキテクチャ図)",
@@ -506,12 +639,16 @@
     "level": 200,
     "jp": false,
     "why": "Open edX の LMS・CMS・Insights と API 群を EC2 Auto Scaling で分け、ProxySQL 経由の Aurora、MongoDB、ElastiCache、OpenSearch、S3 で支える高可用構成の役割分担が分かる。",
+    "why_en": "Shows the division of roles in a highly available architecture that separates the Open edX LMS, CMS, Insights, and APIs across EC2 Auto Scaling groups, backed by Aurora via ProxySQL, MongoDB, ElastiCache, OpenSearch, and S3.",
     "synopsis": "Open edX を可用性と費用の両面から AWS で動かすための参照構成図である(2023-04-14 公開)。ALB の背後で CMS・LMS・Insights の Web アプリ層と、Notes・Forums などの API 層を別々の EC2 Auto Scaling で動かす。ProxySQL が書き込みと読み取りを Aurora の各エンドポイントへ振り分け、MongoDB クラスター、ElastiCache、Amazon OpenSearch Service、S3 が支え、メールは Amazon SES で送る。図と番号ごとの説明だけで、テンプレートや IaC はない。",
-    "caveat": ""
+    "synopsis_en": "A reference architecture diagram for running Open edX on AWS with both availability and cost in mind (published 2023-04-14). Behind an ALB, the web application tier (CMS, LMS, Insights) and the API tier (Notes, Forums, etc.) run in separate EC2 Auto Scaling groups. ProxySQL routes writes and reads to the respective Aurora endpoints, supported by a MongoDB cluster, ElastiCache, Amazon OpenSearch Service, and S3, with email sent via Amazon SES. It consists only of the diagram and numbered explanations; there are no templates or IaC.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 35,
     "section": "LMS・試験・学習基盤",
+    "section_en": "LMS, exams, and learning platforms",
     "theme": "lms",
     "url": "https://docs.aws.amazon.com/reference-architecture-diagrams/latest/hybrid-remote-proctoring-solution/hybrid-remote-proctoring-solution.html",
     "title": "Hybrid Remote Proctoring Solution(AWS リファレンスアーキテクチャ図)",
@@ -521,12 +658,16 @@
     "level": 200,
     "jp": false,
     "why": "受験者の顔を Rekognition で登録し、Chime SDK の Media Capture で 5 秒ごとのカメラ・画面映像を S3 に保存、Lambda でフレームを切り出して本人確認と人数検出を行い、SNS と Chime メッセージで監督者に通知する試験監督の構成が分かる。",
+    "why_en": "Shows a proctoring architecture that registers examinees' faces with Rekognition, saves camera and screen video every 5 seconds to S3 with Chime SDK Media Capture, extracts frames with Lambda for identity verification and person counting, and notifies proctors via SNS and Chime messages.",
     "synopsis": "遠隔と対面の試験で、AI の補助で不正を見つけながら監督する仕組みの参照構成図である(2023-03-30)。受験者の顔を Amazon Rekognition で登録し、Amazon Chime SDK の映像を最大 5 秒単位で S3 に保存し、Lambda が取り出したフレームで本人確認と顔の数を調べる。問題があれば Amazon SNS と Chime のメッセージで監督者に知らせ、試験情報は DynamoDB、認証は Amazon Cognito が担う。9 段階の図と説明だけでテンプレートはなく、同意や生体データの扱いなどプライバシー面は対象外と明記されている。",
-    "caveat": ""
+    "synopsis_en": "A reference architecture diagram for proctoring remote and in-person exams with AI assistance in detecting cheating (2023-03-30). Examinees' faces are registered with Amazon Rekognition, Amazon Chime SDK video is saved to S3 in segments of up to 5 seconds, and Lambda checks identity and the number of faces in extracted frames. If a problem is found, proctors are notified via Amazon SNS and Chime messages; exam information is in DynamoDB and authentication is handled by Amazon Cognito. It consists only of a nine-step diagram and explanations, with no templates, and explicitly states that privacy aspects such as consent and handling of biometric data are out of scope.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 36,
     "section": "LMS・試験・学習基盤",
+    "section_en": "LMS, exams, and learning platforms",
     "theme": "lms",
     "url": "https://aws.amazon.com/solutions/guidance/deploying-moodle-learning-management-system-on-aws/",
     "title": "Guidance for Deploying Moodle Learning Management System on AWS(ページ見出しは Operating Moodle on AWS)",
@@ -536,12 +677,16 @@
     "level": 200,
     "jp": false,
     "why": "Moodle の参照構成(EC2 Auto Scaling、Aurora、EFS、ElastiCache、CloudFront、CodePipeline)を Well-Architected の 6 つの柱ごとに、なぜその構成にしたかの説明とともに示している。",
+    "why_en": "Shows a reference architecture for Moodle (EC2 Auto Scaling, Aurora, EFS, ElastiCache, CloudFront, CodePipeline), organized by the six Well-Architected pillars, with an explanation of why each choice was made.",
     "synopsis": "Moodle を AWS で運用する参照構成を示す Guidance ページである。ALB、EC2 Auto Scaling、Aurora、Amazon EFS、ElastiCache、CloudFront がそれぞれ負荷分散、台数調整、データベース、共有ファイル、キャッシュ、エッジ配信を担い、CloudFormation と CodePipeline・CodeBuild・CodeDeploy で構築とデプロイを自動化する。Well-Architected の 6 つの柱ごとに選択の理由が説明される。デプロイ用コードへのリンクや費用の数字はなく、本番アカウントで使わないよう求める免責が付く。",
-    "caveat": ""
+    "synopsis_en": "A Guidance page presenting a reference architecture for running Moodle on AWS. ALB, EC2 Auto Scaling, Aurora, Amazon EFS, ElastiCache, and CloudFront handle load balancing, scaling, the database, shared files, caching, and edge delivery respectively, and CloudFormation together with CodePipeline, CodeBuild, and CodeDeploy automates provisioning and deployment. The reasons behind each choice are explained per Well-Architected pillar. There is no link to deployment code and no cost figures, and a disclaimer asks that it not be used in production accounts.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 37,
     "section": "仮想 PC 教室・実習環境",
+    "section_en": "Virtual PC labs and hands-on environments",
     "theme": "vdi",
     "url": "https://aws.amazon.com/jp/blogs/news/casestudy-capcom-academia-collaboration-by-game-development/",
     "title": "AWS で実現するゲーム開発体験授業 – カプコンと近畿大学の産学連携",
@@ -551,12 +696,16 @@
     "level": 200,
     "jp": true,
     "why": "近畿大学の授業で、Client VPN 経由で G4 の EC2 に NICE DCV で接続させ、Managed Microsoft AD で認証し、社外秘のゲームエンジンを学生に使わせた構成が分かる。",
+    "why_en": "Shows the setup used in a Kindai University class: students connect via Client VPN to G4 EC2 instances with NICE DCV, authenticate through Managed Microsoft AD, and use a confidential game engine.",
     "synopsis": "カプコンが近畿大学の学生に自社の非公開ゲームエンジン「RE ENGINE」で開発を体験させる授業で、資産を漏らさず学生の PC に左右されない環境が必要だった。学生は AWS Client VPN で入り、Lambda 経由で GPU 付きの G4 の EC2 を起動し、NICE DCV で接続する。認証は AWS Managed Microsoft AD で、GuardDuty・CloudTrail・Config で監視する。インスタンスは参加人数から負荷を見積もって選んだと説明されるが、台数や費用の数字、手順やコードは載っていない。",
-    "caveat": ""
+    "synopsis_en": "Capcom ran a class in which Kindai University students developed with its unreleased game engine \"RE ENGINE,\" which required an environment that would not leak assets and did not depend on the students' own PCs. Students connect through AWS Client VPN, launch GPU-equipped G4 EC2 instances via Lambda, and connect with NICE DCV. Authentication uses AWS Managed Microsoft AD, with monitoring by GuardDuty, CloudTrail, and Config. The instances were chosen by estimating load from the number of participants, but no instance counts, cost figures, procedures, or code are given.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 38,
     "section": "仮想 PC 教室・実習環境",
+    "section_en": "Virtual PC labs and hands-on environments",
     "theme": "vdi",
     "url": "https://aws.amazon.com/blogs/desktop-and-application-streaming/persistent-storage-for-amazon-appstream-2-0-linux-fleets-on-amazon-elastic-file-system/",
     "title": "Persistent storage for Amazon AppStream 2.0 Linux Fleets on Amazon Elastic File System(Desktop and Application Streaming Blog)",
@@ -566,12 +715,16 @@
     "level": 300,
     "jp": false,
     "why": "AppStream 2.0 の Linux フリートでセッションスクリプトから EFS をマウントし、学生が端末をまたいで課題ファイルを共有・継続できるようにする手順とマウントオプションが分かる。",
+    "why_en": "Shows the procedure and mount options for mounting EFS from a session script on an AppStream 2.0 Linux fleet so that students can share and keep working on assignment files across devices.",
     "synopsis": "教育機関の学生や教員が複数の端末からファイルを使い続けられるよう、Amazon AppStream 2.0 の Linux フリートに永続ストレージを持たせる方法を扱う。セッションスクリプトがインスタンス起動時に Amazon EFS を NFS 4.1 でマウントし、マウントオプションとスクリプト本文、sticky bit で所有者以外の変更を防ぐ設定が示される。EFS の作成と、フリートから TCP 2049 を許可するセキュリティグループが前提で、削除時の手順も書かれている。",
-    "caveat": "AppStream 2.0 は現在 Amazon WorkSpaces Applications に名称が変わっているが、記事は旧名で記載している。"
+    "synopsis_en": "Covers how to give Amazon AppStream 2.0 Linux fleets persistent storage so that students and faculty at educational institutions can keep using files from multiple devices. A session script mounts Amazon EFS over NFS 4.1 at instance launch; the mount options, the script itself, and a sticky-bit setting that prevents changes by anyone other than the owner are shown. Creating the EFS file system and a security group that allows TCP 2049 from the fleet are prerequisites, and cleanup steps are also described.",
+    "caveat": "AppStream 2.0 は現在 Amazon WorkSpaces Applications に名称が変わっているが、記事は旧名で記載している。",
+    "caveat_en": "AppStream 2.0 has since been renamed Amazon WorkSpaces Applications, but the post uses the old name."
   },
   {
     "no": 39,
     "section": "仮想 PC 教室・実習環境",
+    "section_en": "Virtual PC labs and hands-on environments",
     "theme": "vdi",
     "url": "https://aws.amazon.com/blogs/desktop-and-application-streaming/use-veyon-to-remote-control-and-monitor-virtual-labs-on-amazon-workspaces/",
     "title": "Use Veyon to remote control and monitor virtual labs on Amazon WorkSpaces(Desktop and Application Streaming Blog)",
@@ -581,12 +734,16 @@
     "level": 300,
     "jp": false,
     "why": "Ubuntu の Amazon WorkSpaces で作った仮想 PC 教室に Veyon を入れ、Managed Microsoft AD の LDAP 設定、教員端末と学生端末のサービス設定、セキュリティグループのポートを決めて、教員が学生の画面を監視・操作する手順が分かる。",
+    "why_en": "Shows how to install Veyon in a virtual PC lab built on Ubuntu Amazon WorkSpaces, configure LDAP for Managed Microsoft AD, set up the service on teacher and student machines, and decide security group ports so teachers can monitor and control student screens.",
     "synopsis": "Amazon WorkSpaces の仮想 PC 教室で、教員が学生の操作を監視・遠隔操作しにくいという課題を扱う。Ubuntu 22.04 の WorkSpaces にオープンソースの Veyon を入れ、AWS Managed Microsoft AD への LDAP 接続、教員端末と学生端末の設定、TCP 11100・11200・11300・11400 を許可するセキュリティグループを順に設定する。apt のコマンドと設定値が示され、所要 60 分・費用 20 ドル程度(公開時点)の目安と削除手順がある。GitHub のワークショップ用テンプレートで環境を先に作る前提で、構成図はない。",
-    "caveat": ""
+    "synopsis_en": "Addresses the difficulty teachers have monitoring and remotely controlling students in a virtual PC lab on Amazon WorkSpaces. Open-source Veyon is installed on Ubuntu 22.04 WorkSpaces, then the LDAP connection to AWS Managed Microsoft AD, the teacher and student machine settings, and a security group allowing TCP 11100, 11200, 11300, and 11400 are configured in order. apt commands and configuration values are shown, with an estimate of 60 minutes and roughly 20 dollars (at publication) and cleanup steps. It assumes the environment is first built with the workshop template on GitHub; there is no architecture diagram.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 40,
     "section": "仮想 PC 教室・実習環境",
+    "section_en": "Virtual PC labs and hands-on environments",
     "theme": "vdi",
     "url": "https://aws.amazon.com/blogs/publicsector/5-things-consider-rapidly-deploying-virtual-computer-lab-space-amazon-appstream/",
     "title": "5 things to consider when rapidly deploying a virtual computer lab space using Amazon AppStream 2.0",
@@ -596,12 +753,16 @@
     "level": 200,
     "jp": false,
     "why": "AppStream 2.0 で仮想 PC 教室を作るときに、用途(自習・授業・試験)、同時接続数とオンデマンドフリート、ソフトのライセンス、SAML や LTI による認証、VPC の出口制御をどう決めるかが分かる。",
+    "why_en": "Shows how to decide, when building a virtual PC lab with AppStream 2.0, on the use case (self-study, classes, exams), concurrent user counts and on-demand fleets, software licensing, authentication via SAML or LTI, and VPC egress control.",
     "synopsis": "遠隔学習を進める学校が、PC 教室を Amazon AppStream 2.0 で急いで用意する際の 5 つの検討項目をまとめた 2020 年の記事である。デスクトップかアプリかの提供形態と LMS 連携、同時接続数やピーク時間の見積もりとオンデマンドフリート、ソフトのライセンスと既存ライセンスサーバーへの接続、SAML 2.0 や AWS Chalice と LTI による認証、セキュリティグループや出口経路による通信制限を順に説明する。設定値や構成図、手順は載っていない。",
-    "caveat": "AppStream 2.0 は現在 Amazon WorkSpaces Applications に名称が変わっているが、記事は旧名で記載している。"
+    "synopsis_en": "A 2020 post summarizing five considerations for schools moving to remote learning that need to set up a PC lab quickly with Amazon AppStream 2.0. It walks through the delivery form (desktop or application) and LMS integration, estimating concurrent users and peak times together with on-demand fleets, software licensing and connecting to existing license servers, authentication with SAML 2.0 or with AWS Chalice and LTI, and restricting traffic with security groups and egress routes. No configuration values, architecture diagrams, or procedures are included.",
+    "caveat": "AppStream 2.0 は現在 Amazon WorkSpaces Applications に名称が変わっているが、記事は旧名で記載している。",
+    "caveat_en": "AppStream 2.0 has since been renamed Amazon WorkSpaces Applications, but the post uses the old name."
   },
   {
     "no": 41,
     "section": "仮想 PC 教室・実習環境",
+    "section_en": "Virtual PC labs and hands-on environments",
     "theme": "vdi",
     "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/strategy-education-hybrid-multicloud/virtual-labs.html",
     "title": "Virtual computer labs(教育機関向けクラウド戦略ガイド)",
@@ -611,12 +772,16 @@
     "level": 200,
     "jp": false,
     "why": "K12 の仮想 PC 教室を WorkSpaces Applications(旧 AppStream 2.0)で作り、Google Workspace を SAML の IdP、Google Drive を保存先にする構成と、有害サイトの遮断に Route 53 Resolver DNS Firewall などを使う選択肢が分かる。",
+    "why_en": "Shows a K12 virtual PC lab built with WorkSpaces Applications (formerly AppStream 2.0), using Google Workspace as the SAML IdP and Google Drive for storage, plus options such as Route 53 Resolver DNS Firewall for blocking harmful sites.",
     "synopsis": "物理 PC 教室を維持する K12 の学校が、仮想デスクトップやアプリ配信で教室を補完・置換する場面を扱う。Amazon WorkSpaces Applications で仮想 PC 教室を配信し、Amazon VPC と AWS Control Tower で網とガードレールを整える構成を図 1 枚で示す。認証は Google Workspace との SAML 2.0 連携、保存先は Google Drive である。有害サイトの遮断には Route 53 Resolver DNS Firewall やエージェント、仮想アプライアンスなどの選択肢を挙げ、設定手順や数値はない。",
-    "caveat": ""
+    "synopsis_en": "Covers K12 schools that maintain physical PC labs and want to supplement or replace them with virtual desktops or application streaming. A single diagram shows virtual PC labs delivered with Amazon WorkSpaces Applications, with Amazon VPC and AWS Control Tower providing the network and guardrails. Authentication is SAML 2.0 federation with Google Workspace, and storage is Google Drive. For blocking harmful sites it lists options such as Route 53 Resolver DNS Firewall, agents, and virtual appliances; there are no configuration steps or figures.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 42,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://d1.awsstatic.com/events/jp/2021/summit-online/CUS-20_AWS_Summit_Online_2021_NCC.pdf",
     "title": "アマゾン ウェブ サービス（AWS）を活用したがんゲノム解析基盤(登壇資料・PDF)",
@@ -626,12 +791,16 @@
     "level": 300,
     "jp": true,
     "why": "国立がん研究センターが、シークエンス拠点から Direct Connect で S3 にデータを受け取り、すぐに Glacier へ移して制限し、GCATWorkflowCloud で工程ごとにインスタンスを選びスポットで解析する構成と、3 省 2 ガイドライン対応のバケットポリシーや暗号化、大量 RNA-seq 解析で 1 検体 10〜20 円という実績がわかる。",
+    "why_en": "Shows how the National Cancer Center receives data from sequencing sites into S3 over Direct Connect, moves it to Glacier immediately with restricted access, and analyzes it with GCATWorkflowCloud by choosing instances per step and using Spot, along with bucket policies and encryption for the three-ministry, two-guideline requirements and a result of about 10–20 yen per sample for large-scale RNA-seq analysis.",
     "synopsis": "国立がん研究センター研究所の白石友一氏の登壇資料で、1 検体 50〜200GB・処理 1〜2 日のゲノム解析と医療情報ガイドライン対応を課題とする。シークエンス拠点から Direct Connect で S3 と Glacier に受け、GCATWorkflowCloud で工程ごとにインスタンスを選び、スポットで解析する。3 省 2 ガイドライン対応のバケットポリシー、暗号化、md5sum 検証、VPC 分離を示す。約 4 か月で 2,823 サンプルを解析した実績と、公開 RNA-seq 解析で 1 検体約 10〜20 円という数値がある。",
-    "caveat": ""
+    "synopsis_en": "Session slides by Yuichi Shiraishi of the National Cancer Center Research Institute, addressing genome analysis at 50–200 GB and 1–2 days of processing per sample, plus compliance with medical information guidelines. Data is received from sequencing sites into S3 and Glacier over Direct Connect, and GCATWorkflowCloud selects instances per step and analyzes on Spot. Bucket policies for the three-ministry, two-guideline requirements, encryption, md5sum verification, and VPC isolation are shown. Includes a track record of 2,823 samples analyzed in about 4 months and a figure of about 10–20 yen per sample for public RNA-seq analysis.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 43,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://aws.amazon.com/blogs/hpc/scaling-life-sciences-research-by-deploying-aws-parallelcluster-and-aws-datasync/",
     "title": "Scaling life sciences research by deploying AWS ParallelCluster and AWS DataSync(AWS HPC Blog)",
@@ -641,12 +810,16 @@
     "level": 200,
     "jp": true,
     "why": "オンプレの実験データを DataSync で夜間に S3 へ送り、Intelligent-Tiering と Glacier Deep Archive で保管し、ParallelCluster の CPU/GPU 別 Slurm パーティション(G6e)で解析する構成と、オンプレ側ストレージ 85% 削減などの効果が分かる。",
+    "why_en": "Shows a setup that sends on-premises experimental data to S3 overnight with DataSync, stores it in Intelligent-Tiering and Glacier Deep Archive, and analyzes it on ParallelCluster with separate CPU and GPU Slurm partitions (G6e), along with results such as an 85% reduction in on-premises storage.",
     "synopsis": "JSR と慶應義塾大学の共同研究拠点 JKiC が、1 回最大 15TB のデータ、手作業のバックアップ、年単位の GPU 調達に悩んでいた事例である。DataSync で毎日オフピークにデータを送り、解析用は S3 Intelligent-Tiering、バックアップは Glacier Deep Archive に置き、ParallelCluster の CPU 用と GPU 用 Slurm パーティションで G6e を使う。効果としてストレージ 85% 減、GPU 調達が約 1 年から数分になったことなどを挙げ、コードや IaC はない。",
-    "caveat": ""
+    "synopsis_en": "A case study of JKiC, the joint research center of JSR and Keio University, which struggled with up to 15 TB of data per run, manual backups, and GPU procurement that took years. DataSync sends data daily during off-peak hours, analysis data goes to S3 Intelligent-Tiering and backups to Glacier Deep Archive, and ParallelCluster uses G6e in CPU and GPU Slurm partitions. Results cited include an 85% reduction in storage and GPU procurement dropping from about a year to minutes; no code or IaC is included.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 44,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://aws.amazon.com/jp/blogs/news/kek-gotocloud202411/",
     "title": "AWSを利用した創薬向けクライオ電子顕微鏡コンピューティング環境の最適化",
@@ -656,12 +829,16 @@
     "level": 200,
     "jp": true,
     "why": "KEK の GoToCloud が ParallelCluster 上でクライオ電顕解析(RELION)を動かし、解析の工程ごとに CPU と GPU のインスタンスと実行ファイルを使い分ける構成を、構成図とともに説明している。",
+    "why_en": "Explains, with an architecture diagram, how KEK's GoToCloud runs cryo-EM analysis (RELION) on ParallelCluster and switches between CPU and GPU instances and executables for each analysis step.",
     "synopsis": "KEK で、クライオ電子顕微鏡のデータ解析がボトルネックとなり、構造ベース創薬に要る処理量が出ていなかった課題を扱う。GoToCloud は AWS ParallelCluster 上で RELION の複数の実行ファイルを用意し、処理ステップごとに GPU の有無などでインスタンスを選ぶ構成で、構成図付きで説明される。環境構築を 3 手順に自動化し、施設側の環境と各ユーザーの AWS アカウントのどちらでも使える。コードや数値はなく、詳細は Communications Biology の論文を参照する。",
-    "caveat": ""
+    "synopsis_en": "Addresses the situation at KEK where cryo-electron microscopy data analysis had become a bottleneck and could not deliver the throughput needed for structure-based drug discovery. GoToCloud provides multiple RELION executables on AWS ParallelCluster and selects instances per processing step, for example by whether a GPU is needed, as explained with an architecture diagram. Environment setup is automated into 3 steps, and it can be used either in the facility's environment or in each user's AWS account. There is no code and no figures; details are referred to a paper in Communications Biology.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 45,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://aws.amazon.com/jp/blogs/news/choosing-the-right-compute-orchestration-tool-for-your-research-workload/",
     "title": "研究ワークロードに適したコンピューティングオーケストレーションツールの選び方",
@@ -671,12 +848,16 @@
     "level": 200,
     "jp": true,
     "why": "研究ワークロードの性質(密結合か、コンテナか、ML か、デスクトップが要るか)から ParallelCluster、Batch、SageMaker、Lightsail for Research、RES、HealthOmics、Lambda+Step Functions を選び分ける考え方を、構成図付きで示している。",
+    "why_en": "Shows, with architecture diagrams, how to choose among ParallelCluster, Batch, SageMaker, Lightsail for Research, RES, HealthOmics, and Lambda + Step Functions based on the nature of a research workload (tightly coupled, containerized, ML, or needing a desktop).",
     "synopsis": "研究者やシステム管理者が、研究ワークロードに合う AWS サービスを選びにくいという課題を扱う翻訳記事である。密結合 HPC は ParallelCluster、汎用の並列実行は AWS Batch、ML 開発は SageMaker、個人用デスクトップは Lightsail for Research、IT 管理の研究環境は Research and Engineering Studio、ゲノムは HealthOmics、イベント処理は Lambda と Step Functions と対応づけ、構成図 7 枚で示す。スポットの中断に触れ、ツールは組み合わせられるとするが、手順やコードはない。",
-    "caveat": "記事が選択肢の一つとする Research and Engineering Studio は 2026-09-29 に新規顧客への提供を終了している(記事中に記載なし)。"
+    "synopsis_en": "A translated post addressing how hard it is for researchers and system administrators to choose AWS services that suit research workloads. It maps tightly coupled HPC to ParallelCluster, general-purpose parallel execution to AWS Batch, ML development to SageMaker, personal desktops to Lightsail for Research, IT-managed research environments to Research and Engineering Studio, genomics to HealthOmics, and event processing to Lambda and Step Functions, with 7 architecture diagrams. It mentions Spot interruptions and notes that the tools can be combined, but there are no procedures or code.",
+    "caveat": "記事が選択肢の一つとする Research and Engineering Studio は 2026-09-29 に新規顧客への提供を終了している(記事中に記載なし)。",
+    "caveat_en": "Research and Engineering Studio, one of the options the post presents, stopped being offered to new customers on 2026-09-29 (not mentioned in the post)."
   },
   {
     "no": 46,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://d1.awsstatic.com/events/Summits/publicsectorapril2021/Accelerate_the_pace_of_research_with_Kyoto_University_RUN202.pdf",
     "title": "Accelerating the pace of research: Kyoto University(RUN202・PDF)",
@@ -686,12 +867,16 @@
     "level": 200,
     "jp": true,
     "why": "京都大学ゲノム医学センターが、SINET5 と Direct Connect で東京大学のスーパーコンピューターと AWS(ParallelCluster、Batch、FSx for Lustre、S3 と Glacier、WorkSpaces)を結び、ゲノムデータを解析するハイブリッド構成がわかる。",
+    "why_en": "Shows the hybrid architecture in which Kyoto University's Center for Genomic Medicine connects the University of Tokyo's supercomputer with AWS (ParallelCluster, Batch, FSx for Lustre, S3 and Glacier, WorkSpaces) over SINET5 and Direct Connect to analyze genome data.",
     "synopsis": "京都大学ゲノム医学センターの長崎正朗教授らの登壇資料で、ゲノムデータの急増に耐える解析基盤の拡張を課題とする。京大のオンプレミス(GPFS 3PB)と東京大学の Oakbridge-CX を SINET5 でつなぎ、Direct Connect 経由で AWS の ParallelCluster、Batch、FSx for Lustre、S3 と Glacier、WorkSpaces と結ぶ構成を示す。長浜コホート 10,120 人などの規模はあるが、費用の数値はない。FSx for Lustre は試行段階と記されている。",
-    "caveat": ""
+    "synopsis_en": "Session slides by Professor Masao Nagasaki and colleagues at Kyoto University's Center for Genomic Medicine, addressing the expansion of an analysis platform that can keep up with rapidly growing genome data. Kyoto University's on-premises systems (GPFS, 3 PB) and the University of Tokyo's Oakbridge-CX are connected over SINET5, and linked via Direct Connect to ParallelCluster, Batch, FSx for Lustre, S3 and Glacier, and WorkSpaces on AWS. Scale figures such as the 10,120-person Nagahama cohort are given, but no cost figures. FSx for Lustre is noted as being in a trial phase.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 47,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://aws.amazon.com/blogs/architecture/how-csiro-built-scalable-cost-optimized-genomic-variant-querying-on-aws/",
     "title": "How CSIRO built scalable, cost-optimized genomic variant querying on AWS(AWS Architecture Blog)",
@@ -701,12 +886,16 @@
     "level": 300,
     "jp": false,
     "why": "ゲノム変異検索 sBeacon を API Gateway、Lambda、DynamoDB、Athena、S3 で組み、Cognito のグループで開示レベルを分ける構成と、1 クエリ約 1.5 秒・0.00013 ドルという実測値を示している。Terraform の公開リポジトリで再現できる。",
+    "why_en": "Shows the genomic variant search sBeacon built with API Gateway, Lambda, DynamoDB, Athena, and S3, with Cognito groups separating disclosure levels, and measured figures of about 1.5 seconds and 0.00013 dollars per query. It can be reproduced from the public Terraform repository.",
     "synopsis": "豪州の国立科学機関 CSIRO が、GA4GH Beacon 標準のゲノム変異検索 sBeacon をサーバーレスで作った事例である。API Gateway を入口に Lambda で検索を分割・並列実行し、S3 の VCF とメタデータを Athena で検索し、DynamoDB にオントロジー表を置く。Cognito の 4 グループで開示レベルを分ける。1 番染色体での検索 1.52 秒・1 回 0.00013 ドルの実測値と Terraform リポジトリの手順を示し、全ゲノム検索は API Gateway でタイムアウトすると書く。",
-    "caveat": ""
+    "synopsis_en": "A case study in which CSIRO, Australia's national science agency, built sBeacon, a serverless genomic variant search based on the GA4GH Beacon standard. API Gateway is the entry point, Lambda splits and parallelizes queries, VCF files and metadata in S3 are queried with Athena, and ontology tables are kept in DynamoDB. Four Cognito groups separate disclosure levels. It gives measured figures of 1.52 seconds and 0.00013 dollars per query on chromosome 1 and the steps for the Terraform repository, and notes that whole-genome searches time out at API Gateway.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 48,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://aws.amazon.com/blogs/machine-learning/accelerating-hpc-and-ai-research-in-universities-with-amazon-sagemaker-hyperpod/",
     "title": "Accelerating HPC and AI research in universities with Amazon SageMaker HyperPod(AWS Machine Learning Blog)",
@@ -716,12 +905,16 @@
     "level": 300,
     "jp": false,
     "why": "研究大学の共有 GPU 基盤として SageMaker HyperPod を CloudFormation で立て、研究チームごとの Slurm パーティション、NLB による複数ログインノード、AD と IAM Identity Center の連携、ClusterName タグと Budgets によるクラスター別の費用把握を設定する手順が分かる。",
+    "why_en": "Shows how to set up SageMaker HyperPod with CloudFormation as a shared GPU platform for a research university, with Slurm partitions per research team, multiple login nodes behind an NLB, AD integration with IAM Identity Center, and per-cluster cost tracking with a ClusterName tag and Budgets.",
     "synopsis": "名前を伏せた研究大学で、GPU 調達の長さと保守の手間が AI 研究を妨げていた問題を扱う。CloudFormation で VPC、FSx for Lustre、S3 を用意し、SageMaker HyperPod にチーム別の Slurm パーティションを設け、NLB で複数ログインノードに振り分け、オンプレミス AD を IAM Identity Center と連携する。ClusterName タグと AWS Budgets で費用を追う。validate-config.py や CLI の作成コマンドを示すが、規模や費用の数値はない。",
-    "caveat": ""
+    "synopsis_en": "Addresses an unnamed research university where long GPU procurement and maintenance effort were holding back AI research. CloudFormation provisions the VPC, FSx for Lustre, and S3; SageMaker HyperPod gets Slurm partitions per team; an NLB distributes traffic across multiple login nodes; and on-premises AD is integrated with IAM Identity Center. Costs are tracked with a ClusterName tag and AWS Budgets. It shows validate-config.py and the CLI creation commands, but no figures for scale or cost.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 49,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://d1.awsstatic.com/events/Summits/dcsummit2024/OPS201-R_The%20best%20of%20both%20worlds%20A%20framework%20for%20petabyte-scale%20data%20pipelines-REPEAT_DCSummit_20240627.pdf",
     "title": "The best of both worlds: A framework for petabyte-scale data pipelines(AWS Summit Washington, DC 2024 OPS201-R・PDF)",
@@ -731,12 +924,16 @@
     "level": 300,
     "jp": false,
     "why": "ノースカロライナ州立大学 NCICS が NOAA のオープンデータを月 1PB 超配信するために、EC2 上の Apache NiFi を状態管理に使い、変換処理を Lambda や Fargate に任せ、NiFi をクラスタ化せず使い捨てにする設計の理由と、Elasticsearch、Kibana、Zabbix による監視がわかる。",
+    "why_en": "Shows why NCICS at North Carolina State University, in order to deliver over 1 PB of NOAA open data per month, uses Apache NiFi on EC2 for state management, offloads transformations to Lambda and Fargate, and treats NiFi as disposable rather than clustering it, as well as monitoring with Elasticsearch, Kibana, and Zabbix.",
     "synopsis": "AWS Summit Washington, DC 2024 OPS201-R で、ノースカロライナ州立大学 NCICS が 60PB 超の NOAA オープンデータを公開するパイプラインを説明する。EC2 上の Apache NiFi がフローの状態管理と振り分けを担い、変換は Lambda と Fargate に任せ、S3 と SNS でつなぐ。NiFi はクラスタ化すると調整が難しいため単体で使い、フローを冪等にして状態を失っても再開できる使い捨てにする。監視は Elasticsearch、Kibana、Zabbix で、月 1PB 超の転送などの数値を示す。",
-    "caveat": ""
+    "synopsis_en": "At AWS Summit Washington, DC 2024 OPS201-R, NCICS at North Carolina State University explains the pipeline that publishes over 60 PB of NOAA open data. Apache NiFi on EC2 handles flow state management and routing, transformations are handed to Lambda and Fargate, and S3 and SNS connect the pieces. Because clustering NiFi makes coordination difficult, it runs as a single node, and flows are made idempotent so they can be disposable and resume even if state is lost. Monitoring uses Elasticsearch, Kibana, and Zabbix, and figures such as over 1 PB transferred per month are given.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 50,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://d1.awsstatic.com/events/Summits/reinvent2023/HLC305_Building-a-precision-medicine-platform-using-AWS-HealthOmics.pdf",
     "title": "Building a precision medicine platform using AWS HealthOmics(re:Invent 2023 HLC305・PDF)",
@@ -746,12 +943,16 @@
     "level": 300,
     "jp": false,
     "why": "スタンフォード大学の Stanford Data Ocean が、Cognito と署名付き URL で学習者を認証し、EC2 上のコンテナ化したノートブックを割り当て、HealthOmics と S3 のゲノムデータ、KMS や Macie による保護で、ゲノム解析を学ぶ授業と研究の環境を作った構成がわかる。",
+    "why_en": "Shows how Stanford University's Stanford Data Ocean authenticates learners with Cognito and presigned URLs, assigns containerized notebooks on EC2, stores genomic data in HealthOmics and S3, and protects it with KMS and Macie to create an environment for teaching and researching genomic analysis.",
     "synopsis": "re:Invent 2023 HLC305 で、スタンフォード大学が技術に詳しくない研究チームでもデータを扱えるよう学習の負担を下げる Stanford Data Ocean を紹介する。Cognito の SAML 認証、署名付き URL、専用 EC2 上でコンテナとして動くノートブック、AWS HealthOmics によるオミクスデータの保存と解析、S3 のデータセット共有を示し、KMS、Macie、GuardDuty、CloudTrail で守る。設定値や費用の数値はなく、今後は LLM と AI Tutor を挙げる。",
-    "caveat": ""
+    "synopsis_en": "At re:Invent 2023 HLC305, Stanford University presents Stanford Data Ocean, which lowers the learning burden so that research teams without deep technical expertise can work with data. It shows Cognito SAML authentication, presigned URLs, notebooks running as containers on dedicated EC2 instances, storage and analysis of omics data with AWS HealthOmics, and dataset sharing in S3, protected by KMS, Macie, GuardDuty, and CloudTrail. There are no configuration values or cost figures; LLMs and an AI Tutor are listed as future work.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 51,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://aws.amazon.com/blogs/hpc/deploying-open-ondemand-on-aws-and-integrating-with-parallel-cluster/",
     "title": "Deploying Open OnDemand with AWS ParallelCluster(AWS HPC Blog)",
@@ -761,12 +962,16 @@
     "level": 300,
     "jp": false,
     "why": "HPC ポータル Open OnDemand を ALB、EC2、EFS、Managed Microsoft AD、FSx for Lustre、Aurora(Slurm accounting)と組み、EventBridge と Systems Manager で ParallelCluster を自動登録する構成が分かる。サンプルリポジトリでデプロイできる。",
+    "why_en": "Shows how the HPC portal Open OnDemand is combined with ALB, EC2, EFS, Managed Microsoft AD, FSx for Lustre, and Aurora (Slurm accounting), with EventBridge and Systems Manager automatically registering ParallelCluster clusters. It can be deployed from the sample repository.",
     "synopsis": "Open OnDemand で HPC を提供する組織が、同じポータルでクラウドを使う構成を扱う。ALB を入口に EC2 で Open OnDemand を動かし、EFS でホームを共有し、Managed Microsoft AD、FSx for Lustre、Aurora MySQL(Slurm accounting)を組み合わせる。ParallelCluster の設定ファイルを S3 に置くと EventBridge と Systems Manager がポータルに登録する。コードは aws-samples の open-on-demand-on-aws にあり、費用の数値はない。",
-    "caveat": ""
+    "synopsis_en": "Covers a setup in which an organization that provides HPC through Open OnDemand uses the cloud from the same portal. ALB is the entry point, Open OnDemand runs on EC2, EFS shares home directories, and Managed Microsoft AD, FSx for Lustre, and Aurora MySQL (Slurm accounting) are combined. Placing a ParallelCluster configuration file in S3 triggers EventBridge and Systems Manager to register the cluster with the portal. The code is in open-on-demand-on-aws under aws-samples; there are no cost figures.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 52,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://aws.amazon.com/blogs/publicsector/matlab-parallel-cloud-computing-aws-researchers/",
     "title": "How to set up MATLAB parallel cloud computing on AWS for researchers",
@@ -776,12 +981,16 @@
     "level": 300,
     "jp": false,
     "why": "MathWorks Cloud Center に IAM ロールで権限を与え、MATLAB Parallel Server のクラスター(c5d.xlarge のヘッドノード、m5.8xlarge のワーカー、最大 128 ワーカーの自動拡張)を作り、手元の MATLAB から batch でジョブを投げるスクリプト付きの手順が分かる。",
+    "why_en": "Shows how to grant MathWorks Cloud Center permissions with an IAM role, create a MATLAB Parallel Server cluster (c5d.xlarge head node, m5.8xlarge workers, auto scaling up to 128 workers), and submit jobs with batch from local MATLAB, with scripts included.",
     "synopsis": "手元で回らない重い計算を抱える研究者の MATLAB 利用者向けの手順である。IAM ロールで MathWorks Cloud Center に権限を与え、MATLAB Parallel Server のクラスターを既定値のヘッドノード c5d.xlarge、ワーカー m5.8xlarge、上限 128 ワーカーの自動拡張とアイドル時自動終了で作る。手元の MATLAB から batch でジョブを投げる submit.m と retrieve.m が付く。MATLAB と Parallel Server などのライセンスが前提で、費用の数値はない。",
-    "caveat": ""
+    "synopsis_en": "A procedure for MATLAB users among researchers with heavy computations that cannot run locally. An IAM role grants MathWorks Cloud Center permissions, and a MATLAB Parallel Server cluster is created with the defaults of a c5d.xlarge head node, m5.8xlarge workers, auto scaling up to 128 workers, and automatic shutdown when idle. submit.m and retrieve.m for submitting jobs with batch from local MATLAB are included. Licenses for MATLAB, Parallel Server, and so on are prerequisites, and there are no cost figures.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 53,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://aws.amazon.com/blogs/publicsector/covid-19-vaccination-scheduling-scaling-redcap-aws/",
     "title": "COVID-19 vaccination scheduling: Scaling REDCap with AWS",
@@ -791,12 +1000,16 @@
     "level": 300,
     "jp": false,
     "why": "大学で使われる研究データ収集システム REDCap を Elastic Beanstalk と RDS で動かし、CloudFront と Lambda@Edge の待合室、ALB の事前暖機、Locust の負荷試験で 5 分間 14.8 万リクエストに耐えるようにした構成と経緯が分かる。",
+    "why_en": "Shows the setup and background in which REDCap, a research data collection system used at universities, was run on Elastic Beanstalk and RDS and made to withstand 148,000 requests in 5 minutes using a waiting room built with CloudFront and Lambda@Edge, ALB pre-warming, and Locust load testing.",
     "synopsis": "Texas A&M Health が運営したワクチン接種予約で、公開直後の5分間に約4.8万の接続が集中し30分停止した経緯を扱う。REDCap を AWS Elastic Beanstalk と Amazon RDS で動かし、ALB の事前暖機と、Amazon CloudFront と Lambda@Edge による待合室(Visitor Prioritization)で急増を受け止めた。Locust.io の負荷試験は GitHub の AWS CDK Locust Deployment を使い、AWS CDK で内製化した。最初の5分間で14.8万リクエストに耐え、利用者が報告するエラーはほぼゼロになったとする。",
-    "caveat": ""
+    "synopsis_en": "Covers a vaccination scheduling system run by Texas A&M Health, where about 48,000 connections arrived in the 5 minutes after launch and caused a 30-minute outage. REDCap runs on AWS Elastic Beanstalk and Amazon RDS, and the surge was absorbed with ALB pre-warming and a waiting room (Visitor Prioritization) built with Amazon CloudFront and Lambda@Edge. Load testing with Locust.io used the AWS CDK Locust Deployment on GitHub and was brought in-house with AWS CDK. It reports withstanding 148,000 requests in the first 5 minutes with user-reported errors dropping to nearly zero.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 54,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://github.com/aws-samples/sample-grants-genai-assistant",
     "title": "aws-samples/sample-grants-genai-assistant",
@@ -806,12 +1019,16 @@
     "level": 300,
     "jp": false,
     "why": "研究者に合う助成金を探して申請書の下書きと評価をする GROW2 のサンプルで、Bedrock AgentCore のエージェント、Knowledge Base と OpenSearch Serverless、Amplify Gen 2 と AppSync、Step Functions、Guardrails と WAF の構成を CloudShell から展開できる。",
+    "why_en": "A sample of GROW2, which finds grants that fit a researcher and drafts and evaluates proposals; its architecture of Bedrock AgentCore agents, Knowledge Base with OpenSearch Serverless, Amplify Gen 2 with AppSync, Step Functions, and Guardrails with WAF can be deployed from CloudShell.",
     "synopsis": "研究者の助成金探しと申請書類の作成を助ける GROW2 のサンプルである。Bedrock AgentCore の 5 つのエージェント(米国・EU 助成金、申請書、PDF 変換、評価)を、Knowledge Base と OpenSearch Serverless、Step Functions、Amplify Gen 2 と AppSync で組み、Guardrails と WAF で守る。対象は NSF、NIH、Horizon Europe などで、CloudShell で約 5 分操作した後、CodeBuild が約 45〜65 分かけて展開する。本番向けではなく申請書の代筆用でもないと明記され、費用の目安はない。",
-    "caveat": ""
+    "synopsis_en": "A sample of GROW2, which helps researchers find grants and prepare application documents. Five Bedrock AgentCore agents (US and EU grants, proposals, PDF conversion, evaluation) are combined with Knowledge Base and OpenSearch Serverless, Step Functions, and Amplify Gen 2 with AppSync, protected by Guardrails and WAF. It targets NSF, NIH, Horizon Europe, and others; after about 5 minutes of work in CloudShell, CodeBuild takes about 45–65 minutes to deploy. It states explicitly that it is not for production and not for ghostwriting proposals, and gives no cost estimate.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 55,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://github.com/aws-samples/aws-research-workshops",
     "title": "aws-samples/aws-research-workshops",
@@ -821,12 +1038,16 @@
     "level": 300,
     "jp": false,
     "why": "SageMaker ノートブックインスタンス上で、データレイク(S3、Glue、Athena)、Spot、AWS Batch で 1000 Genomes の FastQC、ParallelCluster の Slurm で MHD シミュレーション、コンテナなどを研究者が実習できるノートブック集である。",
+    "why_en": "A collection of notebooks for researchers to practice, on a SageMaker notebook instance, a data lake (S3, Glue, Athena), Spot, FastQC on 1000 Genomes with AWS Batch, MHD simulations with Slurm on ParallelCluster, containers, and more.",
     "synopsis": "研究者が SageMaker の Jupyter ノートブックで学ぶハンズオン集である。AWS 基礎、S3・Glue・Athena のデータレイク、SageMaker での TensorFlow、EC2 Spot による費用削減、AWS Batch で 1000 Genomes に FastQC をかける処理、ParallelCluster と Slurm の MHD シミュレーション、コンテナ入門のモジュールがある。環境は CloudFormation で約 20 分で作る。管理者権限の AWS アカウントが前提で、1 アカウントを複数人で共有すると名前が衝突すると注意している。",
-    "caveat": ""
+    "synopsis_en": "A hands-on collection that researchers work through in SageMaker Jupyter notebooks. Modules cover AWS basics, a data lake with S3, Glue, and Athena, TensorFlow on SageMaker, cost savings with EC2 Spot, running FastQC on 1000 Genomes with AWS Batch, MHD simulations with ParallelCluster and Slurm, and an introduction to containers. The environment is built with CloudFormation in about 20 minutes. An AWS account with administrator permissions is required, and it warns that names will collide if one account is shared by multiple people.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 56,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://aws.amazon.com/blogs/publicsector/the-nbdc-sandbox-how-the-masonic-institute-for-the-developing-brain-built-a-secure-cloud-environment-to-accelerate-brain-development-research-with-aws/",
     "title": "The NBDC sandbox: How the Masonic Institute for the Developing Brain built a secure cloud environment to accelerate brain development research with AWS",
@@ -836,12 +1057,16 @@
     "level": 200,
     "jp": false,
     "why": "ミネソタ大学 MIDB が、S3 のデータをファイルシステムにマウントし、ParallelCluster(Slurm、GPU)と Open OnDemand で、データを手元に落とさずに脳画像解析をさせる研究環境を作った構成と、固定費用とフェアシェアで予算超過を防ぐ考え方がわかる。",
+    "why_en": "Shows how MIDB at the University of Minnesota built a research environment that mounts S3 data as a file system and runs brain imaging analysis with ParallelCluster (Slurm, GPU) and Open OnDemand without downloading data locally, and how fixed costs and fair share prevent budget overruns.",
     "synopsis": "ミネソタ大学 MIDB が、巨大な脳発達研究データと 2025 年 1 月の NIH の新しいセキュリティ要件に対応する NBDC Sandbox を作った事例である。S3 のデータをファイルシステムに直接マウントしてダウンロードをなくし、ParallelCluster と Slurm で GPU を伸縮させ、Open OnDemand のブラウザ画面からジョブを扱う。フェアシェアで資源を配分し、容量に達したらジョブを待たせて想定外の費用を防ぐ。構成図、IaC、費用などの数値はない。",
-    "caveat": ""
+    "synopsis_en": "A case study in which MIDB at the University of Minnesota built the NBDC Sandbox to handle huge brain development research data and the new NIH security requirements of January 2025. S3 data is mounted directly as a file system to eliminate downloads, ParallelCluster and Slurm scale GPUs up and down, and jobs are handled from the Open OnDemand browser interface. Fair share allocates resources, and jobs wait once capacity is reached to prevent unexpected costs. There is no architecture diagram, IaC, or cost figures.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 57,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://aws.amazon.com/blogs/publicsector/building-trusted-research-environments-on-aws/",
     "title": "Building Trusted Research Environments on AWS",
@@ -851,12 +1076,16 @@
     "level": 200,
     "jp": false,
     "why": "機微データを扱う研究環境(TRE)を Five Safes に沿って機能ブロックに分け、RES、Lake Formation、DataZone、Transfer Family、Macie、Landing Zone Accelerator などに対応づける設計の考え方が、ダンディー大学やシェフィールド大学などの例とともに分かる。",
+    "why_en": "Shows the design approach of dividing a trusted research environment (TRE) for sensitive data into functional blocks along the Five Safes and mapping them to RES, Lake Formation, DataZone, Transfer Family, Macie, Landing Zone Accelerator, and others, with examples such as the University of Dundee and the University of Sheffield.",
     "synopsis": "機微な研究データを扱う TRE を、英国統計局の Five Safes に沿って仮想研究環境、データ環境、データ審査・転送の 3 要素に分けて考える記事である。各要素に Research and Engineering Studio、Lake Formation と DataZone、Transfer Family と DataSync、Macie、Landing Zone Accelerator などを対応づける。ダンディー大学、シェフィールド大学、UK Biobank などの例を挙げ、コードはなく eBook へのリンクがある。ダンディー大学の TREEHOOSE の中核部分はサポート終了と記す。",
-    "caveat": "記事が仮想研究環境の中心に置く Research and Engineering Studio は 2026-09-29 に新規顧客への提供を終了している(記事中に記載なし)。"
+    "synopsis_en": "A post that frames a TRE for sensitive research data, following the UK Office for National Statistics' Five Safes, as three elements: a virtual research environment, a data environment, and data review and transfer. Each element is mapped to Research and Engineering Studio, Lake Formation and DataZone, Transfer Family and DataSync, Macie, Landing Zone Accelerator, and others. It cites examples such as the University of Dundee, the University of Sheffield, and UK Biobank; there is no code, but a link to an eBook. It notes that the core of the University of Dundee's TREEHOOSE has reached end of support.",
+    "caveat": "記事が仮想研究環境の中心に置く Research and Engineering Studio は 2026-09-29 に新規顧客への提供を終了している(記事中に記載なし)。",
+    "caveat_en": "Research and Engineering Studio, which the post places at the center of the virtual research environment, stopped being offered to new customers on 2026-09-29 (not mentioned in the post)."
   },
   {
     "no": 58,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://aws.amazon.com/blogs/publicsector/data-ingress-and-egress-through-trusted-research-environments-and-other-secure-enclaves/",
     "title": "Data ingress and egress through Trusted Research Environments and other secure enclaves",
@@ -866,12 +1095,16 @@
     "level": 200,
     "jp": false,
     "why": "TRE などの閉じた研究環境へのデータの持ち込み・持ち出しを、S3 の隔離バケット、Step Functions と Lambda によるワークフロー処理、DataSync の転送、CloudTrail の記録で扱い、二段階の審査者を置く仕組みの構成が分かる。",
+    "why_en": "Shows the architecture of a mechanism for bringing data into and out of closed research environments such as TREs, using S3 quarantine buckets, workflow processing with Step Functions and Lambda, transfers with DataSync, and CloudTrail logging, with two-stage reviewers.",
     "synopsis": "TRE などのセキュアエンクレーブへのデータの持ち込みと持ち出しを審査・承認し自動化する Data Review & Transfer Component(DRTC)を説明する。データを S3 の隔離バケットで検査し、Step Functions と Lambda で処理し、DataSync で転送し、CloudTrail で操作を記録する。審査は第 1 審査者を置く二段階方式で最大 3 名を追加でき、持ち込みと持ち出しに同じ流れを使う。構成図 1 枚のみでコードはなく、DRTC は一部の AWS パートナー経由でのみ提供される。",
-    "caveat": ""
+    "synopsis_en": "Explains the Data Review & Transfer Component (DRTC), which reviews, approves, and automates data ingress to and egress from secure enclaves such as TREs. Data is inspected in S3 quarantine buckets, processed with Step Functions and Lambda, transferred with DataSync, and operations are logged with CloudTrail. Review is a two-stage scheme with a first reviewer and up to 3 additional reviewers, and the same flow is used for ingress and egress. There is only one architecture diagram and no code, and DRTC is available only through certain AWS Partners.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 59,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://aws.amazon.com/blogs/publicsector/getting-started-amazon-lightsail-research-tutorial-using-rstudio/",
     "title": "Getting started with Amazon Lightsail for Research: A tutorial using RStudio",
@@ -881,12 +1114,16 @@
     "level": 200,
     "jp": false,
     "why": "Lightsail for Research で RStudio の仮想マシンを作り、アイドル時自動停止の費用ルール、64GB データディスクの追加、公開データの取得と R 解析、削除までの手順と、自動停止で費用 21% 減という例が分かる。",
+    "why_en": "Shows how to create an RStudio virtual machine in Lightsail for Research, set a cost rule for automatic stop when idle, add a 64 GB data disk, fetch public data and analyze it in R, and delete everything, with an example of a 21% cost reduction from automatic stop.",
     "synopsis": "研究者がノート PC の重い解析をクラウドに移す入門チュートリアルである。Lightsail for Research で RStudio の仮想コンピューターを作り、CPU 5% 未満が 10 分続くと止まる費用ルールと 64GB のデータディスクを設定する。NOAA の気象データ 37GB を取得し、1929〜2022 年の気温を集計する R スクリプトを示し、最後に削除する。費用ルールで 21% 節約した例を挙げ、自動停止で未保存データが失われると注意している。",
-    "caveat": ""
+    "synopsis_en": "An introductory tutorial for researchers moving heavy analysis from a laptop to the cloud. An RStudio virtual computer is created in Lightsail for Research, with a cost rule that stops it after 10 minutes below 5% CPU and a 64 GB data disk. It shows an R script that fetches 37 GB of NOAA weather data and aggregates temperatures from 1929 to 2022, then deletes everything at the end. It cites an example of 21% savings from the cost rule and warns that automatic stop loses unsaved data.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 60,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://aws.amazon.com/blogs/publicsector/introduction-aws-research-it-getting-started-cloud/",
     "title": "An introduction to AWS for research IT: Getting started in the cloud",
@@ -896,12 +1133,16 @@
     "level": 200,
     "jp": false,
     "why": "研究 IT 向けと大学全体向けの 2 通りの OU 構成図(ログ・監査・ネットワークの共通アカウント、学部・研究室の OU)と、Control Tower の Account Factory による研究者アカウントの配布、タグによる費用配分、データ転送料免除の考え方が分かる。",
+    "why_en": "Shows two OU architecture diagrams, one for research IT and one for the whole university (shared accounts for logging, audit, and networking; OUs for faculties and labs), along with distributing researcher accounts through Control Tower's Account Factory, cost allocation with tags, and the data transfer fee waiver.",
     "synopsis": "大学の研究 IT 部門がガバナンスを保って研究者のクラウド利用を始めるための入門記事である。ログ・監査・ネットワークのコア OU と研究者 OU の研究向け構成、中央 IT のコア OU に加えて学部ごとの OU と研究 OU を置く大学全体向け構成、単独アカウントにクロスアカウント IAM ロールで入る構成の 3 図を示す。アカウント配布に Control Tower の Account Factory と AWS Landing Zone を挙げ、タグでの費用配分、AWS Budgets、データ転送料免除にも触れる。コードや数値はない。",
-    "caveat": "記事が選択肢として挙げる AWS Landing Zone ソリューションは提供が終了しており、後継は AWS Control Tower である(記事中に記載なし)。"
+    "synopsis_en": "An introductory post for university research IT departments that want to start researchers on the cloud while maintaining governance. It shows 3 diagrams: a research-oriented layout with core OUs for logging, audit, and networking plus a researcher OU; a university-wide layout with per-faculty OUs and a research OU in addition to central IT's core OUs; and a standalone account accessed through cross-account IAM roles. For account distribution it names Control Tower's Account Factory and AWS Landing Zone, and also touches on cost allocation with tags, AWS Budgets, and the data transfer fee waiver. No code or figures.",
+    "caveat": "記事が選択肢として挙げる AWS Landing Zone ソリューションは提供が終了しており、後継は AWS Control Tower である(記事中に記載なし)。",
+    "caveat_en": "The AWS Landing Zone solution the post lists as an option has been discontinued; its successor is AWS Control Tower (not mentioned in the post)."
   },
   {
     "no": 61,
     "section": "研究計算・研究データ",
+    "section_en": "Research computing and research data",
     "theme": "res",
     "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/strategy-education-hybrid-multicloud/cloud-bursting.html",
     "title": "Cloud bursting for research computing(教育機関向けクラウド戦略ガイド)",
@@ -911,12 +1152,16 @@
     "level": 200,
     "jp": false,
     "why": "米国の R1 大学の研究計算部門が、利用率 80〜95% のオンプレミス Slurm クラスタの不足分を ParallelCluster と Storage Gateway でクラウドへ広げる構成図と、閉域接続、暗号化、ログ取得などの設計上の推奨事項がわかる。",
+    "why_en": "Shows an architecture diagram in which a research computing department at a US R1 university extends an on-premises Slurm cluster running at 80–95% utilization into the cloud with ParallelCluster and Storage Gateway, plus design recommendations such as private connectivity, encryption, and logging.",
     "synopsis": "米国の R1 研究大学で、オンプレミス Slurm クラスターが利用率 80〜95% で埋まり、GPU の予算があってもデータセンターのラック増設の承認に数か月待つ場面を扱う。不足時に計算を AWS ParallelCluster へ、ストレージを AWS Storage Gateway へバーストさせる方法を構成図で示す。推奨事項として、主たるクラウド事業者の選定、閉域接続・暗号化・操作ログなどのセキュリティ要件、マネージドサービスの採用、既存投資を生かすハイブリッド構成を挙げる。設定手順や費用の数値はない。",
-    "caveat": ""
+    "synopsis_en": "Covers a US R1 research university whose on-premises Slurm cluster is full at 80–95% utilization and where, even with GPU budget available, approval for adding racks in the data center takes months. An architecture diagram shows bursting compute to AWS ParallelCluster and storage to AWS Storage Gateway when capacity runs short. Recommendations include selecting a primary cloud provider, security requirements such as private connectivity, encryption, and operation logs, adopting managed services, and a hybrid architecture that leverages existing investments. There are no configuration steps or cost figures.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 62,
     "section": "学習データの分析・活用",
+    "section_en": "Analyzing and using learning data",
     "theme": "data",
     "url": "https://github.com/aws-samples/aws-edu-exam-analytics",
     "title": "aws-samples/aws-edu-exam-analytics",
@@ -926,12 +1171,16 @@
     "level": 300,
     "jp": false,
     "why": "ブラジルの全国試験 ENEM の8年分・5,500万件の結果を CloudFormation で用意した環境に取り込み、Parquet 化して Glue、Athena で集計し Quick Sight で可視化するラボを、ノートブックと SQL 付きで再現できる。",
+    "why_en": "A lab that loads 8 years and 55 million results from Brazil's national exam ENEM into an environment provisioned with CloudFormation, converts them to Parquet, aggregates them with Glue and Athena, and visualizes them in Quick Sight, reproducible with the included notebooks and SQL.",
     "synopsis": "ブラジルの全国高校試験 ENEM の8年分の結果を使うラボのリポジトリである。AWS CloudFormation で環境を作り、SageMaker ノートブックでデータを取得・変換して S3 に置き、AWS Glue のクローラーで8テーブルを登録する。Amazon Athena の SQL で5,500万行超の Parquet 集計テーブルを作り、QuickSight のダッシュボードを組む手順が README にある。集計テーブルには約 9GB の SPICE 容量が要る。リポジトリは 2026-01-22 にアーカイブ済みである。",
-    "caveat": "README は QuickSight と表記しているが、現在のサービス名は Amazon Quick Sight である。"
+    "synopsis_en": "A lab repository using 8 years of results from Brazil's national high school exam ENEM. The environment is created with AWS CloudFormation, a SageMaker notebook fetches and transforms the data and stores it in S3, and an AWS Glue crawler registers 8 tables. The README gives steps to build Parquet aggregate tables of over 55 million rows with Amazon Athena SQL and assemble a QuickSight dashboard. The aggregate tables need about 9 GB of SPICE capacity. The repository was archived on 2026-01-22.",
+    "caveat": "README は QuickSight と表記しているが、現在のサービス名は Amazon Quick Sight である。",
+    "caveat_en": "The README writes QuickSight, but the current service name is Amazon Quick Sight."
   },
   {
     "no": 63,
     "section": "学習データの分析・活用",
+    "section_en": "Analyzing and using learning data",
     "theme": "data",
     "url": "https://aws.amazon.com/blogs/publicsector/how-eduroam-empowers-its-community-through-real-time-analytics-with-amazon-quick-sight/",
     "title": "How eduroam empowers its community through real-time analytics with Amazon Quick Sight",
@@ -941,12 +1190,16 @@
     "level": 200,
     "jp": false,
     "why": "米国 eduroam(Internet2)の認証ログを Glue で日次集計して Redshift Serverless に入れ、Quick Sight の行レベルセキュリティで約1,200機関に機関別ダッシュボードを出す構成がわかる。",
+    "why_en": "Shows an architecture in which authentication logs from eduroam in the US (Internet2) are aggregated daily with Glue into Redshift Serverless, and Quick Sight row-level security delivers per-institution dashboards to about 1,200 institutions.",
     "synopsis": "Internet2 が運営する eduroam US で、約1,200機関の管理者に月次の PDF レポートしか出せなかった課題を扱う。AWS Glue が認証ログを夜間に取り込んで日次集計し、Amazon Redshift Serverless に格納する。Amazon Quick Sight は Redshift を直接クエリで読み、IAM Identity Center と行レベルセキュリティで各管理者に自機関のデータだけを見せる。1日約600万件の認証と4年分の履歴を扱う。コードや IaC はない。",
-    "caveat": ""
+    "synopsis_en": "Addresses eduroam US, operated by Internet2, which could only provide monthly PDF reports to administrators at about 1,200 institutions. AWS Glue ingests authentication logs overnight, aggregates them daily, and stores them in Amazon Redshift Serverless. Amazon Quick Sight reads Redshift with direct query, and IAM Identity Center with row-level security shows each administrator only their own institution's data. It handles about 6 million authentications per day and 4 years of history. No code or IaC is included.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 64,
     "section": "学習データの分析・活用",
+    "section_en": "Analyzing and using learning data",
     "theme": "data",
     "url": "https://aws.amazon.com/blogs/storage/how-vanderbilt-university-scales-digital-archive-discovery-with-s3-metadata/",
     "title": "How Vanderbilt University scales digital archive discovery with Amazon S3 Metadata(AWS Storage Blog)",
@@ -956,12 +1209,16 @@
     "level": 200,
     "jp": false,
     "why": "大学図書館の220TBのデジタルアーカイブのうち100TBを DataSync で S3 に移し、S3 Metadata の Iceberg テーブルを Athena で検索して所在確認を数時間から数分にした流れがわかる。",
+    "why_en": "Shows how a university library moved 100 TB of its 220 TB digital archive to S3 with DataSync and queries S3 Metadata Iceberg tables with Athena, cutting the time to locate files from hours to minutes.",
     "synopsis": "Vanderbilt University 図書館が、220TBのデジタルアーカイブから目的の資料を探すのに数時間かかっていた課題を扱う。100TBを AWS DataSync で Amazon S3 に移し、S3 Metadata が作る3種類の Apache Iceberg テーブルを Amazon Athena で検索する構成で、月別集計の SQL 例が1つある。コレクションの検索は1時間から1分未満、ファイルの所在確認は数時間から5分未満になった。10億オブジェクト超のバケットに月額料金がかかることなど制約も書かれる。",
-    "caveat": ""
+    "synopsis_en": "Addresses the Vanderbilt University library, where finding the right material in a 220 TB digital archive took hours. 100 TB was moved to Amazon S3 with AWS DataSync, and the three types of Apache Iceberg tables created by S3 Metadata are queried with Amazon Athena; one SQL example for monthly aggregation is given. Collection searches went from 1 hour to under 1 minute, and locating files from hours to under 5 minutes. Constraints are also noted, such as monthly charges for buckets with over 1 billion objects.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 65,
     "section": "学習データの分析・活用",
+    "section_en": "Analyzing and using learning data",
     "theme": "data",
     "url": "https://aws.amazon.com/blogs/business-intelligence/revolutionizing-school-resource-collaboration-how-neric-and-mindex-innovated-cross-district-course-capacity-sharing-with-amazon-quicksight/",
     "title": "Revolutionizing school resource collaboration: How NERIC and Mindex innovated cross-district course capacity sharing with Amazon QuickSight(AWS Business Intelligence Blog)",
@@ -971,12 +1228,16 @@
     "level": 200,
     "jp": false,
     "why": "ニューヨーク州の地域情報センター(RIC)ごとに AWS アカウントと Quick Sight を分け、S3、Athena、Transfer Family で学区の時間割データを集め、JWT 認証で学区をまたぐ開講科目の空き検索を埋め込んだ構成がわかる。",
+    "why_en": "Shows an architecture that gives each New York State Regional Information Center (RIC) its own AWS account and Quick Sight, collects school district timetable data with S3, Athena, and Transfer Family, and embeds a cross-district course availability search with JWT authentication.",
     "synopsis": "ニューヨーク州で130超の学区を支援する NERIC と Mindex が、進路指導担当者が他学区の科目の空きを1人最大30分かけて電話などで確認していた作業を置き換えた事例である。学区の時間割データを Amazon S3 に集め(一部は AWS Transfer Family の SFTP 経由)、Amazon Athena で検索し、QuickSight のダッシュボードを既存画面に埋め込み、JWT で認証する。データを分けるため RIC ごとに別の AWS アカウントを持つ。確認は約5分になったとする。コードや IaC はない。",
-    "caveat": "記事は Amazon QuickSight と表記しているが、現在のサービス名は Amazon Quick Sight である。"
+    "synopsis_en": "A case study in which NERIC and Mindex, which support over 130 school districts in New York State, replaced the work of guidance counselors who spent up to 30 minutes per student checking course availability in other districts by phone and other means. District timetable data is collected in Amazon S3 (some via AWS Transfer Family SFTP), queried with Amazon Athena, and QuickSight dashboards are embedded in the existing interface with JWT authentication. Each RIC has a separate AWS account to keep data separate. Checks now take about 5 minutes. No code or IaC is included.",
+    "caveat": "記事は Amazon QuickSight と表記しているが、現在のサービス名は Amazon Quick Sight である。",
+    "caveat_en": "The post writes Amazon QuickSight, but the current service name is Amazon Quick Sight."
   },
   {
     "no": 66,
     "section": "学習データの分析・活用",
+    "section_en": "Analyzing and using learning data",
     "theme": "data",
     "url": "https://aws.amazon.com/blogs/business-intelligence/nbme-launches-insights-for-their-medical-examination-data-using-amazon-quicksight/",
     "title": "NBME launches INSIGHTS℠ for their medical examination data using Amazon QuickSight(AWS Business Intelligence Blog)",
@@ -986,12 +1247,16 @@
     "level": 200,
     "jp": false,
     "why": "NBME の医学生向け自己評価試験の成績データを S3、Lambda、Glue、Step Functions で Redshift に集め、Quick Sight の匿名埋め込みで年間約9万人の受験者に成績分析ダッシュボードを出す構成と、その理由がわかる。",
+    "why_en": "Shows the architecture, and the reasoning behind it, in which NBME collects score data from its self-assessment exams for medical students into Redshift via S3, Lambda, Glue, and Step Functions and delivers score analysis dashboards to about 90,000 examinees a year through Quick Sight anonymous embedding.",
     "synopsis": "NBME が、旧 BI ツールの管理負荷や大容量ファイルの扱いにくさを解消するため、医学生向けの成績分析製品 INSIGHTS を作った事例である。S3 に集めたデータを AWS Lambda と AWS Glue で変換し、AWS Step Functions で制御して Amazon Redshift に入れ、QuickSight の匿名埋め込みで受験者にダッシュボードを出す。QuickSight を選んだ理由として従量課金と、SSO なしで外部ユーザーを扱える点を挙げる。年間約9万人が対象で、公開4か月で3万人超が利用した。コードや IaC はない。",
-    "caveat": "記事は Amazon QuickSight と表記しているが、現在のサービス名は Amazon Quick Sight である。"
+    "synopsis_en": "A case study in which NBME built INSIGHTS, a score analysis product for medical students, to eliminate the administrative burden of its old BI tool and the difficulty of handling large files. Data collected in S3 is transformed with AWS Lambda and AWS Glue, orchestrated with AWS Step Functions, loaded into Amazon Redshift, and delivered to examinees as dashboards through QuickSight anonymous embedding. The reasons for choosing QuickSight were pay-as-you-go pricing and the ability to serve external users without SSO. About 90,000 people a year are in scope, and over 30,000 used it within 4 months of launch. No code or IaC is included.",
+    "caveat": "記事は Amazon QuickSight と表記しているが、現在のサービス名は Amazon Quick Sight である。",
+    "caveat_en": "The post writes Amazon QuickSight, but the current service name is Amazon Quick Sight."
   },
   {
     "no": 67,
     "section": "学習データの分析・活用",
+    "section_en": "Analyzing and using learning data",
     "theme": "data",
     "url": "https://aws.amazon.com/blogs/machine-learning/build-a-machine-learning-model-to-predict-student-performance-using-amazon-sagemaker-canvas/",
     "title": "Build a machine learning model to predict student performance using Amazon SageMaker Canvas(AWS Machine Learning Blog)",
@@ -1001,12 +1266,16 @@
     "level": 200,
     "jp": false,
     "why": "学生の中退・在籍・卒業を予測する3クラス分類を SageMaker Canvas の画面操作だけで作る手順で、標準ビルドで約80%の精度になる過程とデータサイエンティストとの共有方法がわかる。",
+    "why_en": "Shows how to build a three-class classification that predicts whether a student will drop out, stay enrolled, or graduate using only the SageMaker Canvas interface, how a standard build reaches about 80% accuracy, and how to share the model with data scientists.",
     "synopsis": "学生がコース終了時に中退、在籍継続、卒業のどれになるかを予測する記事である。Kaggle の公開データ(36の特徴量と1つのラベル)を Amazon SageMaker Canvas に取り込み、画面操作だけで準備、ビルド、分析、予測を進める。Quick Build と Standard Build の違い、特徴量の影響の確認、SageMaker Studio のデータサイエンティストへの共有を順に示す。Standard Build は約25分、精度は約80%である。Canvas はセッション時間で課金されるためログアウトするよう注意している。",
-    "caveat": ""
+    "synopsis_en": "A post that predicts whether a student will drop out, remain enrolled, or graduate at the end of a course. Public data from Kaggle (36 features and 1 label) is imported into Amazon SageMaker Canvas, and preparation, building, analysis, and prediction are done entirely through the interface. It walks through the difference between Quick Build and Standard Build, checking feature impact, and sharing with data scientists in SageMaker Studio. A Standard Build takes about 25 minutes and reaches about 80% accuracy. It warns to log out because Canvas is billed by session time.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 68,
     "section": "学習データの分析・活用",
+    "section_en": "Analyzing and using learning data",
     "theme": "data",
     "url": "https://aws.amazon.com/blogs/publicsector/designing-educational-big-data-analysis-architecture-aws/",
     "title": "Designing an educational big data analysis architecture with AWS",
@@ -1016,12 +1285,16 @@
     "level": 200,
     "jp": false,
     "why": "EMR で処理した教育データを Redshift で分析し、S3 経由で Neptune にナレッジグラフとして載せ、Athena の Neptune コネクターから Quick Sight で履修推薦を見せる構成がわかる。",
+    "why_en": "Shows an architecture that processes education data with EMR, analyzes it in Redshift, loads it into Neptune as a knowledge graph via S3, and presents course recommendations in Quick Sight through the Athena Neptune connector.",
     "synopsis": "教育機関や EdTech 向けに、学習データと事務データを組み合わせて次学期の履修科目を推薦する汎用構成を示す記事で、特定の事例ではない。Amazon EMR で処理し、Amazon Redshift で分析し、S3 経由で Amazon Neptune にナレッジグラフを作る。Athena の Neptune コネクターが SQL を Gremlin に変換し、QuickSight で教員に見せる。グラフ化の前に ER 図でスキーマを設計する必要があるとし、コード、クエリ、数値は載っていない。",
-    "caveat": "記事は QuickSight と表記しているが、現在のサービス名は Amazon Quick Sight である。"
+    "synopsis_en": "A post for educational institutions and EdTech that presents a generic architecture for combining learning data and administrative data to recommend courses for the next semester; it is not a specific case study. Data is processed with Amazon EMR, analyzed with Amazon Redshift, and built into a knowledge graph in Amazon Neptune via S3. The Athena Neptune connector converts SQL to Gremlin, and the results are shown to faculty in QuickSight. It states that the schema must be designed with an ER diagram before building the graph; no code, queries, or figures are included.",
+    "caveat": "記事は QuickSight と表記しているが、現在のサービス名は Amazon Quick Sight である。",
+    "caveat_en": "The post writes QuickSight, but the current service name is Amazon Quick Sight."
   },
   {
     "no": 69,
     "section": "学習データの分析・活用",
+    "section_en": "Analyzing and using learning data",
     "theme": "data",
     "url": "https://d1.awsstatic.com/events/Summits/awsanaheimsummit/How_the_CSU_is_implementing_decentralized_security_with_Amazon_QuickSight_BSI201.pdf",
     "title": "How the CSU is implementing decentralized security with Amazon QuickSight(AWS Summit Anaheim 2022 BSI201・PDF)",
@@ -1031,12 +1304,16 @@
     "level": 200,
     "jp": false,
     "why": "PeopleSoft のロール関連テーブルを夜間に同期して Quick Sight のグループとフォルダー権限に対応させ、CSU の各キャンパスが利用者を自分で管理できるようにした仕組みと監査ダッシュボードがわかる。",
+    "why_en": "Shows the mechanism that syncs PeopleSoft role tables nightly and maps them to Quick Sight groups and folder permissions so that each CSU campus can manage its own users, along with the audit dashboard.",
     "synopsis": "AWS Summit Anaheim 2022 の BSI201 の資料で、23キャンパスを持つ California State University が QuickSight の権限管理を各キャンパスに任せた仕組みを紹介する。各キャンパスの人事担当が PeopleSoft で付けたロールをロール関連テーブルから夜間に読み込み、QuickSight のグループとフォルダー権限に反映する。構成図には Lambda、CodePipeline、CloudFormation、Redshift などが並び、作成者権限は中央が握る。ロールは15種類で、他ツールより35〜40%の費用削減を見込む。セキュリティ監査ダッシュボードにも触れている。",
-    "caveat": "資料は Amazon QuickSight と表記しているが現在のサービス名は Amazon Quick Sight であり、構成図にある AWS CodeCommit は新規顧客の受け付けを終了している。"
+    "synopsis_en": "Slides for BSI201 at AWS Summit Anaheim 2022, presenting how California State University, with 23 campuses, delegated QuickSight permission management to each campus. Roles assigned in PeopleSoft by each campus's HR staff are read nightly from the role tables and reflected in QuickSight groups and folder permissions. The architecture diagram includes Lambda, CodePipeline, CloudFormation, and Redshift, with author permissions held centrally. There are 15 role types, and a 35–40% cost reduction compared with other tools is expected. A security audit dashboard is also mentioned.",
+    "caveat": "資料は Amazon QuickSight と表記しているが現在のサービス名は Amazon Quick Sight であり、構成図にある AWS CodeCommit は新規顧客の受け付けを終了している。",
+    "caveat_en": "The slides write Amazon QuickSight, but the current service name is Amazon Quick Sight, and AWS CodeCommit, which appears in the architecture diagram, is no longer accepting new customers."
   },
   {
     "no": 70,
     "section": "学習データの分析・活用",
+    "section_en": "Analyzing and using learning data",
     "theme": "data",
     "url": "https://aws.amazon.com/blogs/architecture/architecting-data-lake-for-higher-education-student-analytics",
     "title": "Architecting a Data Lake for Higher Education Student Analytics(AWS Architecture Blog)",
@@ -1046,12 +1323,16 @@
     "level": 200,
     "jp": false,
     "why": "Maryville 大学が Canvas の REST API を Lambda で毎日取得し、学生情報システムの2,500超のテーブルを DMS で S3 に取り込み、Glue、Athena、Redshift で支援が必要な学生を把握するデータレイク構成と、機微なデータを元システムに残す判断がわかる。",
+    "why_en": "Shows a data lake architecture in which Maryville University pulls the Canvas REST API daily with Lambda, ingests 2,500+ tables from its student information system into S3 with DMS, and identifies students who need support using Glue, Athena, and Redshift, plus the decision to leave sensitive data in the source systems.",
     "synopsis": "Maryville University で、学生データがオンプレミスの学生情報システム(SIS)と Canvas LMS に分かれていた状況を扱う。Harvard の IT 部門が作り AWS CloudFormation でデプロイするオープンソースの仕組みを使い、AWS Lambda が Canvas の REST API を毎日呼んで S3 に保存する。AWS DMS は VPN 経由で SIS の2,500超のテーブルを日次で取り込み、AWS Glue で変換し、Amazon Athena で検証し、Amazon Redshift から外部ツールにつなぐ構成図が示される。機微なデータは複製せず元システムに残す判断と、2人で構築したことも書かれる。記事自体にコードは載っていない。",
-    "caveat": ""
+    "synopsis_en": "Covers Maryville University, where student data was split between an on-premises student information system (SIS) and Canvas LMS. Using an open-source mechanism built by Harvard's IT department and deployed with AWS CloudFormation, AWS Lambda calls the Canvas REST API daily and stores the results in S3. AWS DMS ingests the SIS's 2,500+ tables daily over VPN, AWS Glue transforms the data, Amazon Athena validates it, and Amazon Redshift connects to external tools, as shown in an architecture diagram. It also describes the decision not to replicate sensitive data but to leave it in the source systems, and that the system was built by two people. The post itself includes no code.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 71,
     "section": "ネットワーク・セキュリティ",
+    "section_en": "Networking and security",
     "theme": "net",
     "url": "https://aws.amazon.com/jp/blogs/news/k12-security-jpps-202207/",
     "title": "教育委員会向け 教育情報セキュリティポリシーガイドライン改訂から読み解くクラウド化",
@@ -1061,12 +1342,16 @@
     "level": 200,
     "jp": true,
     "why": "文部科学省ガイドラインの 2021・2022 年改訂でネットワーク分離を前提にしなくなった点を踏まえ、教育情報システムをインターネット、VPN、専用線、情報ハイウェイ、SINET で AWS に接続する選択肢と、事例で紹介された GuardDuty・WAF・ACM の使い方や RI による費用の考え方が分かる。",
+    "why_en": "Building on the fact that the 2021 and 2022 revisions of the MEXT guidelines no longer assume network separation, explains the options for connecting education information systems to AWS via the internet, VPN, leased lines, information highways, and SINET, the use of GuardDuty, WAF, and ACM presented in a case study, and how to think about cost with RIs.",
     "synopsis": "2022年7月に開いた、初中等教育のクラウド化をテーマとするオンラインセミナーの報告記事である。文部科学省ガイドラインの2021年改訂で、ネットワーク分離を必要としない構成とクラウド活用が目指す姿とされた点を出発点に、インターネット、VPN、専用線、情報ハイウェイ、SINET で AWS に接続する選択肢を紹介する。シャープマーケティングジャパンのスタディシリーズの事例として Amazon GuardDuty、AWS WAF、AWS Certificate Manager などの利用を、費用では Savings Plans や Reserved Instance を挙げる。手順や設定値はなく、スライド画像と動画の案内が載る。",
-    "caveat": ""
+    "synopsis_en": "A report on an online seminar held in July 2022 on moving K-12 education to the cloud. Starting from the point that the 2021 revision of the MEXT guidelines set configurations that do not require network separation and cloud use as the target state, it introduces options for connecting to AWS via the internet, VPN, leased lines, information highways, and SINET. As a case study from Sharp Marketing Japan's Study Series, it covers the use of Amazon GuardDuty, AWS WAF, and AWS Certificate Manager, and for cost it mentions Savings Plans and Reserved Instances. There are no procedures or configuration values; slide images and a pointer to the video are included.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 72,
     "section": "ネットワーク・セキュリティ",
+    "section_en": "Networking and security",
     "theme": "net",
     "url": "https://aws.amazon.com/jp/blogs/news/sinet6-aws-ur/",
     "title": "SINET6 経由で AWS を利用する方法",
@@ -1076,12 +1361,16 @@
     "level": 200,
     "jp": true,
     "why": "SINET6 加入機関が AWS につなぐ IX からインターネットへ出る経路、IX から AWS に直接届く経路、SINET クラウド接続サービスの 3 経路を、費用負担、帯域、申請先、東京・大阪の地理冗長の観点で比べており、接続方式を選ぶ判断材料になる。",
+    "why_en": "Compares the 3 paths by which SINET6 member institutions connect to AWS (going out to the internet from the IX, reaching AWS directly from the IX, and the SINET cloud connection service) in terms of who bears the cost, bandwidth, where to apply, and geographic redundancy between Tokyo and Osaka, giving a basis for choosing a connection method.",
     "synopsis": "SINET6 に加入する大学・研究機関が AWS に接続する方法を整理した記事である。IX を経由する経路、自機関から専用線を引いて AWS Direct Connect でつなぐ方法、SINET クラウド接続サービスを、データ転送料金の負担や帯域の点から説明する。SINET クラウド接続サービスは基本料金がなく、東京と大阪の両ルートで費用を増やさず地理冗長を組めると図で説明する。申請は NII と AWS Japan の二段階である。詳しい手順はウェビナー動画に譲っている。",
-    "caveat": ""
+    "synopsis_en": "A post that organizes how universities and research institutions on SINET6 connect to AWS. It explains the path through the IX, running a leased line from the institution and connecting with AWS Direct Connect, and the SINET cloud connection service, in terms of who bears data transfer charges and bandwidth. It explains with a diagram that the SINET cloud connection service has no base fee and that geographic redundancy can be set up over both the Tokyo and Osaka routes without increasing cost. Application is a two-step process with NII and AWS Japan. Detailed procedures are left to the webinar recording.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 73,
     "section": "ネットワーク・セキュリティ",
+    "section_en": "Networking and security",
     "theme": "net",
     "url": "https://aws.amazon.com/blogs/publicsector/solving-public-ip-space-asymmetric-routing-challenges-for-higher-education-aws-migrations/",
     "title": "Solving public IP space asymmetric routing challenges for higher education AWS migrations",
@@ -1091,12 +1380,16 @@
     "level": 300,
     "jp": false,
     "why": "大学が持つグローバルIP帯をVPN/Direct Connect経由で使うときの非対称ルーティングを、ALB/NLBを公開サブネットに置く、NATゲートウェイ、ENIを2枚にするという3つの構成とルートテーブルで解く方法がわかる。",
+    "why_en": "Shows how to solve asymmetric routing when a university uses its own public IP block over VPN/Direct Connect, using 3 configurations and route tables: placing an ALB/NLB in a public subnet, a NAT gateway, and attaching 2 ENIs.",
     "synopsis": "古くから持つグローバル IPv4 アドレス帯を学内で使う大学が、VPN や AWS Direct Connect で AWS に移行するときの非対称ルーティングを扱う。学内からの要求がインターネットゲートウェイ経由で届き、応答が VPN 側へ戻って落とされる仕組みを図で示す。解決策として、ALB/NLB を公開サブネットに置く構成、NAT ゲートウェイを使う構成、EC2 に ENI を2枚付ける構成をルートテーブル例とともに比べる。ENI 2枚の場合の OS 側設定は範囲外で、CLI や IaC はない。",
-    "caveat": ""
+    "synopsis_en": "Covers asymmetric routing when a university that has long used its own public IPv4 address block on campus migrates to AWS over VPN or AWS Direct Connect. A diagram shows how requests from campus arrive via the internet gateway while responses return toward the VPN side and are dropped. As solutions, it compares placing an ALB/NLB in a public subnet, using a NAT gateway, and attaching 2 ENIs to EC2, with example route tables. OS-side configuration for the 2-ENI case is out of scope, and there is no CLI or IaC.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 74,
     "section": "ネットワーク・セキュリティ",
+    "section_en": "Networking and security",
     "theme": "net",
     "url": "https://aws.amazon.com/blogs/publicsector/web-filtering-for-education-using-aws-network-firewall-with-egress-tls-inspection/",
     "title": "Web filtering for education using AWS Network Firewall with egress TLS inspection",
@@ -1106,12 +1399,16 @@
     "level": 300,
     "jp": false,
     "why": "Network Firewall の出口方向 TLS インスペクションを、OpenSSL で作った証明書の ACM 取り込み、Suricata ルール、ファイアウォールポリシー、ルートの設定まで CLI で組み、学校向けの HTTPS フィルタリングを試せる。",
+    "why_en": "Lets you build Network Firewall egress TLS inspection with the CLI, from importing an OpenSSL-generated certificate into ACM through Suricata rules, the firewall policy, and routing, so you can try HTTPS filtering for schools.",
     "synopsis": "教育機関の Web フィルタリングで、HTTPS の中身まで見るために AWS Network Firewall の出口方向 TLS インスペクションを使う方法で、SNI フィルタリングを扱った前編の続きである。OpenSSL で作った自己署名 CA 証明書を AWS Certificate Manager に取り込み、TLS インスペクション設定、Suricata ルール、ファイアウォールポリシー、ルートテーブルを AWS CLI で順に組む。クライアントへの証明書追加が必要なこと、Encrypted Client Hello は対象外なこと、ルールはデモ用であることが注意点である。IaC はない。",
-    "caveat": ""
+    "synopsis_en": "Describes using AWS Network Firewall egress TLS inspection to inspect the contents of HTTPS traffic for web filtering at educational institutions, as the sequel to the first part, which covered SNI filtering. A self-signed CA certificate generated with OpenSSL is imported into AWS Certificate Manager, and the TLS inspection configuration, Suricata rules, firewall policy, and route tables are built in order with the AWS CLI. Points to note are that the certificate must be added to clients, that Encrypted Client Hello is not covered, and that the rules are for demonstration. No IaC is included.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 75,
     "section": "ネットワーク・セキュリティ",
+    "section_en": "Networking and security",
     "theme": "net",
     "url": "https://aws.amazon.com/blogs/publicsector/web-filtering-for-education-using-aws-network-firewall/",
     "title": "Web filtering for education using AWS Network Firewall",
@@ -1121,12 +1418,16 @@
     "level": 300,
     "jp": false,
     "why": "Client VPN、Network Firewall、NAT ゲートウェイを並べた VPC で、SNI と HTTP Host による許可リストとドメインカテゴリでの遮断を Suricata ルールで設定し、学校の Web フィルタリングを置き換える手順がわかる。",
+    "why_en": "Shows the procedure for replacing a school's web filtering with a VPC that lines up Client VPN, Network Firewall, and a NAT gateway, with Suricata rules that configure allow lists by SNI and HTTP Host and blocking by domain category.",
     "synopsis": "教育機関の Web フィルタリング機器を AWS Network Firewall に置き換える方法を説明する記事である。AWS Client VPN で接続した利用者の通信を、ルートテーブルでファイアウォールのエンドポイントへ通し NAT ゲートウェイから外へ出す VPC を作る。Suricata ルールで SNI による許可と、2026年2月の更新で加わったドメインカテゴリでの遮断の例を示す。手順はコンソール操作で、CLI や IaC はない。Encrypted Client Hello で SNI が読めない通信はリセットされ、TLS インスペクションは後編で扱う。",
-    "caveat": ""
+    "synopsis_en": "A post explaining how to replace an educational institution's web filtering appliance with AWS Network Firewall. It builds a VPC where traffic from users connected via AWS Client VPN is routed through the firewall endpoint by route tables and out through a NAT gateway. It shows Suricata rule examples for allowing by SNI and for blocking by domain category, which was added in the February 2026 update. The steps are console operations, with no CLI or IaC. Traffic whose SNI cannot be read because of Encrypted Client Hello is reset, and TLS inspection is covered in the second part.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 76,
     "section": "ネットワーク・セキュリティ",
+    "section_en": "Networking and security",
     "theme": "net",
     "url": "https://aws.amazon.com/blogs/publicsector/cloud-incident-response-at-unsw-with-digital-forensics-powered-by-aws/",
     "title": "Cloud incident response at UNSW with digital forensics powered by AWS",
@@ -1136,12 +1437,16 @@
     "level": 300,
     "jp": false,
     "why": "UNSW がワークロード・セキュリティ・フォレンジックの 3 種のアカウントで Automated Forensic Orchestrator for EC2 を動かし、Quarantine タグでの隔離、Service Catalog による期限付きアクセス、SIFT 用の踏み台を加えた構成が分かる。",
+    "why_en": "Shows the setup in which UNSW runs Automated Forensic Orchestrator for EC2 across 3 types of accounts (workload, security, and forensics), with isolation via a Quarantine tag, time-limited access through Service Catalog, and an added bastion host for SIFT.",
     "synopsis": "UNSW Sydney が、インシデント時の証拠収集の負担を減らすため Automated Forensics Orchestrator for EC2 を拡張した事例である。ワークロード、セキュリティ、フォレンジックの3種類のアカウントに分け、タグを起点に AWS Lambda がセキュリティグループのルールを外して隔離し、ボリュームのスナップショットをフォレンジック側へ共有する。AWS Service Catalog で一時的な権限を払い出し、Amazon EventBridge で失効させる。調査担当者は EC2 Image Builder で作った踏み台に AWS Systems Manager 経由で入り、SIFT のインスタンスで調査する。UNSW 固有のコードや IaC は公開されていない。",
-    "caveat": ""
+    "synopsis_en": "A case study in which UNSW Sydney extended Automated Forensics Orchestrator for EC2 to reduce the burden of evidence collection during incidents. Accounts are split into 3 types (workload, security, and forensics); triggered by a tag, AWS Lambda removes security group rules to isolate the instance and shares volume snapshots to the forensics side. AWS Service Catalog issues temporary permissions, which Amazon EventBridge revokes. Investigators enter a bastion host built with EC2 Image Builder via AWS Systems Manager and investigate on a SIFT instance. UNSW-specific code and IaC are not published.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 77,
     "section": "授業用アカウント・統制・コスト・調達",
+    "section_en": "Classroom accounts, governance, cost, and procurement",
     "theme": "gov",
     "url": "https://aws.amazon.com/jp/blogs/news/uot-data-engginering-lecture-multiaccount-challenge-vol1/",
     "title": "東京大学 松尾・岩澤研究室主催の AI エンジニアリング実践講座にて、1400 名を超える受講者に AWS 上でのクラウド開発を体験していただきました [ 準備、構築編 ]",
@@ -1151,12 +1456,16 @@
     "level": 300,
     "jp": true,
     "why": "1,400 超の受講者アカウントを Organizations と IAM Identity Center、SCP で作った構成と、Control Tower を採らなかった理由、create-account のクォータ対策、ユーザー作成と権限付与のシェルスクリプトが分かる。",
+    "why_en": "Shows the setup that created 1,400+ participant accounts with Organizations, IAM Identity Center, and SCPs, the reasons Control Tower was not adopted, workarounds for the create-account quota, and the shell scripts for creating users and granting permissions.",
     "synopsis": "東京大学 松尾・岩澤研究室の講座で、1,400名超の受講者に個別の AWS アカウントを配った準備と構築を記した3部作の1本目である。AWS Organizations、IAM Identity Center、講座ごとの OU と SCP で構成し、Control Tower を見送った理由と、アカウント数上限の引き上げやリトライによるクォータ対策を説明する。ユーザー作成と権限付与の Bash スクリプト全文が載り、それぞれ約1時間で終わった。CLI で作ったユーザーには初回登録メールが届かない点も注意として書かれる。",
-    "caveat": ""
+    "synopsis_en": "The first of a three-part series describing the preparation and build for distributing individual AWS accounts to 1,400+ participants in a course run by the Matsuo-Iwasawa Lab at the University of Tokyo. The setup uses AWS Organizations, IAM Identity Center, and per-course OUs and SCPs; it explains why Control Tower was passed over and the quota workarounds of raising the account limit and retrying. The full Bash scripts for creating users and granting permissions are included, and each took about 1 hour to run. It also notes that users created via the CLI do not receive the initial registration email.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 78,
     "section": "授業用アカウント・統制・コスト・調達",
+    "section_en": "Classroom accounts, governance, cost, and procurement",
     "theme": "gov",
     "url": "https://docs.aws.amazon.com/ja_jp/solutions/latest/innovation-sandbox-on-aws/solution-overview.html",
     "title": "Innovation Sandbox on AWS 実装ガイド(日本語)",
@@ -1166,12 +1475,16 @@
     "level": 300,
     "jp": true,
     "why": "サンドボックス用 OU の自動作成、予算しきい値での通知と自動処置、期間・費用によるアカウントの回収、管理用 Web UI を持つソリューションの構成、デプロイ手順、クォータ計画、月額約 65 ドルの費用見積もりが分かる。",
+    "why_en": "Shows the architecture of a solution with automatic creation of a sandbox OU, notifications and automatic actions at budget thresholds, account reclamation by duration or cost, and an administrative web UI, along with deployment steps, quota planning, and an estimated cost of about 65 dollars per month.",
     "synopsis": "AWS サービスを試すためのサンドボックスアカウントを安全に管理し、使い終わったら片づけて再利用する Innovation Sandbox on AWS の実装ガイドである。ベストプラクティスを組み込んだ OU 構成の自動作成、予算しきい値での通知と自動処置、期間や費用によるアカウント回収、高コスト操作の制限を Web UI から扱える。費用は月額約 65.25 ドル(米国東部)と見積もり、デプロイ手順は別ページ、コードは GitHub にある。新規アカウントの作成や閉鎖はしない点が明記され、教育への言及はない。",
-    "caveat": ""
+    "synopsis_en": "The implementation guide for Innovation Sandbox on AWS, which securely manages sandbox accounts for trying AWS services and cleans them up for reuse when done. From a web UI you can handle automatic creation of an OU structure with built-in best practices, notifications and automatic actions at budget thresholds, account reclamation by duration or cost, and restrictions on high-cost operations. The cost is estimated at about 65.25 dollars per month (US East), deployment steps are on a separate page, and the code is on GitHub. It states explicitly that the solution does not create or close new accounts, and there is no mention of education.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 79,
     "section": "授業用アカウント・統制・コスト・調達",
+    "section_en": "Classroom accounts, governance, cost, and procurement",
     "theme": "gov",
     "url": "https://aws.amazon.com/jp/blogs/news/empowering-educators-how-innovation-sandbox-on-aws-accelerates-learning-objectives-through-secure-cost-effective-and-recyclable-sandbox-management/",
     "title": "教育者を支援: Innovation Sandbox on AWS が学習目標の達成を加速する方法",
@@ -1181,12 +1494,16 @@
     "level": 200,
     "jp": true,
     "why": "Organizations と IAM Identity Center の上で(Control Tower とも併用でき)期限付きサンドボックスアカウントをリースして回収する仕組みと、イーストロンドン大学(330 アカウント超)やシェフィールド大学、ハッカソンでの使い方が分かる。",
+    "why_en": "Shows the mechanism for leasing and reclaiming time-limited sandbox accounts on top of Organizations and IAM Identity Center (which can also be used with Control Tower), and how it is used at the University of East London (330+ accounts), the University of Sheffield, and in hackathons.",
     "synopsis": "大学で数千人の学生にサンドボックス用アカウントを配る手間や費用の不安に対し、Innovation Sandbox on AWS の使い方を紹介する英語記事の翻訳である。AWS Organizations と IAM Identity Center を使い(既存の AWS Control Tower 環境とも併用できる)、学生がポータルからリースを申請し、費用上限と期間付きの環境を受け取り、期限後に自動で片づけられる流れを説明する。イーストロンドン大学の330超のアカウント、シェフィールド大学の Amazon Bedrock を使う授業、ハノイ工科大学のハッカソンの例を挙げる。手順の詳細は実装ガイドと GitHub に委ねている。",
-    "caveat": ""
+    "synopsis_en": "A translation of an English post introducing how to use Innovation Sandbox on AWS, addressing the effort and cost concerns of distributing sandbox accounts to thousands of students at a university. Using AWS Organizations and IAM Identity Center (it can also be used with an existing AWS Control Tower environment), it explains the flow in which students request a lease from a portal, receive an environment with a cost cap and a duration, and the environment is cleaned up automatically after it expires. Examples include the University of East London's 330+ accounts, a course at the University of Sheffield that uses Amazon Bedrock, and a hackathon at Hanoi University of Science and Technology. Procedure details are left to the implementation guide and GitHub.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 80,
     "section": "授業用アカウント・統制・コスト・調達",
+    "section_en": "Classroom accounts, governance, cost, and procurement",
     "theme": "gov",
     "url": "https://aws.amazon.com/jp/blogs/news/how-to-procure-aws-with-research-funds/",
     "title": "競争的研究資金を獲得した研究者がどのようにクラウドを活用しているか",
@@ -1196,12 +1513,16 @@
     "level": 200,
     "jp": true,
     "why": "東京農工大の CREST 研究が、単価契約の入札で AWS を調達し、多施設のデータを VPN と SINET クラウド接続で集め、ParallelCluster とスポットインスタンスで脳波データを解析した構成の概略が分かる。",
+    "why_en": "Gives an overview of the setup in which a CREST project at Tokyo University of Agriculture and Technology procured AWS through unit-price competitive bidding, collected data from multiple sites over VPN and the SINET cloud connection, and analyzed EEG data with ParallelCluster and Spot Instances.",
     "synopsis": "従量課金のクラウドを研究費で調達することへの抵抗感を背景に、東京農工大学の田中聡久教授による JST CREST の研究「脳波の機械判読によるてんかん診断・治療支援AIの構築」の事例を紹介する。調達には、利用量を制限せずに柔軟に契約できる単価指定型競争入札を使った。構成は、海外を含む多施設のデータを VPN と SINET クラウド接続サービスで集め、AWS ParallelCluster でジョブに応じて計算ノードを増減し、スポットインスタンスで費用を抑えるものである。手順、コード、費用やデータ量の数値は載っておらず、各資金と所属機関の調達ルールに従う必要があるとしている。",
-    "caveat": ""
+    "synopsis_en": "Against the background of reluctance to procure pay-as-you-go cloud with research funds, it presents the case of the JST CREST project \"脳波の機械判読によるてんかん診断・治療支援AIの構築\" led by Professor Toshihisa Tanaka of Tokyo University of Agriculture and Technology. For procurement, unit-price competitive bidding was used, which allows a flexible contract without limiting usage. The architecture collects data from multiple sites, including overseas, over VPN and the SINET cloud connection service, scales compute nodes up and down per job with AWS ParallelCluster, and keeps costs down with Spot Instances. No procedures, code, or figures for cost or data volume are included, and it states that the procurement rules of each funding source and institution must be followed.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 81,
     "section": "授業用アカウント・統制・コスト・調達",
+    "section_en": "Classroom accounts, governance, cost, and procurement",
     "theme": "gov",
     "url": "https://d1.awsstatic.com/events/jp/2017/crs/fukuoka/K3.pdf",
     "title": "九州大学における教育・研究・業務におけるクラウドの活用(登壇資料・PDF)",
@@ -1211,12 +1532,16 @@
     "level": 200,
     "jp": true,
     "why": "九州大学が SINET VPN で VPC につなぎ、Web サーバー集約、Moodle・Mahara・BookRoll、学生ごとの Windows VDI、Proself を AWS に置いた全体構成と、機密性・完全性・可用性の脅威分析、VDI 約 200 台の作成時間(東京 112 分、バージニア 49 分)が分かる。",
+    "why_en": "Shows Kyushu University's overall architecture, connecting to a VPC over SINET VPN and placing consolidated web servers, Moodle, Mahara, BookRoll, per-student Windows VDI, and Proself on AWS, along with a threat analysis for confidentiality, integrity, and availability, and the creation time for about 200 VDIs (112 minutes in Tokyo, 49 minutes in Virginia).",
     "synopsis": "学内で 1,000 以上の Web サーバーが個別に動き、更新費用とセキュリティ管理が課題だった九州大学の 2017 年の登壇資料である。SINET 経由の VPN で Amazon VPC をキャンパスの一部と位置づけ、Web サーバーの集約、Moodle・Mahara・BookRoll、学生ごとの Windows VDI、Proselfを置いた構成を示す。機密性・完全性・可用性ごとの脅威の洗い出し、VDI 約 200 台の作成時間(東京 112 分、北バージニア 49 分)、5 年間の費用比較が載っている。Moodle のスケーリング時のセッション切れや調達手続きなど、残った課題も挙げている。",
-    "caveat": ""
+    "synopsis_en": "Session slides from 2017 by Kyushu University, where 1,000+ web servers ran individually on campus and update costs and security management were issues. It positions Amazon VPC as part of the campus via a VPN over SINET and shows an architecture with consolidated web servers, Moodle, Mahara, BookRoll, per-student Windows VDI, and Proself. It includes an enumeration of threats to confidentiality, integrity, and availability, the creation time for about 200 VDIs (112 minutes in Tokyo, 49 minutes in N. Virginia), and a 5-year cost comparison. It also lists remaining issues such as session loss when scaling Moodle and procurement procedures.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 82,
     "section": "授業用アカウント・統制・コスト・調達",
+    "section_en": "Classroom accounts, governance, cost, and procurement",
     "theme": "gov",
     "url": "https://aws.amazon.com/blogs/publicsector/simplify-aws-health-notifications-management-for-higher-education/",
     "title": "Simplify AWS health notifications management for higher education",
@@ -1226,12 +1551,16 @@
     "level": 300,
     "jp": false,
     "why": "数百アカウントを持つ大学の中央 IT 向けに、AWS User Notifications と Organizations の信頼されたアクセスで Health 通知を集約し、サービス・イベント種別ごとのルールで担当者に振り分ける設定手順が分かる。",
+    "why_en": "Shows the configuration steps for a university's central IT with hundreds of accounts to aggregate Health notifications with AWS User Notifications and Organizations trusted access, and route them to the right people with rules by service and event type.",
     "synopsis": "数百の AWS アカウントを持つ大学の中央 IT 部門が、大量の通知の中で重要なアラートを見落とす課題を扱う記事で、特定の大学の事例ではない。AWS User Notifications と AWS Organizations の信頼されたアクセスで AWS Health の通知を集約し、サービス名、イベント種別、リージョンで絞ったルールでメールや Slack、Microsoft Teams に振り分ける手順をコンソールで示す。500アカウント・2リージョンなら1,000件の通知が2通になるとし、設定は追加料金なしとする。",
-    "caveat": ""
+    "synopsis_en": "A post addressing the problem of a university's central IT department with hundreds of AWS accounts missing important alerts among a flood of notifications; it is not a case study of a specific university. It shows in the console how to aggregate AWS Health notifications with AWS User Notifications and AWS Organizations trusted access, and route them to email, Slack, or Microsoft Teams with rules filtered by service name, event type, and region. It states that with 500 accounts and 2 regions, 1,000 notifications become 2, and that the setup incurs no additional charge.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 83,
     "section": "授業用アカウント・統制・コスト・調達",
+    "section_en": "Classroom accounts, governance, cost, and procurement",
     "theme": "gov",
     "url": "https://aws.amazon.com/blogs/publicsector/reduce-it-costs-by-implementing-automatic-shutdown-for-amazon-ec2-instances/",
     "title": "Reduce IT costs by implementing automatic shutdown for Amazon EC2 instances",
@@ -1241,12 +1570,16 @@
     "level": 300,
     "jp": false,
     "why": "授業やラボの後に残る EC2 を、CPU 3% 以下 1 時間の CloudWatch アラームと、タグを見て停止する Python の Lambda を EventBridge の cron で動かす 2 つの方法で止める手順が分かる。",
+    "why_en": "Shows 2 ways to stop EC2 instances left running after classes or labs: a CloudWatch alarm on CPU at or below 3% for 1 hour, and a Python Lambda that stops instances by tag, run on an EventBridge cron schedule.",
     "synopsis": "大学で閑散時間や未使用時に EC2 インスタンスが動き続け、想定外の費用が出る問題を扱う。1 つ目の方法は CPU 使用率 3% 以下が 1 時間続いたらインスタンスを停止する CloudWatch アラームで、SNS 通知も設定できる。2 つ目はタグで対象を選んで停止する Python 3.13 の AWS Lambda 関数を、EventBridge の cron(例は毎日 17 時)で起動する方法で、boto3 のコード、IAM インラインポリシー、タグ付けの手順が載っている。CPU 使用率の低いバックグラウンド処理を止めてしまうおそれがあるため、事前にワークロードの傾向を確認するよう注意している。",
-    "caveat": ""
+    "synopsis_en": "Addresses the problem of EC2 instances at universities continuing to run during off-hours or when unused, producing unexpected costs. The first method is a CloudWatch alarm that stops the instance when CPU utilization stays at or below 3% for 1 hour; SNS notification can also be configured. The second is a Python 3.13 AWS Lambda function that selects and stops instances by tag, triggered by an EventBridge cron schedule (the example is daily at 17:00), with the boto3 code, the IAM inline policy, and tagging steps included. It cautions that background processes with low CPU utilization could be stopped, so workload patterns should be checked in advance.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 84,
     "section": "授業用アカウント・統制・コスト・調達",
+    "section_en": "Classroom accounts, governance, cost, and procurement",
     "theme": "gov",
     "url": "https://aws.amazon.com/blogs/awsmarketplace/using-aws-marketplace-to-streamline-third-party-software-procurement-in-higher-education",
     "title": "Using AWS Marketplace to streamline third-party software procurement in higher education(AWS Marketplace Blog)",
@@ -1256,12 +1589,16 @@
     "level": 200,
     "jp": false,
     "why": "大学で Private Marketplace と Private Offer を使い、学部ごとの OU と管理者・調達担当・学部長室などの IAM ロールでソフトウェア調達を統制する設計と、LZA for Education との組み合わせが分かる。",
+    "why_en": "Shows a design for governing software procurement at a university with Private Marketplace and Private Offers, per-department OUs, and IAM roles for administrators, procurement staff, dean's offices, and others, and how it combines with LZA for Education.",
     "synopsis": "大学のソフトウェア調達が部局ごとに分散し、コンプライアンス対応や 6〜12 か月かかる調達期間が課題になっている状況を扱う。承認済みソフトウェアのカタログを作る Private Marketplace、教育向けの価格や条件を取り決める Private Offer、部局ごとに分けた OU と OU 単位のカタログを組み合わせる設計を説明する。IAM ロールは管理者、IT 管理者、調達担当、学部長室、研究チーム、学生に分け、Landing Zone Accelerator for Education と組み合わせる。導入は 3 段階の流れで示され、コードや IaC はない。",
-    "caveat": ""
+    "synopsis_en": "Addresses a situation in which software procurement at universities is scattered across departments, with compliance and procurement lead times of 6–12 months as issues. It explains a design that combines Private Marketplace for a catalog of approved software, Private Offers for negotiating education pricing and terms, and per-department OUs with catalogs per OU. IAM roles are divided into administrators, IT administrators, procurement staff, dean's offices, research teams, and students, combined with Landing Zone Accelerator for Education. Adoption is shown as a 3-phase flow, and there is no code or IaC.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 85,
     "section": "授業用アカウント・統制・コスト・調達",
+    "section_en": "Classroom accounts, governance, cost, and procurement",
     "theme": "gov",
     "url": "https://docs.aws.amazon.com/pdfs/prescriptive-guidance/latest/strategy-education-hybrid-multicloud/strategy-education-hybrid-multicloud.pdf",
     "title": "Building a strategy for single, hybrid, and multicloud in education(AWS Prescriptive Guidance・PDF 版)",
@@ -1271,12 +1608,16 @@
     "level": 200,
     "jp": false,
     "why": "教育機関が主に使うクラウドを決め CCoE を置く方針と、仮想 PC 教室(WorkSpaces Applications と SAML)、SIS・LMS のデータレイクによる学生支援、IAM Identity Center での ID 連携、ParallelCluster による研究計算のバーストの 4 つの構成例が分かる。",
+    "why_en": "Shows the policy of deciding a primary cloud and establishing a CCoE for educational institutions, plus 4 example architectures: virtual PC labs (WorkSpaces Applications and SAML), student support with a data lake of SIS and LMS data, identity federation with IAM Identity Center, and bursting research computing with ParallelCluster.",
     "synopsis": "明確な方針がないまま複数のクラウドを使うと、複雑さや統制のばらつきが生じるという教育機関の課題を扱う。主要クラウドを 1 つ選ぶ、CCoE を置く、マルチクラウドは必要な場合に限るなど 7 つの推奨を示す。構成例は、Amazon WorkSpaces Applications と SAML 2.0 による仮想 PC 教室、SIS・LMS・CRM のデータをデータレイクに集めて学生への連絡と幹部向けダッシュボードに使う学生支援、AWS IAM Identity Center による ID 連携、AWS ParallelCluster による研究計算のバーストの 4 つである。設定コードや IaC は含まれない。",
-    "caveat": "学生支援の構成例はダッシュボードに Amazon QuickSight を使っているが、QuickSight は現在 Amazon Quick Sight に名称変更されている。"
+    "synopsis_en": "Addresses the challenge for educational institutions that using multiple clouds without a clear policy leads to complexity and inconsistent governance. It presents 7 recommendations, such as choosing 1 primary cloud, establishing a CCoE, and limiting multicloud to cases where it is needed. The 4 example architectures are a virtual PC lab with Amazon WorkSpaces Applications and SAML 2.0, student support that gathers SIS, LMS, and CRM data in a data lake for student outreach and executive dashboards, identity federation with AWS IAM Identity Center, and bursting research computing with AWS ParallelCluster. No configuration code or IaC is included.",
+    "caveat": "学生支援の構成例はダッシュボードに Amazon QuickSight を使っているが、QuickSight は現在 Amazon Quick Sight に名称変更されている。",
+    "caveat_en": "The student support example architecture uses Amazon QuickSight for dashboards, but QuickSight has since been renamed Amazon Quick Sight."
   },
   {
     "no": 86,
     "section": "基幹システムの移行と事業継続",
+    "section_en": "Core system migration and business continuity",
     "theme": "mig",
     "url": "https://aws.amazon.com/blogs/publicsector/a-faster-more-resilient-digital-repository-migrating-dspace-to-aws/",
     "title": "A faster, more resilient digital repository: Migrating DSpace to AWS",
@@ -1286,12 +1627,16 @@
     "level": 300,
     "jp": false,
     "why": "Johns Hopkins 大学の機関リポジトリ DSpace をフロント、API、検索、定期ジョブのコンテナに分けて ECS Fargate、RDS PostgreSQL、S3、ALB、WAF で動かす構成と、GitHub で公開された IaC の参照構成が得られる。",
+    "why_en": "Gives the architecture in which Johns Hopkins University's DSpace institutional repository is split into front-end, API, search, and scheduled-job containers running on ECS Fargate, RDS PostgreSQL, S3, ALB, and WAF, along with a reference architecture with IaC published on GitHub.",
     "synopsis": "Johns Hopkins 大学図書館の DSpace リポジトリが単一サーバーで更新が止まり、ボットのアクセス急増にも弱かった状況を扱う。DSpace をフロントエンド、API、検索インデックス、定期ジョブのコンテナに分け、ECS on Fargate、RDS for PostgreSQL、S3、ALB、AWS WAF、定期実行の EventBridge で動かす。IaC を含む参照アーキテクチャは GitHub(jhu-library-devops/terraform-aws-jhu-drcc)で公開され、移行期間は約 6 か月である。S3 へのデータ移行の検証や、公開後のスケーリング設定の調整が必要だったとしている。",
-    "caveat": ""
+    "synopsis_en": "Covers the situation at the Johns Hopkins University libraries, where the DSpace repository ran on a single server, could not be updated, and was vulnerable to surges in bot traffic. DSpace is split into front-end, API, search index, and scheduled-job containers, run on ECS on Fargate, RDS for PostgreSQL, S3, ALB, AWS WAF, and EventBridge for scheduled runs. A reference architecture including IaC is published on GitHub (jhu-library-devops/terraform-aws-jhu-drcc), and the migration took about 6 months. It notes that validating the data migration to S3 and tuning scaling settings after launch were needed.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 87,
     "section": "基幹システムの移行と事業継続",
+    "section_en": "Core system migration and business continuity",
     "theme": "mig",
     "url": "https://aws.amazon.com/blogs/storage/university-of-california-irvine-backs-up-petabytes-of-research-data-to-aws/",
     "title": "University of California Irvine backs up petabytes of research data to AWS(AWS Storage Blog)",
@@ -1301,12 +1646,16 @@
     "level": 300,
     "jp": false,
     "why": "学内約100台の研究用サーバーの5PB超を rclone と Python ラッパーで S3 に送り、サーバー単位のバケットと IAM ロール、Glacier Deep Archive へのライフサイクル、CloudWatch アラームとコスト内訳まで含めた研究データバックアップの作り方がわかる。",
+    "why_en": "Shows how to build a research data backup that sends 5PB+ from about 100 research servers on campus to S3 with rclone and a Python wrapper, with per-server buckets and IAM roles, lifecycle rules to Glacier Deep Archive, CloudWatch alarms, and a cost breakdown.",
     "synopsis": "UC Irvine の RCIC が、研究室の約 100 台のサーバーにある研究データを、各研究室が自分で管理しつつ全体で監督できる形でバックアップする仕組みを扱う。rclone と Python ラッパーで S3 に同期し、サーバーごとのバケットと IAM ロール、Glacier Deep Archive へのライフサイクル、CloudWatch のアラームと SNS 通知を組み合わせる。コードは GitHub(RCIC-UCI-Public/rcs3)で公開され、5 PB 超のバックアップ量と費用内訳(ストレージ 80%、API 18.5%)が載る。大きなバックアップの初回同期は、極端な場合は数週間かかるとしている。",
-    "caveat": ""
+    "synopsis_en": "Covers how UC Irvine's RCIC backs up research data on about 100 lab servers in a way that lets each lab manage its own backups while allowing central oversight. It syncs to S3 with rclone and a Python wrapper, combining per-server buckets and IAM roles, lifecycle rules to Glacier Deep Archive, and CloudWatch alarms with SNS notifications. The code is published on GitHub (RCIC-UCI-Public/rcs3), and it reports a backup volume of 5 PB+ and a cost breakdown (storage 80%, API 18.5%). It states that the initial sync of a large backup can take weeks in extreme cases.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 88,
     "section": "基幹システムの移行と事業継続",
+    "section_en": "Core system migration and business continuity",
     "theme": "mig",
     "url": "https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/events/approved/reinvent-2025/reinvent/2024/slides/wps/WPS319_Democratizing-access-to-higher-education-for-12-million-students.pdf",
     "title": "Democratizing access to higher education for 1.2 million students(re:Invent 2024 WPS319・PDF)",
@@ -1316,12 +1665,16 @@
     "level": 300,
     "jp": false,
     "why": "ブラジルの全国大学入学選抜システム SiSU を CloudFront、WAF、Shield Advanced、NLB、EC2、SQL Server、OpenShift とマルチアカウントで組み、ピーク時10万超の受験者アクセスと毎分約1.1万件の登録に耐えた構成がわかる。",
+    "why_en": "Shows the architecture of SiSU, Brazil's national university admissions system, built with CloudFront, WAF, Shield Advanced, NLB, EC2, SQL Server, OpenShift, and multiple accounts, which withstood 100,000+ applicant accesses at peak and about 11,000 registrations per minute.",
     "synopsis": "ブラジル教育省が運営する全国の大学入学選抜システム SiSU を扱う re:Invent 2024 の WPS319 の資料である。CloudFront、AWS WAF、Shield Advanced で入口を守り、NLB、EC2 上の SQL Server クラスター、Red Hat OpenShift on AWS で処理し、用途別のアカウントに分けた構成を示す。ピーク時のアクセス 10.4 万件超、毎分約 1.1 万件の登録、負荷試験の同時ユーザー 15 万の数字が載る。6〜8 週間の計画段階を含む AWS Countdown による準備や、本番で想定外の認証エラーが出たことにも触れ、コードや設定値はない。",
-    "caveat": ""
+    "synopsis_en": "Slides for WPS319 at re:Invent 2024 covering SiSU, the national university admissions system run by Brazil's Ministry of Education. It shows an architecture that protects the entry point with CloudFront, AWS WAF, and Shield Advanced, processes with NLB, a SQL Server cluster on EC2, and Red Hat OpenShift on AWS, and is split into accounts by purpose. Figures include 104,000+ accesses at peak, about 11,000 registrations per minute, and 150,000 concurrent users in load testing. It also touches on preparation through AWS Countdown, including a 6–8 week planning phase, and on unexpected authentication errors in production; there is no code or configuration values.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 89,
     "section": "基幹システムの移行と事業継続",
+    "section_en": "Core system migration and business continuity",
     "theme": "mig",
     "url": "https://aws.amazon.com/blogs/publicsector/six-best-practices-for-building-resilient-higher-education-applications-on-aws/",
     "title": "Six best practices for building resilient higher-education applications on AWS",
@@ -1331,12 +1684,16 @@
     "level": 200,
     "jp": false,
     "why": "SIS、LMS、奨学金ポータルを持つ大学向けに、Route 53 と Application Recovery Controller によるマルチリージョン、CDK による IaC、CloudWatch Synthetics による監視など6つの設計方針が整理されている。",
+    "why_en": "Organizes 6 design principles for universities with an SIS, LMS, and scholarship portal, including multi-region with Route 53 and Application Recovery Controller, IaC with CDK, and monitoring with CloudWatch Synthetics.",
     "synopsis": "履修登録の締め切りなど、止まると影響がすぐ出る SIS、LMS、奨学金ポータルの障害対策を、名前を伏せた大学の例で扱う。6 つの方針は、Route 53 と Application Recovery Controller によるマルチリージョン設計、AWS CDK と CI/CD による自動化、IaC へのセキュリティ統制の組み込み、Lambda と DynamoDB による費用を抑えたマルチリージョン、DevOps の文化づくり、CloudWatch と Synthetics カナリアによる監視である。コード、構成図、数値は載っていない。重要なアプリケーションから始めることや、月次のコスト見直しを勧めている。",
-    "caveat": ""
+    "synopsis_en": "Covers failure countermeasures for an SIS, LMS, and scholarship portal, where outages have immediate impact such as at course registration deadlines, using the example of an unnamed university. The 6 principles are multi-region design with Route 53 and Application Recovery Controller, automation with AWS CDK and CI/CD, building security controls into IaC, cost-efficient multi-region with Lambda and DynamoDB, building a DevOps culture, and monitoring with CloudWatch and Synthetics canaries. No code, architecture diagrams, or figures are included. It recommends starting with critical applications and reviewing costs monthly.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 90,
     "section": "EdTech のサービス基盤",
+    "section_en": "Service platforms for EdTech",
     "theme": "edtech",
     "url": "https://aws.amazon.com/jp/blogs/startup/tech-interview-schoo-2023/",
     "title": "「何かあればすぐ AWS が対応してくれる安心感」Schoo 社の AWS 移行事例とエンタープライズサポート活用(AWS Startup ブログ)",
@@ -1346,12 +1703,16 @@
     "level": 200,
     "jp": true,
     "why": "オンライン学習の録画配信を他社基盤の EOL に合わせて 7 か月で MediaConvert、S3、CloudFront の構成へ移した経緯と、高等教育機関向け授業基盤 Schoo Swing のオンライン授業基盤を Chime SDK に移してプロキシ環境での品質問題を解いた例がわかる。",
+    "why_en": "Shows how online learning video delivery was moved within 7 months to a MediaConvert, S3, and CloudFront architecture to meet the EOL of a third-party platform, and how the online class platform of Schoo Swing, a class platform for higher education institutions, was moved to the Chime SDK to solve quality problems in proxy environments.",
     "synopsis": "オンライン学習の Schoo 社で、MP4 を HLS に変換していた他社の動画基盤が EOL を迎え、7 か月の期限内に移行する必要があった事例を紹介する。移行後は AWS Elemental MediaConvert で HLS に変換し、Amazon S3 に保存して Amazon CloudFront で配信する。高等教育機関向けの Schoo Swing では、他社 SDK のセキュリティ面の難点やプロキシ有効時の画質低下を解くため、オンライン授業の基盤を Amazon Chime SDK に移した。エンタープライズサポートの TAM による定例会でのコスト分析の活用も述べ、構成図は簡単なもの 1 枚でコードはない。",
-    "caveat": ""
+    "synopsis_en": "Presents the case of Schoo, an online learning company, where the third-party video platform that converted MP4 to HLS reached EOL and the migration had to be completed within a 7-month deadline. After migration, AWS Elemental MediaConvert converts to HLS, Amazon S3 stores the content, and Amazon CloudFront delivers it. For Schoo Swing, aimed at higher education institutions, the online class platform was moved to the Amazon Chime SDK to solve security concerns with a third-party SDK and video quality degradation when a proxy was enabled. It also describes using cost analysis in regular meetings with the Enterprise Support TAM; there is 1 simple architecture diagram and no code.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 91,
     "section": "EdTech のサービス基盤",
+    "section_en": "Service platforms for EdTech",
     "theme": "edtech",
     "url": "https://aws.amazon.com/jp/blogs/startup/aws-startup-architecture-of-the-year-japan-2020-unifa-case-study/",
     "title": "「AWS Startup Architecture of the Year Japan 2020」で優勝！ ユニファ社の AWS 活用事例(AWS Startup ブログ)",
@@ -1361,12 +1722,16 @@
     "level": 200,
     "jp": true,
     "why": "保育施設の午睡チェックで、EC2 Auto Scaling、ElastiCache による順序保証、SQS と DLQ による再試行、DynamoDB への保存を組み合わせ、ネットワーク障害時もセンサーと iPad で業務を続ける設計を学べる。",
+    "why_en": "Teaches a design for nap checks at childcare facilities that combines EC2 Auto Scaling, ordering guarantees with ElastiCache, retries with SQS and a DLQ, and storage in DynamoDB, and keeps operations going with sensors and iPads during network outages.",
     "synopsis": "保育施設で乳幼児の昼寝を見守る「ルクミー午睡チェック」を題材に、保育者の負担を減らすための構成を紹介する。センサーと iPad から届くチェックデータを EC2 Auto Scaling で処理し、ElastiCache にチェックシートの各セルの状態を記録して順序を保ち、SQS でキューに入れて 10 回失敗したものは DLQ に送って通知し、DynamoDB に保存する。SQS は秒間メッセージ数の制限から FIFO キューを使っていない。ネットワーク障害が起きても、開始済みのチェックはセンサーと iPad だけで続けられる。数値やコードは載っていない。",
-    "caveat": ""
+    "synopsis_en": "Using \"ルクミー午睡チェック\" (Lookmee nap check), which monitors infants' naps at childcare facilities, it presents an architecture for reducing the burden on childcare workers. Check data arriving from sensors and iPads is processed with EC2 Auto Scaling, the state of each cell in the check sheet is recorded in ElastiCache to preserve ordering, messages are queued in SQS with those that fail 10 times sent to a DLQ with a notification, and data is stored in DynamoDB. SQS FIFO queues are not used because of the messages-per-second limit. Even if a network outage occurs, checks already started can continue with only the sensors and iPads. No figures or code are included.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 92,
     "section": "EdTech のサービス基盤",
+    "section_en": "Service platforms for EdTech",
     "theme": "edtech",
     "url": "https://aws.amazon.com/blogs/quantum-computing/combating-quantum-noise-with-aws-university-of-washington-capstone-project/",
     "title": "Combating quantum noise with AWS: University of Washington Capstone Project(AWS Quantum Technologies Blog)",
@@ -1376,12 +1741,16 @@
     "level": 300,
     "jp": false,
     "why": "大学のキャップストーン課題で、Braket の実機、AWS Batch による並列のノイズ緩和計算、AWS Parallel Computing Service による誤り訂正シミュレーション、S3 を組み合わせた構成と、ノートブックと CloudFormation を含む GitHub リポジトリがわかる。",
+    "why_en": "Shows the setup for a university capstone project combining Braket hardware, parallel noise-mitigation computations with AWS Batch, error-correction simulations with AWS Parallel Computing Service, and S3, along with a GitHub repository containing notebooks and CloudFormation.",
     "synopsis": "University of Washington の AQET プログラムで、学生チームが 10 週間の課題として量子ノイズの抑制、緩和、誤り訂正に取り組んだ例を紹介する。Amazon Braket で Rigetti の実機とノイズ付きシミュレーターに回路を送り、AWS Batch でノイズ緩和の計算を並列に実行し、AWS Parallel Computing Service で誤り訂正のシミュレーションを広げ、結果を S3 に置く。GitHub には CloudFormation で環境を作るノートブックと手法別のノートブックがある。費用や実行時間の数値は載っていない。",
-    "caveat": ""
+    "synopsis_en": "Presents an example from the University of Washington's AQET program in which a student team tackled quantum noise suppression, mitigation, and error correction as a 10-week project. Circuits are sent to Rigetti hardware and a noisy simulator through Amazon Braket, noise-mitigation computations run in parallel on AWS Batch, error-correction simulations are scaled out with AWS Parallel Computing Service, and results are placed in S3. GitHub holds a notebook that builds the environment with CloudFormation and notebooks for each method. No figures for cost or run time are included.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 93,
     "section": "EdTech のサービス基盤",
+    "section_en": "Service platforms for EdTech",
     "theme": "edtech",
     "url": "https://aws.amazon.com/blogs/architecture/increasing-mcgraw-hills-application-throughput-with-amazon-sqs/",
     "title": "Increasing McGraw-Hill's Application Throughput with Amazon SQS(AWS Architecture Blog)",
@@ -1391,12 +1760,16 @@
     "level": 300,
     "jp": false,
     "why": "教員・管理者向けの学習成績レポート生成で、DB ポーリングを優先度別の SQS キューと Spark クラスタ内のコンシューマーに置き換えた設計と、2,030 件の負荷試験結果、GitHub のサンプルコードがわかる。",
+    "why_en": "Shows a design that replaced DB polling with prioritized SQS queues and consumers inside the Spark cluster for generating learning performance reports for teachers and administrators, along with results from a 2,030-item load test and sample code on GitHub.",
     "synopsis": "McGraw-Hill の Open Learning Solutions で、学習者の成績レポートを作る処理が PostgreSQL のポーリングと Spark クラスターの起動・停止の繰り返しで負荷に耐えられなかった問題を扱う。新しい構成では、対象校の数で 2 段階の優先度に分けた Amazon SQS キューを置き、Spark クラスター内に組み込んだコンシューマーがメッセージを取り続ける。GitHub のサンプルコードと、2,030 件の負荷試験で従来 4 時間以内に終わらなかった 142 件も完了した結果が載る。DB との不整合や、遅いタスクを待つスレッドの問題は今後の改善点としている。",
-    "caveat": ""
+    "synopsis_en": "Addresses a problem in McGraw-Hill's Open Learning Solutions, where the process that generates learner performance reports could not handle the load because of PostgreSQL polling and repeated starting and stopping of the Spark cluster. In the new architecture, Amazon SQS queues are split into 2 priority levels by the number of target schools, and consumers embedded in the Spark cluster keep pulling messages. It includes sample code on GitHub and the result of a 2,030-item load test in which the 142 items that previously did not finish within 4 hours also completed. Inconsistencies with the DB and threads waiting on slow tasks are listed as future improvements.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 94,
     "section": "EdTech のサービス基盤",
+    "section_en": "Service platforms for EdTech",
     "theme": "edtech",
     "url": "https://docs.aws.amazon.com/solutions/deepracer-on-aws/",
     "title": "DeepRacer on AWS",
@@ -1406,12 +1779,16 @@
     "level": 300,
     "jp": false,
     "why": "強化学習を学ぶレーシングシミュレーターを自分のアカウントに CloudFormation で立てるソリューションで、CloudFront、Cognito、API Gateway、Lambda、DynamoDB 単一テーブル、SQS FIFO、SageMaker AI、Kinesis Video Streams による構成図と手順がわかり、学生向けの ML 演習基盤として使える。",
+    "why_en": "Shows the architecture diagram and steps for a solution that stands up a racing simulator for learning reinforcement learning in your own account with CloudFormation, using CloudFront, Cognito, API Gateway, Lambda, a DynamoDB single table, SQS FIFO, SageMaker AI, and Kinesis Video Streams, usable as an ML exercise platform for students.",
     "synopsis": "3D のレーシングシミュレーターで強化学習を学ぶ環境を、自分の AWS アカウントに立てるソリューションである。CloudFront と S3 で画面を配信し、Cognito で認証とグループを管理し、API Gateway と Lambda で API を処理する。プロフィール、学習ジョブ、モデル、リーダーボードは DynamoDB の単一テーブルに置き、学習・評価ジョブは SQS FIFO キューで順に SageMaker に渡し、学習中の映像は Kinesis Video Streams で見せる。CloudFormation テンプレートと手順を示す実装ガイド、GitHub のソースが用意されている。",
-    "caveat": ""
+    "synopsis_en": "A solution that stands up an environment for learning reinforcement learning with a 3D racing simulator in your own AWS account. CloudFront and S3 serve the UI, Cognito manages authentication and groups, and API Gateway and Lambda handle the API. Profiles, training jobs, models, and leaderboards are kept in a DynamoDB single table, training and evaluation jobs are passed in order to SageMaker through an SQS FIFO queue, and video during training is shown with Kinesis Video Streams. An implementation guide with CloudFormation templates and steps, and source on GitHub, are provided.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 95,
     "section": "EdTech のサービス基盤",
+    "section_en": "Service platforms for EdTech",
     "theme": "edtech",
     "url": "https://aws.amazon.com/blogs/migration-and-modernization/building-for-scale-and-speed-how-turnitin-accelerated-innovation-with-micro-frontend-architecture-on-aws/",
     "title": "Building for Scale and Speed: How Turnitin Accelerated Innovation with Micro-frontend Architecture on AWS(AWS Migration and Modernization Blog)",
@@ -1421,12 +1798,16 @@
     "level": 200,
     "jp": false,
     "why": "学術不正対策サービス Turnitin が、フロントエンドを各バックエンドサービスと対応するマイクロフロントエンドに分割し、CloudFront と S3 で配信した構成と、その判断理由がわかる。",
+    "why_en": "Shows the architecture in which Turnitin, an academic integrity service, split its front end into micro-frontends corresponding to each backend service and delivered them with CloudFront and S3, along with the reasoning behind the decision.",
     "synopsis": "学術不正対策・評価サービスの Turnitin で、モノリスのフロントエンドのためにチームが独立して開発できず、コードの重複や買収製品の統合が難しかった問題を扱う。フロントエンドを業務領域ごとのマイクロフロントエンドに分け、API Gateway と Lambda のバックエンドと 1 対 1 で対応させ、S3 と CloudFront で配信し、Route 53 と独立した CI/CD パイプラインを組み合わせる。チームの自律や所有範囲の明確化といった判断理由が述べられるが、コード、IaC、数値はない。チームの教育などの組織の変更が必要だったとしている。",
-    "caveat": ""
+    "synopsis_en": "Addresses the problem at Turnitin, an academic integrity and assessment service, where a monolithic front end prevented teams from developing independently and made code duplication and integrating acquired products difficult. The front end is split into micro-frontends by business domain, each mapped 1-to-1 to an API Gateway and Lambda backend, delivered with S3 and CloudFront, and combined with Route 53 and independent CI/CD pipelines. The reasoning, such as team autonomy and clear ownership, is described, but there is no code, IaC, or figures. It notes that organizational changes such as team training were needed.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 96,
     "section": "EdTech のサービス基盤",
+    "section_en": "Service platforms for EdTech",
     "theme": "edtech",
     "url": "https://aws.amazon.com/blogs/apn/scaling-learning-how-geniusee-migrated-a-wordpress-e-learning-solution-to-aws-serverless/",
     "title": "Scaling Learning: How Geniusee Migrated a WordPress E-Learning Solution to AWS Serverless(AWS Partner Network Blog)",
@@ -1436,12 +1817,16 @@
     "level": 200,
     "jp": false,
     "why": "マルチテナントの e ラーニング SaaS を、ECS Fargate のフロント、Lambda(Laravel Vapor)のバックエンド、学習進捗イベントを SQS と DynamoDB 経由で Aurora と QuickSight に集める構成に移行した設計を、サービスごとの役割とともに学べる。",
+    "why_en": "Teaches the design, with the role of each service, for migrating a multi-tenant e-learning SaaS to an architecture with an ECS Fargate front end, a Lambda (Laravel Vapor) backend, and learning progress events gathered into Aurora and QuickSight via SQS and DynamoDB.",
     "synopsis": "WordPress のモノリスで動くマルチテナントの e ラーニング SaaS が、同時 100 万ユーザー、SLA 99.99% という要件に耐えられなかった問題を、Geniusee の移行例で扱う。React のフロントを ALB 配下の ECS on Fargate で動かし、Laravel のバックエンドを Laravel Vapor で Lambda に載せ、認証に Cognito を使う。視聴イベントは Lambda から SQS に送り、DynamoDB をバッファにして Aurora に保存し、QuickSight でテナントごとに分析する。コード、IaC、費用や性能の実績値は載っていない。",
-    "caveat": "学習データの分析に Amazon QuickSight を使っているが、QuickSight は現在 Amazon Quick Sight に名称変更されている。"
+    "synopsis_en": "Through Geniusee's migration example, addresses the problem of a multi-tenant e-learning SaaS running on a WordPress monolith that could not meet requirements of 1 million concurrent users and a 99.99% SLA. The React front end runs on ECS on Fargate behind an ALB, the Laravel backend is placed on Lambda with Laravel Vapor, and Cognito is used for authentication. Viewing events are sent from Lambda to SQS, buffered in DynamoDB, stored in Aurora, and analyzed per tenant in QuickSight. No code, IaC, or actual cost or performance figures are included.",
+    "caveat": "学習データの分析に Amazon QuickSight を使っているが、QuickSight は現在 Amazon Quick Sight に名称変更されている。",
+    "caveat_en": "Amazon QuickSight is used for analyzing learning data, but QuickSight has since been renamed Amazon Quick Sight."
   },
   {
     "no": 97,
     "section": "EdTech のサービス基盤",
+    "section_en": "Service platforms for EdTech",
     "theme": "edtech",
     "url": "https://d1.awsstatic.com/events/Summits/reinvent2023/IMP205_Modern-digital-experiences-to-accelerate-mission-impact.pdf",
     "title": "Modern Digital Experiences to Accelerate Mission Impact(re:Invent 2023 IMP205・PDF)",
@@ -1451,12 +1836,16 @@
     "level": 200,
     "jp": false,
     "why": "STEM 教育団体 PLTW が授業用サイバーレンジをデータセンターから EC2、マルチアカウント、マルチリージョンへ移して同時 250 セッションの上限から受講者 1.1 万人超・月額 38% 減にした数字と、Clever 経由で学校の SIS から名簿を同期する Lambda、SNS、SQS、Aurora のイベント駆動構成がわかる。",
+    "why_en": "Shows the figures from STEM education organization PLTW moving its classroom cyber range from a data center to EC2, multiple accounts, and multiple regions, going from a cap of 250 concurrent sessions to 11,000+ learners with a 38% monthly cost reduction, and the event-driven architecture of Lambda, SNS, SQS, and Aurora that syncs rosters from school SISs via Clever.",
     "synopsis": "STEM 教育団体 PLTW の授業用サイバーレンジが、データセンターでは同時 250 セッションが上限で月 3.9 万ドルかかっていた問題を扱う IMP205 の資料である。EC2、Auto Scaling、マルチリージョン、マルチアカウントへ移し、受講者 1,800 人から 1.1 万人超、月額 38% 減になった数字が載る。名簿は、CloudWatch Events で起動した Lambda が Clever 経由で学校の SIS データを処理し、SNS と SQS を経て Aurora に保存する構成で 24 時間ごとに同期する。後半の Mercy Corps の話は方針の紹介で、構成図はない。",
-    "caveat": ""
+    "synopsis_en": "Slides for IMP205 covering the problem that the classroom cyber range of STEM education organization PLTW was capped at 250 concurrent sessions in the data center and cost 39,000 dollars per month. It gives the figures after moving to EC2, Auto Scaling, multiple regions, and multiple accounts: from 1,800 learners to 11,000+, and a 38% reduction in monthly cost. Rosters are synced every 24 hours in an architecture where Lambda, triggered by CloudWatch Events, processes school SIS data via Clever and stores it in Aurora through SNS and SQS. The Mercy Corps part in the second half is an overview of its approach, with no architecture diagram.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 98,
     "section": "EdTech のサービス基盤",
+    "section_en": "Service platforms for EdTech",
     "theme": "edtech",
     "url": "https://aws.amazon.com/blogs/apn/rebuilding-an-edtech-publishing-platform-by-leveraging-aws-lambda-to-optimize-performance-at-scale/",
     "title": "Rebuilding an EdTech Publishing Platform by Leveraging AWS Lambda to Optimize Performance at Scale(AWS Partner Network Blog)",
@@ -1466,12 +1855,16 @@
     "level": 200,
     "jp": false,
     "why": "K-12 向けデジタル教科書の出版基盤を、EC2 のモノリスから S3 イベント起動の Lambda と Python/Django のマイクロサービスに作り直した構成と、性能 120% 改善などの結果がわかる。",
+    "why_en": "Shows the architecture that rebuilt a K-12 digital textbook publishing platform from an EC2 monolith into Lambda triggered by S3 events and Python/Django microservices, along with results such as a 120% performance improvement.",
     "synopsis": "EdTech 企業が買収した K-12 向けデジタル教科書の基盤が、EC2 上の Java のモノリスで横に拡張できず、障害や遅さ、リリースの遅れを抱えていた問題を扱う。パートナーの JBS が Python/Django で書き直し、Amazon S3 へのコンテンツ配置をきっかけに AWS Lambda が動くマイクロサービス構成にして、XML からデジタル本への変換やメディア処理を自動化した。性能 120% 超の改善、機能の展開が最大 25 倍速くなったこと、問い合わせ 70% 減の数字が載る。コード、IaC、GitHub のリンクはなく、旧ベンダーの XML 納品の流れは変えられない前提だった。",
-    "caveat": ""
+    "synopsis_en": "Addresses the problem of a K-12 digital textbook platform acquired by an EdTech company, which was a Java monolith on EC2 that could not scale horizontally and suffered from outages, slowness, and release delays. Partner JBS rewrote it in Python/Django as a microservice architecture in which AWS Lambda runs when content is placed in Amazon S3, automating conversion from XML to digital books and media processing. Figures include a performance improvement of 120%+, feature rollout up to 25 times faster, and a 70% reduction in inquiries. There is no code, IaC, or GitHub link, and the premise was that the legacy vendor's XML delivery flow could not be changed.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 99,
     "section": "EdTech のサービス基盤",
+    "section_en": "Service platforms for EdTech",
     "theme": "edtech",
     "url": "https://d1.awsstatic.com/events/Summits/awsdelhisummit/EXP204_ScaleFor.pdf",
     "title": "Scale for impact: Transforming the way EdTech reaches students with AWS(AWS Summit Delhi 2022 EXP204・PDF)",
@@ -1481,12 +1874,16 @@
     "level": 200,
     "jp": false,
     "why": "ライブ授業を MediaLive、MediaPackage、Origin Shield 付き CloudFront で配信し S3 で VOD 化する構成(同時視聴 12 万人)と、模擬試験の開始・提出・採点の流れを API Gateway、Lambda、SQS、Redis、RDS で組んだ構成の図と規模の数字がわかる。",
+    "why_en": "Shows diagrams and scale figures for an architecture that delivers live classes with MediaLive, MediaPackage, and CloudFront with Origin Shield and turns them into VOD on S3 (120,000 concurrent viewers), and one that handles starting, submitting, and grading mock exams with API Gateway, Lambda, SQS, Redis, and RDS.",
     "synopsis": "インドの EdTech 企業 PhysicsWallah と Adda247 が大人数のライブ授業と模擬試験を支えた例を扱う EXP204 の資料である。ライブ授業は MediaLive で変換し、MediaPackage で HLS/DASH にし、Origin Shield 付き CloudFront で配信し、録画は S3 から VOD で出す。模擬試験は開始と提出を API Gateway と Lambda で受け、提出後の処理を SQS で非同期にし、Redis と RDS を使う。1 教室で同時 12.1 万人、毎日 15 万人超が試験を提出するといった数字が載り、コードはない。",
-    "caveat": ""
+    "synopsis_en": "Slides for EXP204 covering how Indian EdTech companies PhysicsWallah and Adda247 supported large-scale live classes and mock exams. Live classes are transcoded with MediaLive, packaged into HLS/DASH with MediaPackage, and delivered with CloudFront with Origin Shield, and recordings are served as VOD from S3. Mock exams take starts and submissions through API Gateway and Lambda, make post-submission processing asynchronous with SQS, and use Redis and RDS. Figures such as 121,000 concurrent users in 1 classroom and 150,000+ exam submissions daily are included, and there is no code.",
+    "caveat": "",
+    "caveat_en": ""
   },
   {
     "no": 100,
     "section": "EdTech のサービス基盤",
+    "section_en": "Service platforms for EdTech",
     "theme": "edtech",
     "url": "https://d1.awsstatic.com/events/Summits/amer2021/augustsummitonline/Enable_processing_capacity_and_scale_up_with_AWS_Lambda_WPS202.pdf",
     "title": "Enable processing capacity and scale up with AWS Lambda(AWS Summit Online 2021 8月 WPS202・PDF)",
@@ -1496,7 +1893,10 @@
     "level": 200,
     "jp": false,
     "why": "K-12 の評価で画像を OCR で読み取り得点を保存する ScanStack を、オンプレミスから FTP・EFS・Aurora へのリフトアンドシフトを経て、Transfer Family、S3、Step Functions、Secrets Manager、Aurora のサーバーレス構成に変えた前後の構成図と、月額費用 97% 減・処理時間 60% 短縮の数字がわかる。",
+    "why_en": "Shows the before-and-after architecture diagrams for ScanStack, which reads K-12 assessment images with OCR and stores scores, moving from on-premises through a lift-and-shift to FTP, EFS, and Aurora to a serverless architecture with Transfer Family, S3, Step Functions, Secrets Manager, and Aurora, along with the figures of a 97% reduction in monthly cost and 60% shorter processing time.",
     "synopsis": "PowerSchool の K-12 向け評価製品 ScanStack で、画像を OCR で読み取りスコアを保存する処理を扱う WPS202 の資料である。データセンターでは処理能力の増強に約 45 日かかっていた。まず NAS を EFS、MySQL を Aurora に移し、次に Transfer Family で受けた画像を S3 に置き、Step Functions で処理を制御し、Secrets Manager と Aurora を使うサーバーレス構成に変えた。月額費用 97% 減、平均処理時間 60% 短縮の数字が載り、コードはない。",
-    "caveat": ""
+    "synopsis_en": "Slides for WPS202 covering ScanStack, PowerSchool's K-12 assessment product, and its process of reading images with OCR and storing scores. In the data center, adding processing capacity took about 45 days. First the NAS was moved to EFS and MySQL to Aurora; then it was changed to a serverless architecture in which images received by Transfer Family are placed in S3, Step Functions controls processing, and Secrets Manager and Aurora are used. Figures of a 97% reduction in monthly cost and a 60% reduction in average processing time are included, and there is no code.",
+    "caveat": "",
+    "caveat_en": ""
   }
 ]

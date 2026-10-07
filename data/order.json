@@ -2,15 +2,17 @@
   {
     "id": "start",
     "name": "はじめ方・調達・契約",
+    "name_en": "Getting started, procurement, and contracts",
     "lead": "大学や教育委員会が AWS を使い始めるときの契約、支払い、研究費の扱い。日本語の資料が最もそろっている分野です。",
+    "lead_en": "Contracts, payment, and the handling of research funds when a university or board of education starts using AWS. This is the area with the most Japanese-language material.",
     "picks": [
-      {"url":"https://aws.amazon.com/jp/blogs/news/highedu-research-how-to-buy-and-pay-series-1/","why":"アカウントを作る 2 つの経路(直接契約と請求代行)と、予算の上限管理、円建て請求、研究向けクレジットなど、支払いまわりの疑問をまとめた入門。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/compefund-cloud/","why":"競争的研究費でクラウド利用料を支出できると明確になったことの解説。申請時の費用見積もりの考え方も載っている。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/how-to-procure-aws-with-research-funds/","why":"研究費で調達したあとの使い方の実例。多施設からのデータ収集と、ParallelCluster とスポットインスタンスによる大規模計算。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/aws-itx-edu/","why":"初等中等教育向けの包括支援プログラムの紹介。校務 DX、学習環境、教育データ利活用の 3 つの課題にどう対応するかを説明している。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/highedu-research-case-study-series-1/","why":"国内の大学・研究機関の事例をまとめて紹介した記事。業務システムと研究計算の両方の例がある。"},
-      {"url":"https://aws.amazon.com/jp/government-education/worldwide/japan/UR-Industry-Site/","why":"国内の大学・研究機関向けの公式の入口。調達と SINET のウェビナー録画、「はじめ方」の PDF はここから辿れる。"},
-      {"url":"https://aws.amazon.com/jp/government-education/worldwide/japan/K12-Industry-Site/","why":"教育委員会・学校向けの公式の入口。校務、ゼロトラスト、生成 AI のウェビナー録画がまとまっている。"}
+      {"url":"https://aws.amazon.com/jp/blogs/news/highedu-research-how-to-buy-and-pay-series-1/","why":"アカウントを作る 2 つの経路(直接契約と請求代行)と、予算の上限管理、円建て請求、研究向けクレジットなど、支払いまわりの疑問をまとめた入門。","why_en":"An introduction that collects the questions around payment: the two routes for creating an account (direct contract and billing agent), budget caps, billing in yen, and credits for research."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/compefund-cloud/","why":"競争的研究費でクラウド利用料を支出できると明確になったことの解説。申請時の費用見積もりの考え方も載っている。","why_en":"Explains that it has been made clear that cloud usage fees can be paid from competitive research funding. Also covers how to think about cost estimates at application time."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/how-to-procure-aws-with-research-funds/","why":"研究費で調達したあとの使い方の実例。多施設からのデータ収集と、ParallelCluster とスポットインスタンスによる大規模計算。","why_en":"A real example of how AWS is used after being procured with research funds: collecting data from multiple sites, and large-scale computation with ParallelCluster and Spot Instances."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/aws-itx-edu/","why":"初等中等教育向けの包括支援プログラムの紹介。校務 DX、学習環境、教育データ利活用の 3 つの課題にどう対応するかを説明している。","why_en":"Introduces the comprehensive support program for K-12. Explains how it addresses three challenges: school-administration DX, learning environments, and the use of education data."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/highedu-research-case-study-series-1/","why":"国内の大学・研究機関の事例をまとめて紹介した記事。業務システムと研究計算の両方の例がある。","why_en":"An article that brings together case studies from Japanese universities and research institutions. Includes examples of both business systems and research computing."},
+      {"url":"https://aws.amazon.com/jp/government-education/worldwide/japan/UR-Industry-Site/","why":"国内の大学・研究機関向けの公式の入口。調達と SINET のウェビナー録画、「はじめ方」の PDF はここから辿れる。","why_en":"The official entry page for Japanese universities and research institutions. The procurement and SINET webinar recordings and the \"はじめ方\" PDF can be reached from here."},
+      {"url":"https://aws.amazon.com/jp/government-education/worldwide/japan/K12-Industry-Site/","why":"教育委員会・学校向けの公式の入口。校務、ゼロトラスト、生成 AI のウェビナー録画がまとまっている。","why_en":"The official entry page for boards of education and schools. Collects webinar recordings on school administration, zero trust, and generative AI."}
     ],
     "rest": [
       "https://aws.amazon.com/jp/blogs/news/aws-itx2024-for-public-sector/",
@@ -96,13 +98,15 @@
   {
     "id": "net",
     "name": "ネットワーク・SINET 接続",
+    "name_en": "Networking and SINET connectivity",
     "lead": "SINET からの接続方式と、学内ネットワークを AWS につなぐときの設計。",
+    "lead_en": "Connection methods from SINET, and design for connecting campus networks to AWS.",
     "picks": [
-      {"url":"https://aws.amazon.com/jp/blogs/news/sinet6-aws-ur/","why":"SINET6 の加入機関が AWS につなぐ 3 つの方法(IX 経由、Direct Connect、SINET クラウド接続サービス)を比べている。最初に読む 1 本。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/sinet-100gbps/","why":"SINET クラウド接続サービスの回線増強の告知。大容量のデータ転送を前提にした設計の背景知識になる。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/solving-public-ip-space-asymmetric-routing-challenges-for-higher-education-aws-migrations/","why":"大学が持つグローバル IP 帯を AWS に移すときに起きる非対称ルーティングを、3 つの構成例で解いている。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/web-filtering-for-education-using-aws-network-firewall-with-egress-tls-inspection/","why":"Network Firewall の TLS インスペクションで HTTPS 通信をフィルタリングする手順。証明書とルールの設定まで載っている。2024 年 7 月の前編と合わせて読む。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/how-eduroam-empowers-its-community-through-real-time-analytics-with-amazon-quick-sight/","why":"eduroam の認証ログを Glue、Redshift Serverless、Quick Sight で機関別のダッシュボードにした構成。"}
+      {"url":"https://aws.amazon.com/jp/blogs/news/sinet6-aws-ur/","why":"SINET6 の加入機関が AWS につなぐ 3 つの方法(IX 経由、Direct Connect、SINET クラウド接続サービス)を比べている。最初に読む 1 本。","why_en":"Compares the three ways a SINET6 member institution can connect to AWS (via IX, Direct Connect, and the SINET cloud connection service). The one to read first."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/sinet-100gbps/","why":"SINET クラウド接続サービスの回線増強の告知。大容量のデータ転送を前提にした設計の背景知識になる。","why_en":"Announcement of the bandwidth upgrade for the SINET cloud connection service. Background knowledge for designs that assume large-volume data transfer."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/solving-public-ip-space-asymmetric-routing-challenges-for-higher-education-aws-migrations/","why":"大学が持つグローバル IP 帯を AWS に移すときに起きる非対称ルーティングを、3 つの構成例で解いている。","why_en":"Solves the asymmetric routing that arises when a university moves its public IP range to AWS, using three example configurations."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/web-filtering-for-education-using-aws-network-firewall-with-egress-tls-inspection/","why":"Network Firewall の TLS インスペクションで HTTPS 通信をフィルタリングする手順。証明書とルールの設定まで載っている。2024 年 7 月の前編と合わせて読む。","why_en":"Steps for filtering HTTPS traffic with TLS inspection in Network Firewall. Covers certificate and rule configuration. Read together with the first part from July 2024."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/how-eduroam-empowers-its-community-through-real-time-analytics-with-amazon-quick-sight/","why":"eduroam の認証ログを Glue、Redshift Serverless、Quick Sight で機関別のダッシュボードにした構成。","why_en":"An architecture that turns eduroam authentication logs into per-institution dashboards with Glue, Redshift Serverless, and Quick Sight."}
     ],
     "rest": [
       "https://aws.amazon.com/jp/blogs/news/announcing-template-for-closed-network-system-workloads-on-aws/",
@@ -124,11 +128,13 @@
   {
     "id": "id",
     "name": "認証・ID 連携",
+    "name_en": "Authentication and identity federation",
     "lead": "学内 ID との連携、本人確認、デジタル証明。AWS 公式の教育向け記事は少なく、事例が中心です。",
+    "lead_en": "Federation with campus IDs, identity verification, and digital credentials. There are few official AWS articles for education here, so case studies make up most of it.",
     "picks": [
-      {"url":"https://aws.amazon.com/blogs/publicsector/federating-access-amazon-appstream-gg4l-school-passport/","why":"学校向けのシングルサインオンから AppStream 2.0 へフェデレーションする設定例。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/building-an-identity-verified-remote-assessment-platform-on-aws/","why":"顔照合、音声照合、本人確認書類の読み取りを組み合わせて、遠隔試験の本人確認を行う構成。"},
-      {"url":"https://aws.amazon.com/jp/solutions/case-studies/osaka-university/","why":"生涯 ID と統合データプラットフォームの国内事例。"}
+      {"url":"https://aws.amazon.com/blogs/publicsector/federating-access-amazon-appstream-gg4l-school-passport/","why":"学校向けのシングルサインオンから AppStream 2.0 へフェデレーションする設定例。","why_en":"A configuration example for federating from a single sign-on for schools to AppStream 2.0."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/building-an-identity-verified-remote-assessment-platform-on-aws/","why":"顔照合、音声照合、本人確認書類の読み取りを組み合わせて、遠隔試験の本人確認を行う構成。","why_en":"An architecture that verifies the identity of remote exam takers by combining face matching, voice matching, and reading of identity documents."},
+      {"url":"https://aws.amazon.com/jp/solutions/case-studies/osaka-university/","why":"生涯 ID と統合データプラットフォームの国内事例。","why_en":"A Japanese case study of a lifelong ID and an integrated data platform."}
     ],
     "rest": [
       "https://aws.amazon.com/jp/blogs/news/digital-auth-and-sign-with-cognito/",
@@ -147,14 +153,16 @@
   {
     "id": "gov",
     "name": "アカウント設計・ガバナンス・コスト",
+    "name_en": "Account design, governance, and cost",
     "lead": "授業や研究室へのアカウント配布、マルチアカウントの統制、費用の抑え方。",
+    "lead_en": "Distributing accounts to classes and labs, multi-account governance, and keeping costs down.",
     "picks": [
-      {"url":"https://aws.amazon.com/jp/blogs/news/faq-of-cloud-in-your-class/","why":"授業で AWS アカウントを使うときの費用見積もり、起動数の上限、受講者側の準備、請求方法(バウチャーや請求代行)を FAQ 形式で整理している。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/uot-data-engginering-lecture-multiaccount-challenge-vol1/","why":"1,400 名を超える受講者に 1 人 1 アカウントを配る構成を、Organizations と IAM Identity Center で作った記録。続編 2 本で権限設計、コスト管理、後片づけまで扱う。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/empowering-educators-how-innovation-sandbox-on-aws-accelerates-learning-objectives-through-secure-cost-effective-and-recyclable-sandbox-management/","why":"期限付きのサンドボックスアカウントの払い出しと回収を自動化する AWS ソリューションの紹介。授業や研究室での配布に向く。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/cloud-cost-savings-10-tips-for-academic-institutions/","why":"予算アラート、サイズの見直し、スポットインスタンス、ストレージのライフサイクルなど 10 項目。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/simplify-aws-health-notifications-management-for-higher-education/","why":"数百のアカウントを持つ大学で、AWS Health の通知をまとめ、絞り込む設定。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/from-cloud-sprawl-to-strategic-success-cornell-universitys-cloud-service-transformation/","why":"260 アカウントに広がった利用を、サービス設計の見直しで立て直した大学 IT 部門の事例。"}
+      {"url":"https://aws.amazon.com/jp/blogs/news/faq-of-cloud-in-your-class/","why":"授業で AWS アカウントを使うときの費用見積もり、起動数の上限、受講者側の準備、請求方法(バウチャーや請求代行)を FAQ 形式で整理している。","why_en":"Organizes, in FAQ form, cost estimates for using AWS accounts in class, limits on the number of launched instances, what participants need to prepare, and billing methods (vouchers and billing agents)."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/uot-data-engginering-lecture-multiaccount-challenge-vol1/","why":"1,400 名を超える受講者に 1 人 1 アカウントを配る構成を、Organizations と IAM Identity Center で作った記録。続編 2 本で権限設計、コスト管理、後片づけまで扱う。","why_en":"A record of building a setup that gives each of more than 1,400 participants their own account, using Organizations and IAM Identity Center. The two follow-up posts cover permission design, cost management, and cleanup."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/empowering-educators-how-innovation-sandbox-on-aws-accelerates-learning-objectives-through-secure-cost-effective-and-recyclable-sandbox-management/","why":"期限付きのサンドボックスアカウントの払い出しと回収を自動化する AWS ソリューションの紹介。授業や研究室での配布に向く。","why_en":"Introduces an AWS solution that automates the issuing and reclaiming of time-limited sandbox accounts. Suited to distribution in classes and labs."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/cloud-cost-savings-10-tips-for-academic-institutions/","why":"予算アラート、サイズの見直し、スポットインスタンス、ストレージのライフサイクルなど 10 項目。","why_en":"10 items including budget alerts, right-sizing, Spot Instances, and storage lifecycles."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/simplify-aws-health-notifications-management-for-higher-education/","why":"数百のアカウントを持つ大学で、AWS Health の通知をまとめ、絞り込む設定。","why_en":"Settings for aggregating and filtering AWS Health notifications at a university with hundreds of accounts."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/from-cloud-sprawl-to-strategic-success-cornell-universitys-cloud-service-transformation/","why":"260 アカウントに広がった利用を、サービス設計の見直しで立て直した大学 IT 部門の事例。","why_en":"A case study of a university IT department that regained control of usage that had sprawled to 260 accounts by redesigning its services."}
     ],
     "rest": [
       "https://aws.amazon.com/jp/blogs/news/uot-data-engginering-lecture-multiaccount-challenge-vol3/",
@@ -200,15 +208,17 @@
   {
     "id": "sec",
     "name": "セキュリティ・ガイドライン対応",
+    "name_en": "Security and guideline compliance",
     "lead": "文部科学省のガイドラインの読み解きと、ゼロトラスト、インシデント対応。",
+    "lead_en": "Reading the MEXT guidelines, zero trust, and incident response.",
     "picks": [
-      {"url":"https://aws.amazon.com/jp/blogs/news/mext-guideline-2021-update/","why":"ネットワーク分離から、認証を軸にした構成へ。2021 年の改訂の要点を AWS の機能と対応づけて解説している。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/k12-security-jpps-202207/","why":"同じ改訂を扱った教育委員会向けセミナーの報告。ネットワーク分離を前提にしない構成、コスト、接続方式まで触れている。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/points_for_building_a_system_for_board_of_education_on_aws/","why":"ガイドラインに沿ってクラウドを使うときの考え方。データセンターの物理要件を第三者認証で満たす、という整理。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/k12-zerotrust-data-analytics-jun-5-2024/","why":"ゼロトラストの導入事例と、校務データから教育ダッシュボードを作る構成。資料 PDF と録画がある。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/preparation-for-cyberattacks/","why":"資産の棚卸し、バックアップと DR 計画など 4 つの備え。米国の大学の復旧事例をもとにしている。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/data-security-governance-best-practices-education-state-local-government/","why":"マルチアカウント、ID フェデレーション、データの検出、監視、アラートなど 7 項目。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/cloud-incident-response-at-unsw-with-digital-forensics-powered-by-aws/","why":"EC2 のフォレンジックを自動化するソリューションを、大学が自前の運用に合わせて拡張した事例。"}
+      {"url":"https://aws.amazon.com/jp/blogs/news/mext-guideline-2021-update/","why":"ネットワーク分離から、認証を軸にした構成へ。2021 年の改訂の要点を AWS の機能と対応づけて解説している。","why_en":"From network separation to an architecture centered on authentication. Explains the key points of the 2021 revision, mapped to AWS features."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/k12-security-jpps-202207/","why":"同じ改訂を扱った教育委員会向けセミナーの報告。ネットワーク分離を前提にしない構成、コスト、接続方式まで触れている。","why_en":"A report on a seminar for boards of education covering the same revision. Also touches on architectures that do not assume network separation, cost, and connection methods."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/points_for_building_a_system_for_board_of_education_on_aws/","why":"ガイドラインに沿ってクラウドを使うときの考え方。データセンターの物理要件を第三者認証で満たす、という整理。","why_en":"How to think about using the cloud in line with the guidelines. Frames the physical requirements for data centers as being met through third-party certification."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/k12-zerotrust-data-analytics-jun-5-2024/","why":"ゼロトラストの導入事例と、校務データから教育ダッシュボードを作る構成。資料 PDF と録画がある。","why_en":"A zero trust case study and an architecture for building an education dashboard from school administration data. Material PDF and recording are available."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/preparation-for-cyberattacks/","why":"資産の棚卸し、バックアップと DR 計画など 4 つの備え。米国の大学の復旧事例をもとにしている。","why_en":"Four preparations, including asset inventory and backup and DR planning. Based on recovery cases at US universities."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/data-security-governance-best-practices-education-state-local-government/","why":"マルチアカウント、ID フェデレーション、データの検出、監視、アラートなど 7 項目。","why_en":"7 items including multi-account, identity federation, data discovery, monitoring, and alerting."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/cloud-incident-response-at-unsw-with-digital-forensics-powered-by-aws/","why":"EC2 のフォレンジックを自動化するソリューションを、大学が自前の運用に合わせて拡張した事例。","why_en":"A case study of a university extending a solution that automates EC2 forensics to fit its own operations."}
     ],
     "rest": [
       "https://aws.amazon.com/jp/blogs/news/21st-crisis-management-contest-team-its-genkotsu/",
@@ -272,13 +282,15 @@
   {
     "id": "bcp",
     "name": "事業継続・バックアップ・DR",
+    "name_en": "Business continuity, backup, and DR",
     "lead": "ランサムウェアを想定したバックアップと復旧、止まらない構成の作り方。",
+    "lead_en": "Backup and recovery with ransomware in mind, and how to build architectures that keep running.",
     "picks": [
-      {"url":"https://aws.amazon.com/jp/blogs/news/backup-and-recovery-planning/","why":"復旧用に分離した環境、書き換えできないバックアップ(WORM、Vault Lock)、復旧訓練の 3 点。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/six-best-practices-for-building-resilient-higher-education-applications-on-aws/","why":"マルチリージョン、CI/CD、IaC でのセキュリティ、可観測性など 6 項目。大学との 5 年間のモダナイゼーションをもとにしている。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/hartnell-college-recovered-critical-systems-using-aws-after-cyber-attack/","why":"ランサムウェア被害からの復旧で得た 4 つの教訓。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/how-pearson-improves-its-resilience-with-aws-fault-injection-service/","why":"CI/CD パイプラインに障害注入の実験を組み込む構成。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/five-need-to-know-facts-about-using-the-aws-cloud-for-k12-cyber-resiliency/","why":"K-12 向けに、バックアップ、DR、DDoS 対策などの選択肢を整理している。"}
+      {"url":"https://aws.amazon.com/jp/blogs/news/backup-and-recovery-planning/","why":"復旧用に分離した環境、書き換えできないバックアップ(WORM、Vault Lock)、復旧訓練の 3 点。","why_en":"Three points: an isolated environment for recovery, immutable backups (WORM, Vault Lock), and recovery drills."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/six-best-practices-for-building-resilient-higher-education-applications-on-aws/","why":"マルチリージョン、CI/CD、IaC でのセキュリティ、可観測性など 6 項目。大学との 5 年間のモダナイゼーションをもとにしている。","why_en":"6 items including multi-Region, CI/CD, security in IaC, and observability. Based on five years of modernization with a university."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/hartnell-college-recovered-critical-systems-using-aws-after-cyber-attack/","why":"ランサムウェア被害からの復旧で得た 4 つの教訓。","why_en":"Four lessons learned from recovering from a ransomware attack."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/how-pearson-improves-its-resilience-with-aws-fault-injection-service/","why":"CI/CD パイプラインに障害注入の実験を組み込む構成。","why_en":"An architecture that builds fault injection experiments into a CI/CD pipeline."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/five-need-to-know-facts-about-using-the-aws-cloud-for-k12-cyber-resiliency/","why":"K-12 向けに、バックアップ、DR、DDoS 対策などの選択肢を整理している。","why_en":"Organizes the options for K-12, such as backup, DR, and DDoS protection."}
     ],
     "rest": [
       "https://aws.amazon.com/jp/blogs/news/aws-summit-japan-2026-resilience/",
@@ -307,14 +319,16 @@
   {
     "id": "mig",
     "name": "校務・基幹システムの移行",
+    "name_en": "Migrating administrative and core systems",
     "lead": "校務支援、学生情報システム、ERP、機関リポジトリなどの移行とモダナイゼーション。",
+    "lead_en": "Migration and modernization of school administration support, student information systems, ERP, institutional repositories, and more.",
     "picks": [
-      {"url":"https://aws.amazon.com/jp/blogs/news/k12-school-affairs-system-zerotrust-jun-27-2024/","why":"県域での校務支援システムの共同利用とゼロトラストの事例報告。資料 PDF と録画がある。"},
-      {"url":"https://aws.amazon.com/jp/solutions/case-studies/iwate-system-d/","why":"上の報告と同じ取り組みの導入事例ページ。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/k12-secureaccess/","why":"WorkSpaces や AppStream 2.0 を経由して校務系システムにアクセスする構成。2021 年のガイドライン改訂より前の考え方として読む。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/evaluating-long-term-value-migrating-erp-sis-applications-aws/","why":"ERP と学生情報システムを移す価値を、コスト以外(止まりにくさ、データ活用、ライセンス)から整理している。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/turning-urgency-into-opportunity-njits-10-week-cloud-migration/","why":"200 台を超える仮想サーバーを 10 週間で移した大学の事例。ランディングゾーンの整備と、直書きされた IP アドレスの解消が論点。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/a-faster-more-resilient-digital-repository-migrating-dspace-to-aws/","why":"機関リポジトリの DSpace をコンテナ化して ECS/Fargate に移した事例。Terraform のコードが公開されている。"}
+      {"url":"https://aws.amazon.com/jp/blogs/news/k12-school-affairs-system-zerotrust-jun-27-2024/","why":"県域での校務支援システムの共同利用とゼロトラストの事例報告。資料 PDF と録画がある。","why_en":"A case report on prefecture-wide shared use of a school administration support system and zero trust. Material PDF and recording are available."},
+      {"url":"https://aws.amazon.com/jp/solutions/case-studies/iwate-system-d/","why":"上の報告と同じ取り組みの導入事例ページ。","why_en":"The case study page for the same initiative as the report above."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/k12-secureaccess/","why":"WorkSpaces や AppStream 2.0 を経由して校務系システムにアクセスする構成。2021 年のガイドライン改訂より前の考え方として読む。","why_en":"An architecture for accessing school administration systems through WorkSpaces or AppStream 2.0. Read as the thinking from before the 2021 guideline revision."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/evaluating-long-term-value-migrating-erp-sis-applications-aws/","why":"ERP と学生情報システムを移す価値を、コスト以外(止まりにくさ、データ活用、ライセンス)から整理している。","why_en":"Organizes the value of migrating ERP and student information systems from angles other than cost (resilience, data use, licensing)."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/turning-urgency-into-opportunity-njits-10-week-cloud-migration/","why":"200 台を超える仮想サーバーを 10 週間で移した大学の事例。ランディングゾーンの整備と、直書きされた IP アドレスの解消が論点。","why_en":"A case study of a university that migrated more than 200 virtual servers in 10 weeks. The main points are setting up a landing zone and eliminating hard-coded IP addresses."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/a-faster-more-resilient-digital-repository-migrating-dspace-to-aws/","why":"機関リポジトリの DSpace をコンテナ化して ECS/Fargate に移した事例。Terraform のコードが公開されている。","why_en":"A case study of containerizing DSpace, an institutional repository, and moving it to ECS/Fargate. The Terraform code is published."}
     ],
     "rest": [
       "https://aws.amazon.com/jp/blogs/news/2023-10-17-fujita-health-university-haneda-clinic-electronic-medical-records-and-medical-information-infrastructure/",
@@ -388,14 +402,16 @@
   {
     "id": "lms",
     "name": "LMS・学習基盤",
+    "name_en": "LMS and learning platforms",
     "lead": "Moodle を中心に、LMS の構成、拡張、周辺システムとの連携。",
+    "lead_en": "LMS architecture, extensions, and integration with surrounding systems, centered on Moodle.",
     "picks": [
-      {"url":"https://aws.amazon.com/blogs/publicsector/modernize-moodle-lms-with-aws-serverless-services/","why":"Fargate、Aurora Serverless、ElastiCache で Moodle を組む構成。CDK のサンプルがある。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/how-to-scale-and-optimize-moodle-lms-on-aws/","why":"CloudFormation テンプレートでの高可用構成、移行時のデータベース選定、負荷試験、コスト最適化。"},
-      {"url":"https://aws.amazon.com/solutions/guidance/deploying-moodle-learning-management-system-on-aws/","why":"Moodle を AWS で運用するための公式 Guidance。"},
-      {"url":"https://docs.aws.amazon.com/reference-architecture-diagrams/latest/moodle-for-high-availability-on-aws/moodle-for-high-availability-on-aws.html","why":"高可用な Moodle のリファレンス構成図。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/implementing-a-unified-search-platform-for-educational-content-on-amazon-opensearch-service/","why":"動画、PDF、スライドを取り込み、文字起こしと要約をして横断検索する構成。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/accelerating-innovation-in-education-implementing-the-prometheus-x-data-space-connector-on-aws/","why":"教育・スキル分野のデータスペース接続を AWS に構築する手順。"}
+      {"url":"https://aws.amazon.com/blogs/publicsector/modernize-moodle-lms-with-aws-serverless-services/","why":"Fargate、Aurora Serverless、ElastiCache で Moodle を組む構成。CDK のサンプルがある。","why_en":"An architecture that builds Moodle on Fargate, Aurora Serverless, and ElastiCache. A CDK sample is available."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/how-to-scale-and-optimize-moodle-lms-on-aws/","why":"CloudFormation テンプレートでの高可用構成、移行時のデータベース選定、負荷試験、コスト最適化。","why_en":"A high-availability setup with CloudFormation templates, database selection at migration, load testing, and cost optimization."},
+      {"url":"https://aws.amazon.com/solutions/guidance/deploying-moodle-learning-management-system-on-aws/","why":"Moodle を AWS で運用するための公式 Guidance。","why_en":"The official Guidance for running Moodle on AWS."},
+      {"url":"https://docs.aws.amazon.com/reference-architecture-diagrams/latest/moodle-for-high-availability-on-aws/moodle-for-high-availability-on-aws.html","why":"高可用な Moodle のリファレンス構成図。","why_en":"A reference architecture diagram for highly available Moodle."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/implementing-a-unified-search-platform-for-educational-content-on-amazon-opensearch-service/","why":"動画、PDF、スライドを取り込み、文字起こしと要約をして横断検索する構成。","why_en":"An architecture that ingests videos, PDFs, and slides, transcribes and summarizes them, and makes them searchable across the board."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/accelerating-innovation-in-education-implementing-the-prometheus-x-data-space-connector-on-aws/","why":"教育・スキル分野のデータスペース接続を AWS に構築する手順。","why_en":"Steps for building a data space connector for the education and skills domain on AWS."}
     ],
     "rest": [
       "https://aws.amazon.com/blogs/publicsector/modernize-moodle-lms-aws-serverless-containers/",
@@ -472,12 +488,14 @@
   {
     "id": "vdi",
     "name": "仮想デスクトップ・PC 教室・遠隔授業",
+    "name_en": "Virtual desktops, PC labs, and remote classes",
     "lead": "AppStream 2.0 や WorkSpaces で PC 教室や実習環境を配る構成。",
+    "lead_en": "Architectures for delivering PC labs and lab-work environments with AppStream 2.0 or WorkSpaces.",
     "picks": [
-      {"url":"https://aws.amazon.com/blogs/publicsector/5-things-consider-rapidly-deploying-virtual-computer-lab-space-amazon-appstream/","why":"仮想 PC 教室を作るときの 5 つの検討点(用途、同時接続数、ライセンス、認証、ネットワーク)。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/3-ways-appstream-2-0-transforms-cte-stem-experience-schools/","why":"安価な端末から高負荷のアプリケーションを使わせる 3 つの使い方。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/casestudy-capcom-academia-collaboration-by-game-development/","why":"EC2、NICE DCV、Client VPN でゲーム開発環境を学生に配った産学連携授業の構成。"},
-      {"url":"https://aws.amazon.com/blogs/desktop-and-application-streaming/parkway-schools/","why":"学区での AppStream 2.0 活用を扱った技術記事(Desktop and Application Streaming Blog)。"}
+      {"url":"https://aws.amazon.com/blogs/publicsector/5-things-consider-rapidly-deploying-virtual-computer-lab-space-amazon-appstream/","why":"仮想 PC 教室を作るときの 5 つの検討点(用途、同時接続数、ライセンス、認証、ネットワーク)。","why_en":"Five considerations when building a virtual PC lab (use case, concurrent connections, licensing, authentication, networking)."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/3-ways-appstream-2-0-transforms-cte-stem-experience-schools/","why":"安価な端末から高負荷のアプリケーションを使わせる 3 つの使い方。","why_en":"Three ways to let students use demanding applications from inexpensive devices."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/casestudy-capcom-academia-collaboration-by-game-development/","why":"EC2、NICE DCV、Client VPN でゲーム開発環境を学生に配った産学連携授業の構成。","why_en":"The architecture of an industry-academia collaboration course that delivered game development environments to students with EC2, NICE DCV, and Client VPN."},
+      {"url":"https://aws.amazon.com/blogs/desktop-and-application-streaming/parkway-schools/","why":"学区での AppStream 2.0 活用を扱った技術記事(Desktop and Application Streaming Blog)。","why_en":"A technical post on using AppStream 2.0 in a school district (Desktop and Application Streaming Blog)."}
     ],
     "rest": [
       "https://aws.amazon.com/jp/blogs/news/aws-cgc2025/",
@@ -555,20 +573,22 @@
   {
     "id": "genai",
     "name": "生成 AI × 教育",
+    "name_en": "Generative AI × education",
     "lead": "教材づくり、個別学習支援、授業分析。2025〜2026 年の記事が厚い分野です。",
+    "lead_en": "Creating teaching materials, personalized learning support, and lesson analysis. This area has many articles from 2025–2026.",
     "picks": [
-      {"url":"https://aws.amazon.com/jp/blogs/news/aws-summit-japan-2025-genai-education/","why":"成績分析と教材作成を行うエージェント、指導計画の個別化(RAG)の 2 つのデモの構成。スライド PDF がある。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/accelerate-education-with-gen-ai-20240529/","why":"Bedrock と RAG の基礎から、教育での使いどころまでを扱ったウェビナーの報告。資料 PDF と録画がある。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/amazon-bedrock%E3%81%AE%E7%94%9F%E6%88%90-ai-%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%A6%E3%83%91%E3%83%BC%E3%82%BD%E3%83%8A%E3%83%A9%E3%82%A4%E3%82%BA%E3%81%95%E3%82%8C%E3%81%9F%E5%AD%A6%E7%94%9F/","why":"学生ごとのプロファイルと教材を組み合わせて、個別の説明を生成する構成。内容は英語版(2024 年 4 月)で確認した。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/transforming-university-lecture-content-into-an-enriched-course-using-generative-ai-on-aws/","why":"長い講義録画をトピックごとに分け、要約と確認問題を付ける。公開前に教員が確認する設計。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/student-attentiveness-and-engagement-analysis-in-live-classrooms-with-generative-ai/","why":"授業画面のスクリーンショットから小テストを自動で作るサーバーレス構成。GitHub のサンプルがある。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/smarter-k12-lesson-and-assessment-mapping-in-education-on-aws/","why":"生徒、授業、学習標準、評価をグラフでつなぐ GraphRAG の参照構成。ワークショップへのリンクがある。"},
-      {"url":"https://aws.amazon.com/blogs/machine-learning/build-and-scale-adoption-of-ai-agents-for-education-with-strands-agents-amazon-bedrock-agentcore-and-librechat/","why":"チャット画面から Strands Agents と AgentCore Runtime のエージェントを使う構成。Machine Learning Blog の記事で、CDK と GitHub のサンプルがある。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/generative-ai-in-edtech-5-pitfalls-to-avoid-for-long-term-success/","why":"生成 AI を製品に組み込むときの 5 つの落とし穴(課題設定、データ基盤、品質指標、拡張計画、組織)。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/prompt-engineering-with-partyrock-a-guide-for-educators/","why":"教員向けのプロンプト設計の手引き。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/how-sphero-brings-safe-impactful-ai-to-k12-classrooms-with-amazon-bedrock/","why":"児童生徒向けに、自由入力ではなくワンクリック操作にし、Guardrails と Knowledge Bases で安全側に倒した設計。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/generative-ai-edtech-use-cases-jp/","why":"中学校の授業で生徒がチャットボットを作った実践の記録。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/building-an-ai-ready-university-campus-with-aws/","why":"全学で AI を導入するための 6 つの柱(データ、ガバナンス、人、文化、ユースケース、効果測定)。"}
+      {"url":"https://aws.amazon.com/jp/blogs/news/aws-summit-japan-2025-genai-education/","why":"成績分析と教材作成を行うエージェント、指導計画の個別化(RAG)の 2 つのデモの構成。スライド PDF がある。","why_en":"The architecture of two demos: an agent that analyzes grades and creates teaching materials, and personalization of lesson plans (RAG). Slide PDF is available."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/accelerate-education-with-gen-ai-20240529/","why":"Bedrock と RAG の基礎から、教育での使いどころまでを扱ったウェビナーの報告。資料 PDF と録画がある。","why_en":"A report on a webinar covering the basics of Bedrock and RAG through to where they fit in education. Material PDF and recording are available."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/amazon-bedrock%E3%81%AE%E7%94%9F%E6%88%90-ai-%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%A6%E3%83%91%E3%83%BC%E3%82%BD%E3%83%8A%E3%83%A9%E3%82%A4%E3%82%BA%E3%81%95%E3%82%8C%E3%81%9F%E5%AD%A6%E7%94%9F/","why":"学生ごとのプロファイルと教材を組み合わせて、個別の説明を生成する構成。内容は英語版(2024 年 4 月)で確認した。","why_en":"An architecture that combines per-student profiles with teaching materials to generate individualized explanations. The content was checked against the English version (April 2024)."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/transforming-university-lecture-content-into-an-enriched-course-using-generative-ai-on-aws/","why":"長い講義録画をトピックごとに分け、要約と確認問題を付ける。公開前に教員が確認する設計。","why_en":"Splits long lecture recordings by topic and adds summaries and review questions. Designed so that instructors review the output before publishing."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/student-attentiveness-and-engagement-analysis-in-live-classrooms-with-generative-ai/","why":"授業画面のスクリーンショットから小テストを自動で作るサーバーレス構成。GitHub のサンプルがある。","why_en":"A serverless architecture that automatically creates quizzes from screenshots of the lesson screen. A GitHub sample is available."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/smarter-k12-lesson-and-assessment-mapping-in-education-on-aws/","why":"生徒、授業、学習標準、評価をグラフでつなぐ GraphRAG の参照構成。ワークショップへのリンクがある。","why_en":"A GraphRAG reference architecture that links students, lessons, learning standards, and assessments in a graph. Includes a link to a workshop."},
+      {"url":"https://aws.amazon.com/blogs/machine-learning/build-and-scale-adoption-of-ai-agents-for-education-with-strands-agents-amazon-bedrock-agentcore-and-librechat/","why":"チャット画面から Strands Agents と AgentCore Runtime のエージェントを使う構成。Machine Learning Blog の記事で、CDK と GitHub のサンプルがある。","why_en":"An architecture for using Strands Agents and AgentCore Runtime agents from a chat interface. A Machine Learning Blog post, with CDK and GitHub samples."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/generative-ai-in-edtech-5-pitfalls-to-avoid-for-long-term-success/","why":"生成 AI を製品に組み込むときの 5 つの落とし穴(課題設定、データ基盤、品質指標、拡張計画、組織)。","why_en":"Five pitfalls when building generative AI into a product (problem definition, data foundation, quality metrics, scaling plan, organization)."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/prompt-engineering-with-partyrock-a-guide-for-educators/","why":"教員向けのプロンプト設計の手引き。","why_en":"A guide to prompt design for educators."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/how-sphero-brings-safe-impactful-ai-to-k12-classrooms-with-amazon-bedrock/","why":"児童生徒向けに、自由入力ではなくワンクリック操作にし、Guardrails と Knowledge Bases で安全側に倒した設計。","why_en":"A design for children and students that uses one-click actions instead of free-text input and errs on the safe side with Guardrails and Knowledge Bases."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/generative-ai-edtech-use-cases-jp/","why":"中学校の授業で生徒がチャットボットを作った実践の記録。","why_en":"A record of a junior high school lesson in which students built chatbots."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/building-an-ai-ready-university-campus-with-aws/","why":"全学で AI を導入するための 6 つの柱(データ、ガバナンス、人、文化、ユースケース、効果測定)。","why_en":"Six pillars for adopting AI across a whole university (data, governance, people, culture, use cases, measuring impact)."}
     ],
     "rest": [
       "https://aws.amazon.com/jp/blogs/news/aws-jpps-seminar-2026-april/",
@@ -683,15 +703,17 @@
   {
     "id": "data",
     "name": "データ分析・学習データ利活用",
+    "name_en": "Data analytics and learning data",
     "lead": "教育データの集約、ダッシュボード、予測モデル。",
+    "lead_en": "Aggregating education data, dashboards, and predictive models.",
     "picks": [
-      {"url":"https://aws.amazon.com/jp/blogs/news/jp-education-industry-data-analysis-workshop/","why":"S3、Glue DataBrew、Athena、Quick Sight を使うハンズオンの開催報告。日本語のワークショップ教材へのリンクがある。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/k12-study-data-jpps-202211/","why":"学校での教育データ利活用の事例と、学習ログ分析のデモを扱ったセミナーの報告。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/how-amazon-redshift-ml-can-help-enhance-outcomes-for-underperforming-at-risk-students/","why":"学生情報システムと LMS に分かれたデータを集め、SQL で予測モデルを作る流れ。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/designing-educational-big-data-analysis-architecture-aws/","why":"データウェアハウスの出力からナレッジグラフを作り、履修の推薦につなげる構成。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/modern-data-engineering-higher-ed-dataops-data-lake/","why":"データレイクに CI/CD と IaC を持ち込んだ大学システムの事例。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/how-the-ohio-state-university-modernized-their-data-foundation-with-aws/","why":"Redshift と Glue でデータ基盤を一本化した事例。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/how-d2l-transformed-educational-analytics-using-visual-data-preparation-in-amazon-quick-sight/","why":"LMS の分析機能に Quick Sight を組み込んだ事例。"}
+      {"url":"https://aws.amazon.com/jp/blogs/news/jp-education-industry-data-analysis-workshop/","why":"S3、Glue DataBrew、Athena、Quick Sight を使うハンズオンの開催報告。日本語のワークショップ教材へのリンクがある。","why_en":"A report on a hands-on session using S3, Glue DataBrew, Athena, and Quick Sight. Includes a link to Japanese-language workshop materials."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/k12-study-data-jpps-202211/","why":"学校での教育データ利活用の事例と、学習ログ分析のデモを扱ったセミナーの報告。","why_en":"A report on a seminar covering case studies of the use of education data in schools and a demo of learning log analysis."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/how-amazon-redshift-ml-can-help-enhance-outcomes-for-underperforming-at-risk-students/","why":"学生情報システムと LMS に分かれたデータを集め、SQL で予測モデルを作る流れ。","why_en":"The flow of gathering data split between a student information system and an LMS and building a predictive model in SQL."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/designing-educational-big-data-analysis-architecture-aws/","why":"データウェアハウスの出力からナレッジグラフを作り、履修の推薦につなげる構成。","why_en":"An architecture that builds a knowledge graph from data warehouse output and feeds it into course recommendations."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/modern-data-engineering-higher-ed-dataops-data-lake/","why":"データレイクに CI/CD と IaC を持ち込んだ大学システムの事例。","why_en":"A case study of a university system that brought CI/CD and IaC to its data lake."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/how-the-ohio-state-university-modernized-their-data-foundation-with-aws/","why":"Redshift と Glue でデータ基盤を一本化した事例。","why_en":"A case study of consolidating a data foundation with Redshift and Glue."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/how-d2l-transformed-educational-analytics-using-visual-data-preparation-in-amazon-quick-sight/","why":"LMS の分析機能に Quick Sight を組み込んだ事例。","why_en":"A case study of building Quick Sight into the analytics features of an LMS."}
     ],
     "rest": [
       "https://aws.amazon.com/jp/blogs/news/data-dissemination-for-public-sector-on-aws/",
@@ -775,16 +797,18 @@
   {
     "id": "res",
     "name": "研究計算・研究データ・セキュア研究環境",
+    "name_en": "Research computing, research data, and secure research environments",
     "lead": "HPC、研究データの管理と公開、機微データを扱う研究環境(TRE)。",
+    "lead_en": "HPC, managing and publishing research data, and research environments for sensitive data (TRE).",
     "picks": [
-      {"url":"https://aws.amazon.com/jp/blogs/news/ai-for-science-new-era/","why":"AI を使った研究を 6 分野で概観し、計算基盤、基盤モデル、データ管理の構成要素を示している。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/building-trusted-research-environments-on-aws/","why":"機微なデータを扱う研究環境(TRE)の考え方と、AWS で組むときの検討点。eBook へのリンクがある。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/data-ingress-and-egress-through-trusted-research-environments-and-other-secure-enclaves/","why":"TRE に持ち込む、持ち出すデータの審査を自動化するサーバーレス構成。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/5-best-practices-for-accelerating-research-computing-with-aws/","why":"研究計算をクラウドに広げるときの体制、セキュリティ、研究者の使い勝手、費用など 5 項目。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/seven-lessons-learned-driving-aws-cloud-adoption-in-research-at-saint-louis-university/","why":"REDCap の移行を起点に、学内の研究分野へクラウド利用を広げた 7 つの進め方。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/kek-gotocloud202411/","why":"ParallelCluster で、解析の工程ごとにインスタンスを選ぶ基盤を作った事例。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/why-fugaku-japans-fastest-supercomputer-went-virtual-on-aws-jp/","why":"「富岳」向けのアプリケーションをクラウドでも動かせるようにした「バーチャル富岳」の解説。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/the-nbdc-sandbox-how-the-masonic-institute-for-the-developing-brain-built-a-secure-cloud-environment-to-accelerate-brain-development-research-with-aws/","why":"S3、ParallelCluster、Open OnDemand で、データを手元に落とさずに解析させる研究環境。"}
+      {"url":"https://aws.amazon.com/jp/blogs/news/ai-for-science-new-era/","why":"AI を使った研究を 6 分野で概観し、計算基盤、基盤モデル、データ管理の構成要素を示している。","why_en":"Surveys AI-based research across six fields and lays out the building blocks: compute infrastructure, foundation models, and data management."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/building-trusted-research-environments-on-aws/","why":"機微なデータを扱う研究環境(TRE)の考え方と、AWS で組むときの検討点。eBook へのリンクがある。","why_en":"The thinking behind research environments for sensitive data (TRE) and the considerations when building one on AWS. Includes a link to an eBook."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/data-ingress-and-egress-through-trusted-research-environments-and-other-secure-enclaves/","why":"TRE に持ち込む、持ち出すデータの審査を自動化するサーバーレス構成。","why_en":"A serverless architecture that automates the review of data brought into and taken out of a TRE."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/5-best-practices-for-accelerating-research-computing-with-aws/","why":"研究計算をクラウドに広げるときの体制、セキュリティ、研究者の使い勝手、費用など 5 項目。","why_en":"5 items for extending research computing to the cloud, including organization, security, usability for researchers, and cost."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/seven-lessons-learned-driving-aws-cloud-adoption-in-research-at-saint-louis-university/","why":"REDCap の移行を起点に、学内の研究分野へクラウド利用を広げた 7 つの進め方。","why_en":"Seven approaches to spreading cloud use across the research fields on campus, starting from a REDCap migration."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/kek-gotocloud202411/","why":"ParallelCluster で、解析の工程ごとにインスタンスを選ぶ基盤を作った事例。","why_en":"A case study of building a platform on ParallelCluster that selects instances per analysis stage."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/why-fugaku-japans-fastest-supercomputer-went-virtual-on-aws-jp/","why":"「富岳」向けのアプリケーションをクラウドでも動かせるようにした「バーチャル富岳」の解説。","why_en":"Explains \"Virtual Fugaku,\" which makes applications built for Fugaku runnable in the cloud as well."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/the-nbdc-sandbox-how-the-masonic-institute-for-the-developing-brain-built-a-secure-cloud-environment-to-accelerate-brain-development-research-with-aws/","why":"S3、ParallelCluster、Open OnDemand で、データを手元に落とさずに解析させる研究環境。","why_en":"A research environment built on S3, ParallelCluster, and Open OnDemand that lets researchers analyze data without downloading it locally."}
     ],
     "rest": [
       "https://aws.amazon.com/jp/blogs/news/claude-code-for-pharma-tokyo/",
@@ -1123,12 +1147,14 @@
   {
     "id": "cc",
     "name": "窓口・問い合わせ対応",
+    "name_en": "Help desks and inquiry handling",
     "lead": "学生窓口や保護者連絡のコンタクトセンター、チャットボット。",
+    "lead_en": "Contact centers and chatbots for student help desks and parent communication.",
     "picks": [
-      {"url":"https://aws.amazon.com/blogs/publicsector/transforming-student-communications-how-dallas-college-modernized-its-call-center-with-aws/","why":"Amazon Connect にチャットボットと検索を組み合わせて、学生窓口を作り直した事例。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/ut-austin-connects-students-answers-faster-using-amazon-connect/","why":"音声とチャットの窓口を Amazon Connect で作り、Lex、Lambda、外部システムとつないだ構成。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/automating-multi-channel-communication-school-bus-delays/","why":"保護者への一斉連絡(電話、SMS、メール)の構成。CloudFormation テンプレートがある。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/4-ways-conversational-ai-amazon-lex-help-public-sector-transform-customer-engagement/","why":"会話型 AI の使いどころを 4 つに整理している。公共全般向け。"}
+      {"url":"https://aws.amazon.com/blogs/publicsector/transforming-student-communications-how-dallas-college-modernized-its-call-center-with-aws/","why":"Amazon Connect にチャットボットと検索を組み合わせて、学生窓口を作り直した事例。","why_en":"A case study of rebuilding a student help desk by combining Amazon Connect with a chatbot and search."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/ut-austin-connects-students-answers-faster-using-amazon-connect/","why":"音声とチャットの窓口を Amazon Connect で作り、Lex、Lambda、外部システムとつないだ構成。","why_en":"An architecture that builds voice and chat help desks on Amazon Connect and connects them to Lex, Lambda, and external systems."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/automating-multi-channel-communication-school-bus-delays/","why":"保護者への一斉連絡(電話、SMS、メール)の構成。CloudFormation テンプレートがある。","why_en":"An architecture for mass notifications to parents (phone, SMS, email). A CloudFormation template is available."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/4-ways-conversational-ai-amazon-lex-help-public-sector-transform-customer-engagement/","why":"会話型 AI の使いどころを 4 つに整理している。公共全般向け。","why_en":"Organizes where conversational AI fits into four use cases. For the public sector in general."}
     ],
     "rest": [
       "https://aws.amazon.com/blogs/publicsector/helping-schools-stay-connected-parents-students-amazon-alexa/",
@@ -1147,13 +1173,15 @@
   {
     "id": "skill",
     "name": "人材育成・教育プログラム",
+    "name_en": "Skills development and education programs",
     "lead": "AWS Academy・AWS Educate と、授業でのクラウド学習。",
+    "lead_en": "AWS Academy and AWS Educate, and learning the cloud in class.",
     "picks": [
-      {"url":"https://aws.amazon.com/jp/blogs/news/datacenter-aws-academy-jp/","why":"AWS Academy に加わった、データセンター技術者向け 2 コース(日本語)の紹介。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/education-program-transition-1/","why":"AWS Educate の Classroom から AWS Academy Learner Lab への移行の経緯。授業用環境の現状を理解する前提になる。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/aws-commits-future-cloud-workforce-development/","why":"高専での講義の内容(公共分野のクラウド活用、学習リソース、AI サービスのデモ)。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/gamification-accelerating-generative-ai-and-cloud-skills-development/","why":"PartyRock、DeepRacer、GameDay など、遊びながら学ぶ仕組みの紹介。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/amazon-sagemaker-studio-lab-helps-educators-focus-on-teaching-rather-than-technology/","why":"無料で使える Jupyter 環境の紹介。サーバーの準備なしに授業を始められる。"}
+      {"url":"https://aws.amazon.com/jp/blogs/news/datacenter-aws-academy-jp/","why":"AWS Academy に加わった、データセンター技術者向け 2 コース(日本語)の紹介。","why_en":"Introduces the two courses for data center technicians (in Japanese) added to AWS Academy."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/education-program-transition-1/","why":"AWS Educate の Classroom から AWS Academy Learner Lab への移行の経緯。授業用環境の現状を理解する前提になる。","why_en":"The background of the transition from AWS Educate Classroom to AWS Academy Learner Lab. A prerequisite for understanding the current state of classroom environments."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/aws-commits-future-cloud-workforce-development/","why":"高専での講義の内容(公共分野のクラウド活用、学習リソース、AI サービスのデモ)。","why_en":"The content of a lecture at a college of technology (KOSEN): cloud use in the public sector, learning resources, and demos of AI services."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/gamification-accelerating-generative-ai-and-cloud-skills-development/","why":"PartyRock、DeepRacer、GameDay など、遊びながら学ぶ仕組みの紹介。","why_en":"Introduces ways to learn through play, such as PartyRock, DeepRacer, and GameDay."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/amazon-sagemaker-studio-lab-helps-educators-focus-on-teaching-rather-than-technology/","why":"無料で使える Jupyter 環境の紹介。サーバーの準備なしに授業を始められる。","why_en":"Introduces a free Jupyter environment. Classes can start without setting up servers."}
     ],
     "rest": [
       "https://aws.amazon.com/jp/blogs/news/girls-meet-stem-event-2026summer/",
@@ -1418,12 +1446,14 @@
   {
     "id": "edtech",
     "name": "EdTech 事業者向け",
+    "name_en": "For EdTech providers",
     "lead": "EdTech 企業の事例、スタートアップ支援、収益性。",
+    "lead_en": "Case studies of EdTech companies, startup support, and profitability.",
     "picks": [
-      {"url":"https://aws.amazon.com/jp/blogs/news/edtech-meetup-nov-11-2025/","why":"3 社のライトニングトークとパネルの報告。AI と人の役割分担、コスト管理、開発の進め方。"},
-      {"url":"https://aws.amazon.com/blogs/publicsector/4-steps-edtechs-can-take-to-grow-their-profitability-on-aws/","why":"利用者 1 人あたりなどの単位でコストを捉える、収益性改善の 4 ステップ。"},
-      {"url":"https://aws.amazon.com/jp/solutions/case-studies/loilo-aws-is-how/","why":"授業支援プラットフォームの国内事例。"},
-      {"url":"https://aws.amazon.com/jp/blogs/news/aws-edstart-japan/","why":"EdTech スタートアップ支援プログラムの紹介(日本語)。"}
+      {"url":"https://aws.amazon.com/jp/blogs/news/edtech-meetup-nov-11-2025/","why":"3 社のライトニングトークとパネルの報告。AI と人の役割分担、コスト管理、開発の進め方。","why_en":"A report on lightning talks from three companies and a panel: the division of roles between AI and people, cost management, and how to run development."},
+      {"url":"https://aws.amazon.com/blogs/publicsector/4-steps-edtechs-can-take-to-grow-their-profitability-on-aws/","why":"利用者 1 人あたりなどの単位でコストを捉える、収益性改善の 4 ステップ。","why_en":"Four steps to improving profitability by viewing cost in units such as per user."},
+      {"url":"https://aws.amazon.com/jp/solutions/case-studies/loilo-aws-is-how/","why":"授業支援プラットフォームの国内事例。","why_en":"A Japanese case study of a classroom support platform."},
+      {"url":"https://aws.amazon.com/jp/blogs/news/aws-edstart-japan/","why":"EdTech スタートアップ支援プログラムの紹介(日本語)。","why_en":"Introduces the support program for EdTech startups (in Japanese)."}
     ],
     "rest": [
       "https://aws.amazon.com/jp/blogs/news/edtech-meetup-nov-27-2024/",
@@ -1645,8 +1675,11 @@
   {
     "id": "misc",
     "name": "そのほか(公共全般の技術記事)",
+    "name_en": "Other (technical posts for the public sector in general)",
     "lead": "Education カテゴリに入っているが、行政・医療・非営利と共通の内容の記事。",
-    "picks": [],
+    "lead_en": "Articles that are in the Education category but whose content is shared with government, healthcare, and nonprofits.",
+    "picks": [
+    ],
     "rest": [
       "https://aws.amazon.com/jp/blogs/news/deploying-aws-modular-data-center-from-ordering-to-delivery-and-installation-jp/",
       "https://aws.amazon.com/jp/blogs/news/accelerating-digital-transformation-in-japan-2024/",
@@ -1693,6 +1726,7 @@
       "https://aws.amazon.com/blogs/publicsector/building-scalable-wordpress-sites-for-public-institutions-on-amazon-lightsail/",
       "https://aws.amazon.com/blogs/publicsector/grandma-emergency-button-a-simple-emergency-alert-solution-with-aws-iot-button/"
     ],
-    "extras": []
+    "extras": [
+    ]
   }
 ]
