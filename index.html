@@ -3,183 +3,233 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>AWS × 文教 公式リソース索引</title>
-<meta name="description" content="学校、大学、研究機関の仕事に関わる AWS 公式のブログ記事と資料 2,834 件の索引。技術的に役立つ 100 件は、学べることとあらすじ付きで紹介しています。">
+<script>
+/* 言語: ?lang=ja|en > 保存した設定 > 日本語。本文を描く前に html の lang を決め、CSS の data-l 切り替えをすぐ効かせる */
+(function(){var m=/[?&]lang=(ja|en)(?:&|$)/.exec(location.search),l=m&&m[1];try{if(l)localStorage.setItem('lang',l);else l=localStorage.getItem('lang');}catch(e){}if(l==='en')document.documentElement.lang='en';})();
+</script>
+<title data-en="AWS × Education: Official Resource Index">AWS × 文教 公式リソース索引</title>
+<meta name="description" content="学校、大学、研究機関の仕事に関わる AWS 公式のブログ記事と資料 2,834 件の索引。技術的に役立つ 100 件は、学べることとあらすじ付きで紹介しています。" data-en-content="An index of 2,834 official AWS blog posts and resources relevant to schools, universities, and research institutions. The 100 most technically useful come with what you'll learn and a synopsis.">
 <meta name="color-scheme" content="light dark">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+JP:wght@400;500;600&family=Shippori+Mincho+B1:wght@600;700&display=swap">
 <link rel="stylesheet" href="assets/style.css">
+<script src="assets/i18n.js" defer></script>
 <script src="assets/app.js" defer></script>
 </head>
 <body>
 <div class="wrap">
-  <p class="load-error" id="load-error" role="alert" hidden>データを読み込めませんでした。ページを開き直してください。手元で見る場合は、ファイルを直接開かずに Web サーバー経由で開いてください(例: <code>python -m http.server</code>)。</p>
+  <p class="load-error" id="load-error" role="alert" hidden>
+    <span data-l="ja">データを読み込めませんでした。ページを開き直してください。手元で見る場合は、ファイルを直接開かずに Web サーバー経由で開いてください(例: <code>python -m http.server</code>)。</span>
+    <span data-l="en">Could not load the data. Reload the page. If you are viewing locally, open it through a web server rather than directly as a file (e.g. <code>python -m http.server</code>).</span>
+  </p>
   <header class="mast">
-    <p class="eyebrow">AWS 公式の公開情報 ・ 2026年10月5日 更新</p>
-    <h1>AWS × 文教 公式リソース索引</h1>
-    <p class="subline">厳選 <b data-stat="picks">100</b> 件 ・ 全体 <b data-stat="total">2,834</b> 件</p>
-    <p class="lede">学校、大学、研究機関の仕事に関わる AWS 公式のブログ記事と資料を一か所に集めました。「厳選 100」は技術的に役立つ記事と資料に、学べることとあらすじを付けたものです。技術記事はテーマ別の「読む順」に並べ、全件は索引から検索できます。タイトルは原文のままで、元のページにリンクしています。</p>
+    <div class="topline">
+      <p class="eyebrow">
+        <span data-l="ja">AWS 公式の公開情報 ・ 2026年10月5日 更新</span>
+        <span data-l="en">Public information from AWS · Updated October 5, 2026</span>
+      </p>
+      <nav class="lang" aria-label="言語" data-en-aria-label="Language">
+        <a href="?lang=ja" hreflang="ja" lang="ja">日本語</a>
+        <a href="?lang=en" hreflang="en" lang="en">English</a>
+      </nav>
+    </div>
+    <h1 data-l="ja">AWS × 文教 公式リソース索引</h1>
+    <h1 data-l="en">AWS × Education: Official Resource Index</h1>
+    <p class="subline" data-l="ja">厳選 <b data-stat="picks">100</b> 件 ・ 全体 <b data-stat="total">2,834</b> 件</p>
+    <p class="subline" data-l="en">Top <b data-stat="picks">100</b> · <b data-stat="total">2,834</b> in total</p>
+    <p class="lede" data-l="ja">学校、大学、研究機関の仕事に関わる AWS 公式のブログ記事と資料を一か所に集めました。「厳選 100」は技術的に役立つ記事と資料に、学べることとあらすじを付けたものです。技術記事はテーマ別の「読む順」に並べ、全件は索引から検索できます。タイトルは原文のままで、元のページにリンクしています。</p>
+    <p class="lede" data-l="en">Official AWS blog posts and resources relevant to the work of schools, universities, and research institutions, collected in one place. The "Top 100" are technically useful posts and resources, each with what you'll learn and a synopsis. Technical posts are arranged by theme in "Reading order", and everything is searchable in the full index. Titles are kept in their original language and link to the original pages.</p>
     <div class="sources">
       <section class="source en">
-        <h2><span class="dot"></span>英語 ― AWS Public Sector Blog</h2>
-        <p class="total"><span data-stat="en.total">1,210</span><small>件</small></p>
-        <p class="meta"><span data-stat="en.first">2015-12-11</span> 〜 <span data-stat="en.last">2026-09-28</span></p>
-        <p class="note">Education カテゴリ <span data-stat="en.category">1,146</span> 件(一覧 113 ページ分と、ページ送りに出てこなかった <span data-stat="en.gap">21</span> 件)。<span class="mark">＋</span> <span data-stat="en.outside">64</span> 件は、カテゴリの外にある教育・研究関連の記事。ブログ全体の一覧 276 ページと、全ブログの Education カテゴリの一覧データ(1,238 件)と突き合わせ済み。</p>
-        <a href="https://aws.amazon.com/blogs/publicsector/category/public-sector/education/" target="_blank" rel="noopener">カテゴリ一覧を開く</a>
+        <h2 data-l="ja"><span class="dot"></span>英語 ― AWS Public Sector Blog</h2>
+        <h2 data-l="en"><span class="dot"></span>English – AWS Public Sector Blog</h2>
+        <p class="total" data-l="ja"><span data-stat="en.total">1,210</span><small>件</small></p>
+        <p class="total" data-l="en"><span data-stat="en.total">1,210</span><small>posts</small></p>
+        <p class="meta" data-l="ja"><span data-stat="en.first">2015-12-11</span> 〜 <span data-stat="en.last">2026-09-28</span></p>
+        <p class="meta" data-l="en"><span data-stat="en.first">2015-12-11</span> – <span data-stat="en.last">2026-09-28</span></p>
+        <p class="note" data-l="ja">Education カテゴリ <span data-stat="en.category">1,146</span> 件(一覧 113 ページ分と、ページ送りに出てこなかった <span data-stat="en.gap">21</span> 件)。<span class="mark">＋</span> <span data-stat="en.outside">64</span> 件は、カテゴリの外にある教育・研究関連の記事。ブログ全体の一覧 276 ページと、全ブログの Education カテゴリの一覧データ(1,238 件)と突き合わせ済み。</p>
+        <p class="note" data-l="en">Education category: <span data-stat="en.category">1,146</span> posts (113 listing pages, plus <span data-stat="en.gap">21</span> posts that did not appear in the pagination). <span class="mark">＋</span> <span data-stat="en.outside">64</span> are education- or research-related posts outside the category. Cross-checked against the 276 pages of the blog-wide listing and the all-blogs Education category listing data (1,238 posts).</p>
+        <a href="https://aws.amazon.com/blogs/publicsector/category/public-sector/education/" target="_blank" rel="noopener" data-l="ja">カテゴリ一覧を開く</a>
+        <a href="https://aws.amazon.com/blogs/publicsector/category/public-sector/education/" target="_blank" rel="noopener" data-l="en">Open the category listing</a>
       </section>
       <section class="source jp">
-        <h2><span class="dot"></span>日本語 ― Amazon Web Services ブログ</h2>
-        <p class="total"><span data-stat="jp.total">364</span><small>件</small></p>
-        <p class="meta"><span data-stat="jp.first">2016-04-06</span> 〜 <span data-stat="jp.last">2026-09-28</span></p>
-        <p class="note">Public Sector カテゴリ <span data-stat="jp.listed">308</span> 件(一覧 31 ページ)と、カテゴリ外 <span class="mark">＋</span> <span data-stat="jp.outside">56</span> 件。<span class="mark">★</span> <span data-stat="jp.star">74</span> 件は Education サブカテゴリ、<span class="mark">☆</span> <span data-stat="jp.star2">65</span> 件はタイトル、カテゴリ、要約文の語句から教育・研究と判断。ブログ全体の一覧 930 ページ(2016 年 9 月〜2026 年 10 月。最終ページまで)と突き合わせ、一覧データの語句検索でも探しています。</p>
-        <a href="https://aws.amazon.com/jp/blogs/news/category/public-sector/" target="_blank" rel="noopener">カテゴリ一覧を開く</a>
+        <h2 data-l="ja"><span class="dot"></span>日本語 ― Amazon Web Services ブログ</h2>
+        <h2 data-l="en"><span class="dot"></span>Japanese – Amazon Web Services Blog</h2>
+        <p class="total" data-l="ja"><span data-stat="jp.total">364</span><small>件</small></p>
+        <p class="total" data-l="en"><span data-stat="jp.total">364</span><small>posts</small></p>
+        <p class="meta" data-l="ja"><span data-stat="jp.first">2016-04-06</span> 〜 <span data-stat="jp.last">2026-09-28</span></p>
+        <p class="meta" data-l="en"><span data-stat="jp.first">2016-04-06</span> – <span data-stat="jp.last">2026-09-28</span></p>
+        <p class="note" data-l="ja">Public Sector カテゴリ <span data-stat="jp.listed">308</span> 件(一覧 31 ページ)と、カテゴリ外 <span class="mark">＋</span> <span data-stat="jp.outside">56</span> 件。<span class="mark">★</span> <span data-stat="jp.star">74</span> 件は Education サブカテゴリ、<span class="mark">☆</span> <span data-stat="jp.star2">65</span> 件はタイトル、カテゴリ、要約文の語句から教育・研究と判断。ブログ全体の一覧 930 ページ(2016 年 9 月〜2026 年 10 月。最終ページまで)と突き合わせ、一覧データの語句検索でも探しています。</p>
+        <p class="note" data-l="en">Public Sector category: <span data-stat="jp.listed">308</span> posts (31 listing pages), plus <span class="mark">＋</span> <span data-stat="jp.outside">56</span> outside the category. <span class="mark">★</span> <span data-stat="jp.star">74</span> are in the Education subcategory; <span class="mark">☆</span> <span data-stat="jp.star2">65</span> were judged education- or research-related from words in the title, categories, and summary. Cross-checked against 930 pages of the blog-wide listing (September 2016 – October 2026, through the last page), with keyword searches of the listing data as well.</p>
+        <a href="https://aws.amazon.com/jp/blogs/news/category/public-sector/" target="_blank" rel="noopener" data-l="ja">カテゴリ一覧を開く</a>
+        <a href="https://aws.amazon.com/jp/blogs/news/category/public-sector/" target="_blank" rel="noopener" data-l="en">Open the category listing</a>
       </section>
       <section class="source xs">
-        <h2><span class="dot"></span>そのほかの公式資料</h2>
-        <p class="total"><span data-stat="x.total">1,260</span><small>件</small></p>
-        <p class="meta">日本語 <span data-stat="x.ja">182</span> 件 ・ 開いて確認 <span data-stat="status:開いて確認">905</span> 件</p>
-        <p class="note">導入事例、ソリューションと設計指針、ウェビナー録画、登壇資料、GitHub サンプル、教育プログラム、コミュニティ(re:Post、AWS Builder Center)など。1 件ごとに確認の区分を付けています。</p>
-        <a href="https://aws.amazon.com/jp/government-education/worldwide/japan/UR-Industry-Site/" target="_blank" rel="noopener">大学・研究機関のための AWS を開く</a>
+        <h2 data-l="ja"><span class="dot"></span>そのほかの公式資料</h2>
+        <h2 data-l="en"><span class="dot"></span>Other official resources</h2>
+        <p class="total" data-l="ja"><span data-stat="x.total">1,260</span><small>件</small></p>
+        <p class="total" data-l="en"><span data-stat="x.total">1,260</span><small>items</small></p>
+        <p class="meta" data-l="ja">日本語 <span data-stat="x.ja">182</span> 件 ・ 開いて確認 <span data-stat="status:開いて確認">905</span> 件</p>
+        <p class="meta" data-l="en">Japanese <span data-stat="x.ja">182</span> · Opened and checked <span data-stat="status:開いて確認">905</span></p>
+        <p class="note" data-l="ja">導入事例、ソリューションと設計指針、ウェビナー録画、登壇資料、GitHub サンプル、教育プログラム、コミュニティ(re:Post、AWS Builder Center)など。1 件ごとに確認の区分を付けています。</p>
+        <p class="note" data-l="en">Case studies, solutions and guidance, webinar recordings, session slides, GitHub samples, education programs, community (re:Post, AWS Builder Center), and more. Each entry has a verification status.</p>
+        <a href="https://aws.amazon.com/jp/government-education/worldwide/japan/UR-Industry-Site/" target="_blank" rel="noopener" data-l="ja">大学・研究機関のための AWS を開く</a>
+        <a href="https://aws.amazon.com/jp/government-education/worldwide/japan/UR-Industry-Site/" target="_blank" rel="noopener" data-l="en" lang="ja" hreflang="ja">Open "AWS for Universities and Research Institutions" (Japanese)</a>
       </section>
     </div>
   </header>
 
-  <nav class="views" aria-label="表示の切り替え">
-    <button type="button" data-view="picks" aria-pressed="true">厳選 100<small>あらすじ付き</small></button>
-    <button type="button" data-view="order" aria-pressed="false">読む順<small>テーマ別 <span data-stat="order.themes">16</span> 章</small></button>
-    <button type="button" data-view="index" aria-pressed="false">全件索引<small><span data-stat="total">2,834</span> 件</small></button>
+  <nav class="views" aria-label="表示の切り替え" data-en-aria-label="Switch view">
+    <button type="button" data-view="picks" aria-pressed="true"><span data-l="ja">厳選 100<small>あらすじ付き</small></span><span data-l="en">Top 100<small>with synopses</small></span></button>
+    <button type="button" data-view="order" aria-pressed="false"><span data-l="ja">読む順<small>テーマ別 <span data-stat="order.themes">16</span> 章</small></span><span data-l="en">Reading order<small><span data-stat="order.themes">16</span> themes</small></span></button>
+    <button type="button" data-view="index" aria-pressed="false"><span data-l="ja">全件索引<small><span data-stat="total">2,834</span> 件</small></span><span data-l="en">Full index<small><span data-stat="total">2,834</span> items</small></span></button>
   </nav>
 
   <!-- ===================== 厳選 100 ===================== -->
-  <section id="view-picks" aria-label="厳選 100">
+  <section id="view-picks" aria-label="厳選 100" data-en-aria-label="Top 100">
     <div class="px-intro">
-      <p>技術的に役立つ内容(Level 200〜400)で、教育の仕事に結びつきの強い <span data-stat="picks">100</span> 件を選び、記事や資料から学べることとあらすじを付けました。</p>
-      <p class="how"><span data-stat="picks.sections">9</span> つの分野に分け、分野の中では日本語・日本関連のものを先に、続いてレベル、日付の順に並べています。公開後にサービス名が変わったり提供が終わったりしたものは「注:」に書いています。</p>
+      <p data-l="ja">技術的に役立つ内容(Level 200〜400)で、教育の仕事に結びつきの強い <span data-stat="picks">100</span> 件を選び、記事や資料から学べることとあらすじを付けました。</p>
+      <p data-l="en"><span data-stat="picks">100</span> technically useful posts and resources (Level 200–400) with a strong connection to education work, each with what you'll learn and a synopsis.</p>
+      <p class="how" data-l="ja"><span data-stat="picks.sections">9</span> つの分野に分け、分野の中では日本語・日本関連のものを先に、続いてレベル、日付の順に並べています。公開後にサービス名が変わったり提供が終わったりしたものは「注:」に書いています。</p>
+      <p class="how" data-l="en">Grouped into <span data-stat="picks.sections">9</span> areas. Within an area, Japanese and Japan-related items come first, then by level and date. Services renamed or discontinued since publication are described under "Note:".</p>
     </div>
-    <div class="chips px-chips" id="pchips" role="group" aria-label="分野で絞り込む"></div>
+    <div class="chips px-chips" id="pchips" role="group" aria-label="分野で絞り込む" data-en-aria-label="Filter by area"></div>
 
-    <section class="bar" aria-label="厳選の検索と件数">
+    <section class="bar" aria-label="厳選の検索と件数" data-en-aria-label="Search and count for the Top 100">
       <div class="bar-main">
         <div class="search">
-          <label class="vh" for="pq">厳選 100 を検索</label>
-          <input id="pq" type="search" autocomplete="off" placeholder="タイトル・あらすじ・URL を検索(例: Moodle、SINET)">
+          <label class="vh" for="pq" data-en="Search the Top 100">厳選 100 を検索</label>
+          <input id="pq" type="search" autocomplete="off" placeholder="タイトル・あらすじ・URL を検索(例: Moodle、SINET)" data-en-placeholder="Search titles, synopses, URLs (e.g. Moodle, SINET)">
         </div>
-        <div class="seg" id="plevel" role="group" aria-label="レベルで絞り込む">
-          <button type="button" data-level="all" aria-pressed="true">全レベル</button>
+        <div class="seg" id="plevel" role="group" aria-label="レベルで絞り込む" data-en-aria-label="Filter by level">
+          <button type="button" data-level="all" aria-pressed="true"><span data-l="ja">全レベル</span><span data-l="en">All levels</span></button>
           <button type="button" data-level="200" aria-pressed="false">L200</button>
           <button type="button" data-level="300" aria-pressed="false">L300</button>
           <button type="button" data-level="400" aria-pressed="false">L400</button>
         </div>
-        <div class="seg" id="plang" role="group" aria-label="言語で絞り込む">
-          <button type="button" data-lang="all" aria-pressed="true">すべて</button>
-          <button type="button" data-lang="jp" aria-pressed="false">日本語・日本関連</button>
-          <button type="button" data-lang="en" aria-pressed="false">英語</button>
+        <div class="seg" id="plang" role="group" aria-label="言語で絞り込む" data-en-aria-label="Filter by language">
+          <button type="button" data-lang="all" aria-pressed="true"><span data-l="ja">すべて</span><span data-l="en">All</span></button>
+          <button type="button" data-lang="jp" aria-pressed="false"><span data-l="ja">日本語・日本関連</span><span data-l="en">Japanese / Japan-related</span></button>
+          <button type="button" data-lang="en" aria-pressed="false"><span data-l="ja">英語</span><span data-l="en">English</span></button>
         </div>
       </div>
       <div class="bar-sub">
         <p id="pcount" aria-live="polite"></p>
         <div class="active" id="pactive"></div>
         <div class="copy">
-          <button type="button" class="btn" id="copy-picks">表示中を Markdown でコピー</button>
+          <button type="button" class="btn" id="copy-picks"><span data-l="ja">表示中を Markdown でコピー</span><span data-l="en">Copy shown as Markdown</span></button>
         </div>
       </div>
     </section>
     <div class="fallback" id="fallback-p" hidden>
-      <span>自動でコピーできませんでした。下のテキストは選択済みです。このままコピーしてください。</span>
-      <textarea id="fallback-p-text" readonly aria-label="コピー用テキスト"></textarea>
+      <span data-l="ja">自動でコピーできませんでした。下のテキストは選択済みです。このままコピーしてください。</span>
+      <span data-l="en">Automatic copy failed. The text below is already selected; copy it manually.</span>
+      <textarea id="fallback-p-text" readonly aria-label="コピー用テキスト" data-en-aria-label="Text to copy"></textarea>
     </div>
 
     <div id="plist"></div>
-    <p id="pempty" hidden>条件に合うものがありません。検索語を減らすか、条件をリセットしてください。</p>
+    <p id="pempty" hidden><span data-l="ja">条件に合うものがありません。検索語を減らすか、条件をリセットしてください。</span><span data-l="en">Nothing matches. Try fewer search words or reset the filters.</span></p>
   </section>
 
   <!-- ===================== 読む順 ===================== -->
-  <section id="view-order" aria-label="読む順(テーマ別)" hidden>
+  <section id="view-order" aria-label="読む順(テーマ別)" data-en-aria-label="Reading order (by theme)" hidden>
     <div class="order-intro">
-      <p>技術記事 <span data-stat="order.articles">419</span> 件を <span data-stat="order.themes">16</span> のテーマに分け、勉強会で扱いやすい順に並べました。日本語の記事を先に、英語は新しい順です。</p>
-      <p class="how">「まず読む」の <span data-stat="order.picks">89</span> 件のうち、ブログ記事 <span data-stat="order.pickArticles">79</span> 件は本文を開いて選び、ひとこと説明を付けています。「続けて読む」はタイトルとカテゴリで振り分けただけで、中身は確かめていません。</p>
+      <p data-l="ja">技術記事 <span data-stat="order.articles">419</span> 件を <span data-stat="order.themes">16</span> のテーマに分け、勉強会で扱いやすい順に並べました。日本語の記事を先に、英語は新しい順です。</p>
+      <p data-l="en"><span data-stat="order.articles">419</span> technical posts grouped into <span data-stat="order.themes">16</span> themes, in an order that works for study groups. Japanese posts come first; English posts are newest first.</p>
+      <p class="how" data-l="ja">「まず読む」の <span data-stat="order.picks">89</span> 件のうち、ブログ記事 <span data-stat="order.pickArticles">79</span> 件は本文を開いて選び、ひとこと説明を付けています。「続けて読む」はタイトルとカテゴリで振り分けただけで、中身は確かめていません。</p>
+      <p class="how" data-l="en">Of the <span data-stat="order.picks">89</span> "Start here" items, the <span data-stat="order.pickArticles">79</span> blog posts were chosen after reading the full text and have a one-line description. "Read next" items were sorted by title and category only; their content has not been checked.</p>
       <div class="tnav" id="tnav"></div>
       <div class="order-tools">
-        <button type="button" class="btn" id="copy-order">「まず読む」を Markdown でコピー</button>
-        <button type="button" class="btn" id="open-all">「続けて読む」をすべて開く</button>
+        <button type="button" class="btn" id="copy-order"><span data-l="ja">「まず読む」を Markdown でコピー</span><span data-l="en">Copy "Start here" as Markdown</span></button>
+        <button type="button" class="btn" id="open-all"><span data-l="ja">「続けて読む」をすべて開く</span><span data-l="en">Expand all "Read next"</span></button>
       </div>
       <div class="fallback" id="fallback-o" hidden>
-        <span>自動でコピーできませんでした。下のテキストは選択済みです。このままコピーしてください。</span>
-        <textarea id="fallback-o-text" readonly aria-label="コピー用テキスト"></textarea>
+        <span data-l="ja">自動でコピーできませんでした。下のテキストは選択済みです。このままコピーしてください。</span>
+        <span data-l="en">Automatic copy failed. The text below is already selected; copy it manually.</span>
+        <textarea id="fallback-o-text" readonly aria-label="コピー用テキスト" data-en-aria-label="Text to copy"></textarea>
       </div>
     </div>
     <div id="themes"></div>
   </section>
 
   <!-- ===================== 全件索引 ===================== -->
-  <section id="view-index" aria-label="全件索引" hidden>
+  <section id="view-index" aria-label="全件索引" data-en-aria-label="Full index" hidden>
     <section class="years" aria-labelledby="years-h">
       <div class="years-head">
-        <h2 id="years-h">年別の件数</h2>
-        <div class="legend"><span><i class="l-en"></i>英語ブログ</span><span><i class="l-jp"></i>日本語ブログ</span><span><i class="l-x"></i>そのほかの資料(日付のあるもの)</span><span>棒を押すとその年だけに絞ります</span></div>
+        <h2 id="years-h"><span data-l="ja">年別の件数</span><span data-l="en">Items by year</span></h2>
+        <div class="legend" data-l="ja"><span><i class="l-en"></i>英語ブログ</span><span><i class="l-jp"></i>日本語ブログ</span><span><i class="l-x"></i>そのほかの資料(日付のあるもの)</span><span>棒を押すとその年だけに絞ります</span></div>
+        <div class="legend" data-l="en"><span><i class="l-en"></i>English blog</span><span><i class="l-jp"></i>Japanese blog</span><span><i class="l-x"></i>Other resources (with a date)</span><span>Click a bar to show only that year</span></div>
       </div>
       <div class="bars" id="bars"></div>
     </section>
 
-    <section class="refine" aria-label="カテゴリと表示条件">
+    <section class="refine" aria-label="カテゴリと表示条件" data-en-aria-label="Categories and display options">
       <div class="chips" id="chips"></div>
       <div class="chips">
-        <label class="vh" for="catsel">ブログのカテゴリで絞り込む</label>
-        <select id="catsel"><option value="">ブログのカテゴリで絞り込む…</option></select>
-        <label class="vh" for="kindsel">資料の種類で絞り込む</label>
-        <select id="kindsel"><option value="">資料の種類で絞り込む…</option></select>
+        <label class="vh" for="catsel" data-en="Filter by blog category">ブログのカテゴリで絞り込む</label>
+        <select id="catsel"><option value="" data-en="Filter by blog category…">ブログのカテゴリで絞り込む…</option></select>
+        <label class="vh" for="kindsel" data-en="Filter by resource kind">資料の種類で絞り込む</label>
+        <select id="kindsel"><option value="" data-en="Filter by resource kind…">資料の種類で絞り込む…</option></select>
       </div>
       <div class="opts">
-        <label class="check"><input type="checkbox" id="edu"> 日本語ブログは教育・研究(★☆)の記事だけ</label>
-        <label class="check"><input type="checkbox" id="asc"> 古い順に並べる</label>
+        <label class="check"><input type="checkbox" id="edu"> <span data-l="ja">日本語ブログは教育・研究(★☆)の記事だけ</span><span data-l="en">Japanese blog: education/research (★☆) posts only</span></label>
+        <label class="check"><input type="checkbox" id="asc"> <span data-l="ja">古い順に並べる</span><span data-l="en">Oldest first</span></label>
       </div>
     </section>
 
     <div id="anchor"></div>
-    <section class="bar" aria-label="検索と件数">
+    <section class="bar" aria-label="検索と件数" data-en-aria-label="Search and count">
       <div class="bar-main">
         <div class="search">
-          <label class="vh" for="q">索引を検索</label>
-          <input id="q" type="search" autocomplete="off" placeholder="タイトル・カテゴリ・URL を検索(例: Moodle、ゼロトラスト、SINET、AppStream)">
+          <label class="vh" for="q" data-en="Search the index">索引を検索</label>
+          <input id="q" type="search" autocomplete="off" placeholder="タイトル・カテゴリ・URL を検索(例: Moodle、ゼロトラスト、SINET、AppStream)" data-en-placeholder="Search titles, categories, URLs (e.g. Moodle, zero trust, SINET, AppStream)">
         </div>
-        <div class="seg" role="group" aria-label="出典で絞り込む">
-          <button type="button" data-src="all" aria-pressed="true">すべて</button>
-          <button type="button" data-src="en" aria-pressed="false">英語</button>
-          <button type="button" data-src="jp" aria-pressed="false">日本語</button>
-          <button type="button" data-src="x" aria-pressed="false">資料</button>
+        <div class="seg" role="group" aria-label="出典で絞り込む" data-en-aria-label="Filter by source">
+          <button type="button" data-src="all" aria-pressed="true"><span data-l="ja">すべて</span><span data-l="en">All</span></button>
+          <button type="button" data-src="en" aria-pressed="false"><span data-l="ja">英語</span><span data-l="en">English</span></button>
+          <button type="button" data-src="jp" aria-pressed="false"><span data-l="ja">日本語</span><span data-l="en">Japanese</span></button>
+          <button type="button" data-src="x" aria-pressed="false"><span data-l="ja">資料</span><span data-l="en">Resources</span></button>
         </div>
       </div>
       <div class="bar-sub">
         <p id="count" aria-live="polite"></p>
         <div class="active" id="active"></div>
         <div class="copy">
-          <button type="button" class="btn" id="copy-md">表示中を Markdown でコピー</button>
-          <button type="button" class="btn" id="copy-tsv">TSV でコピー</button>
+          <button type="button" class="btn" id="copy-md"><span data-l="ja">表示中を Markdown でコピー</span><span data-l="en">Copy shown as Markdown</span></button>
+          <button type="button" class="btn" id="copy-tsv"><span data-l="ja">TSV でコピー</span><span data-l="en">Copy as TSV</span></button>
         </div>
       </div>
     </section>
     <div class="fallback" id="fallback" hidden>
-      <span>自動でコピーできませんでした。下のテキストは選択済みです。このままコピーしてください。</span>
-      <textarea id="fallback-text" readonly aria-label="コピー用テキスト"></textarea>
+      <span data-l="ja">自動でコピーできませんでした。下のテキストは選択済みです。このままコピーしてください。</span>
+      <span data-l="en">Automatic copy failed. The text below is already selected; copy it manually.</span>
+      <textarea id="fallback-text" readonly aria-label="コピー用テキスト" data-en-aria-label="Text to copy"></textarea>
     </div>
 
     <main>
       <div id="list"></div>
-      <p id="empty" hidden>条件に合うものがありません。検索語を減らすか、条件をリセットしてください。</p>
-      <div class="more" id="more-wrap" hidden><button type="button" id="more">続きを表示</button></div>
+      <p id="empty" hidden><span data-l="ja">条件に合うものがありません。検索語を減らすか、条件をリセットしてください。</span><span data-l="en">Nothing matches. Try fewer search words or reset the filters.</span></p>
+      <div class="more" id="more-wrap" hidden><button type="button" id="more"><span data-l="ja">続きを表示</span><span data-l="en">Show more</span></button></div>
     </main>
   </section>
 
   <footer class="about">
-    <h2>このサイトについて</h2>
-    <ul class="short">
+    <h2><span data-l="ja">このサイトについて</span><span data-l="en">About this site</span></h2>
+    <ul class="short" data-l="ja">
       <li>AWS が公開しているブログ記事と資料(英語と日本語のブログ、導入事例、ソリューションと設計指針、登壇資料、GitHub サンプルなど)を、2026 年 9 月〜10 月に集めた非公式の索引です。</li>
       <li>タイトルは原文のままで、元のページにリンクしています。</li>
       <li>記事や資料の公開後に、サービスの名前が変わったり、提供が終わったりしていることがあります。</li>
       <li>更新日: 2026年10月5日</li>
     </ul>
-    <details class="about-more">
+    <ul class="short" data-l="en">
+      <li>An unofficial index of blog posts and resources published by AWS (English and Japanese blogs, case studies, solutions and guidance, session slides, GitHub samples, and more), collected in September–October 2026.</li>
+      <li>Titles are kept in their original language and link to the original pages.</li>
+      <li>Services may have been renamed or discontinued since a post or resource was published.</li>
+      <li>The English text on this site (what you'll learn, synopses, notes, and the page itself) is a translation of the Japanese original, which takes precedence.</li>
+      <li>Updated: October 5, 2026</li>
+    </ul>
+    <details class="about-more" data-l="ja">
     <summary>集め方と範囲の詳細</summary>
     <h3>載せているもの</h3>
     <ul>
@@ -221,6 +271,50 @@
       <li>対象は、Technical How-to か Best Practices の付いた記事(英語 <span data-stat="en.howto">194</span> 件、日本語 <span data-stat="jp.howto">39</span> 件)に、日本語の ★☆ の記事、カテゴリ外の記事、手で足した英語 11 件を加えたものです。</li>
       <li>ひとこと説明は、記事に書かれている内容の要約です。構成の良し悪しの評価ではありません。</li>
       <li>10 月 4 日の続きの調査で足したものは、資料を合うテーマの「あわせて使う資料」に、日本語ブログの記事を「続けて読む」に入れました。「まず読む」は変えていません。どのテーマにも入れていない資料が 24 件あります。</li>
+    </ul>
+    </details>
+    <details class="about-more" data-l="en">
+    <summary>How it was collected and what it covers</summary>
+    <h3>What is included</h3>
+    <ul>
+      <li>The English AWS Public Sector Blog: the <span data-stat="en.listed">1,125</span> posts on the 113 pages of the Education category listing, <span data-stat="en.gap">21</span> posts that have the category but did not appear in the listing's pagination, and <span class="mark">＋</span> <span data-stat="en.outside">64</span> education- or research-related posts outside the category. Cross-checked against the 276 pages (2,758 posts) of the blog-wide listing. Using the listing data for all AWS blogs, the 1,238 posts in the Education category were also followed; of the 1,228 that could be read, all 1,136 Public Sector Blog posts were confirmed to be included.</li>
+      <li>The Japanese Amazon Web Services Blog: the <span data-stat="jp.listed">308</span> posts on the 31 pages of the Public Sector category listing, plus <span class="mark">＋</span> <span data-stat="jp.outside">56</span> education- or research-related posts outside the category. Cross-checked against 930 of the 937 pages (9,270 posts) of the blog-wide listing. 11 of the <span class="mark">＋</span> posts were found by searching the listing data with 96 terms (university, student, researcher, and so on) and opening posts whose titles contain no education-related words.</li>
+      <li>Other official resources are pages about educational institutions, research institutions, EdTech, and programs for students and faculty. They were found by following links from official pages, opening the listings of other AWS blogs, searching with results limited to a single official domain, and opening the listing data of official sites. Links were followed from the education and research industry pages, program pages, event pages, blog posts that introduce resources or events, and the 128 education-related posts on the Japanese blog.</li>
+      <li>Listing data is what the case study search page, the event materials page, the blogs, What's New, the Solutions Library, and the event listings load after opening (aws.amazon.com/api/dirs/items/search). It can be fetched directly and filtered by industry or keyword. Of the 331 entries added in the follow-up survey on October 4, 2026, 285 came from this listing data.</li>
+      <li>Treated as official: AWS and Amazon sites (aws.amazon.com, docs.aws.amazon.com, repost.aws, builder.aws.com, awsstatic.com, pages.awscloud.com, resources.awscloud.com, aboutamazon.com, amazon.science, and so on), AWS GitHub organizations, and YouTube videos. YouTube is limited to videos linked from official pages or official listing data, and videos whose search-result titles include the name of an AWS event (re:Invent, AWS Imagine). For the latter, the publishing channel was not verified.</li>
+      <li>Not included: generic pages whose connection to education or research could not be confirmed; redirected pages whose original content is no longer visible, and 404 pages; individual AWS Marketplace product pages and partner directory pages (written by sellers or partners); Amazon-wide social-impact articles that do not mention AWS; AWS's own new-graduate recruiting and internship notices; and articles about re-employment support for working adults (AWS re/Start).</li>
+      <li>Titles and URLs are as of the time of retrieval (October 3–4, 2026). Dates are the publication or event dates shown on the page or in the listing data. Year-only dates are cases where the listing data has only a year, or where the listing date was a placeholder that did not match the event date. This index is an unofficial list built from AWS's public information.</li>
+    </ul>
+    <h3>Verification status of other official resources</h3>
+    <ul>
+      <li>Opened and checked (<span data-stat="status:開いて確認">905</span>) – the page was opened and its content checked.</li>
+      <li>Linked from an official page (<span data-stat="status:公式ページのリンク">223</span>) – a link appears on an opened official page, post, or listing page, or in the official listing data. The linked page itself was not opened (this includes YouTube, video pages, PDFs, and other pages that cannot be opened automatically).</li>
+      <li>Seen in search results (<span data-stat="status:検索結果で確認">128</span>) – appeared in search results limited to official domains. The content could not be opened because fetching is prohibited or refused, or only a generic page is returned. Known reasons are given in the note.</li>
+      <li>Checked in a browser (<span data-stat="status:ブラウザで確認">4</span>) – fetching was refused and the page does not appear in search, so a person opened it in a browser (the re:Post Education Excellence Hub and the 3 articles listed there).</li>
+      <li>Of the entries added in the October 4 follow-up survey, 52 were sampled and re-opened by a separate reviewer not involved in the work. No errors were found in titles, URLs, or verification status. For the kind whose notes had included details not found in the materials (event session slides), all 78 opened entries were compared with the materials and 40 notes were corrected to what the materials actually say. 5 entries whose main topic could not be called education were removed.</li>
+    </ul>
+    <h3>What may be missing</h3>
+    <ul>
+      <li>Only two listings can be said to be fully included: the Education category of the English Public Sector Blog and the Public Sector category of the Japanese blog. In the listing data, everything was reviewed for English case studies in the education industry (225), event materials in the education industry (101), and the Education category of all blogs (1,228 of 1,238); of these, entries whose main topic is education and which can still be opened are included. Everything else is what searching turned up.</li>
+      <li>Other AWS blogs – posts with the Education category were cross-checked using the listing data for all blogs (the 10 that could not be read were judged, from their dates, to be already-included Public Sector Blog posts). Posts without the category were chosen by title from each blog's listing. The full post listing was read to the end for 19 blogs (HPC, Desktop and Application Streaming, Training and Certification, Open Source, Quantum Technologies, and others). Machine Learning, AWS News, and APN were read up to page 115 from the newest side; Security, Database, Architecture, Containers, Media, Big Data, and Storage only through category and tag listings; Startups and Game Tech only partially. DevOps, Developer Tools, Industries, Microsoft Workloads, SAP, .NET, Supply Chain, Cloud Financial Management, Integration &amp; Automation, and IBM &amp; Red Hat were not opened. Posts whose titles contain no education or research words and that lack the Education category cannot be picked up.</li>
+      <li>The Japanese blog-wide listing – posts from March 8 to June 23, 2024 were seen only in the General and Case Study category listings (97 posts). There are also 6 places where one page (10 posts) could not be opened (February 2018, September 2020, late July 2022, early September 2023, June 2025, April 2026), and a gap in early November 2025. Keyword searches of the listing data filled in some of this, but search only matches titles and summaries, so posts that mention a school only in the body cannot be picked up. Of the 258 results for 学生 (student), 80 (posts from May 2024 to February 2025) could not be read because fetching was refused.</li>
+      <li>Posts not in any listing – the English Public Sector Blog had one post that appeared in neither the category listing nor the blog-wide listing (a Moodle how-to; it is included on the resources side). Listing pages can return slightly different results on each fetch, so there may be other such posts.</li>
+      <li>Sites where fetching is prohibited – pages.awscloud.com and resources.awscloud.com (webinar recordings, registration pages, PDFs), awseducate.com, and YouTube were verified only through official-page links, listing data, or search results. pages.awscloud.com has many registration pages for past webinars in various countries, and each search turns up pages that are not included.</li>
+      <li>Pages that load content after opening – the case study search page, event materials, the Solutions Library, What's New, and event listings were viewed through the underlying listing data. However, the case study listing data stops at June 2025 and the event materials listing data at re:Invent 2024; anything newer is only what appeared in search. The workshop catalog, the archive of Japanese event materials (aws.amazon.com/jp/events/aws-event-resource/archive/), and the AWS Summit Japan session catalog could not be viewed because the listing data name is unknown or it could not be fetched.</li>
+      <li>Pages that no longer exist – many older case studies, partner case studies, AWS EdStart pages, and the like now redirect to listing pages or other pages. Of the 310 English education case studies in the listing data, 192 redirected to the general case studies page or returned 404. In Japanese, the case study pages for Fujita Health University, KEK, and Casio redirect (PDF versions of the latter two are included). URLs confirmed to redirect are not included (they are recorded in the working documents).</li>
+      <li>AWS Summit Japan materials – each year from 2016 to 2026 was searched with 86 searches limited to official domains, and through the Japanese blog listing data. Only a few new items were found, such as session slides from the Institute of Medical Science, the University of Tokyo (2018) and Life is Tech! (2021). For the 2018 case study sessions, the storage location's sequential numbers 01–46 were opened in order; of the 39 that existed, only 1 could be confirmed as a session by an educational or research institution (5 could not be read). Most materials from 2019 onward (pages.awscloud.com) and the session listings (awsevents.com) could not be opened and rarely appear in search. The RIKEN "Virtual Fugaku" session (2024, CUS-38) was confirmed from a blog post, but no URL for its materials or video on an official domain has been found.</li>
+      <li>Sessions at re:Invent and other events – in the event materials listing data (2019–2024), all 101 entries in the education industry and all search results for 18 terms such as education, university, and student were reviewed, and 87 sessions whose main topic is education were added (slides and videos are separate rows). About 70% of entries tagged with the education industry were not about education, and conversely the education sessions at re:Invent 2020–2022 had no industry tag. re:Invent 2025 is not in the listing data; only what appeared in search is included. Sessions without published slides cannot be picked up.</li>
+      <li>re:Post and AWS Builder Center – re:Post Selections (curated topic pages) shows 99 entries in its listing, but page fetching could read the titles of only 12; individual pages cannot be opened and do not appear in search. The only one included is the Education Excellence Hub, checked in a browser. re:Post questions come only from search-result titles, and only some AWS Builder Center articles could be read. Both include posts by members, so the poster is given in the note.</li>
+      <li>Education pages for individual services – across 40 searches and link-following from official pages, only 1 new product page explicitly for education was found. The AppStream 2.0 education page, the Alexa education page, AWS IoT EduKit, the Japanese DeepRacer student league page, and others now redirect to generic pages.</li>
+      <li>GitHub, session slides, and partner case studies – only what search found and what was linked from official pages. What's New was searched in the listing data with about 20 terms.</li>
+      <li>Number of page fetches – many consecutive fetches are refused for about 15–25 minutes (HTTP 429). Refused pages were not retried. For this reason, 7 of the entries added on October 4 could not be opened and are marked "Linked from an official page".</li>
+      <li>Number of searches – searches are limited to 200 per work session. The additional survey on October 4, 2026 hit this limit, leaving the searches for Japanese case studies, AWS Summit Japan materials by year, education sessions at re:Invent 2021–2023, and education pages for individual AWS services. A follow-up survey the same day covered these 4 with 185 searches and the listing data. What was and was not found is described in the items above.</li>
+    </ul>
+    <h3>About the reading order</h3>
+    <ul>
+      <li>Covered: posts tagged Technical How-to or Best Practices (English <span data-stat="en.howto">194</span>, Japanese <span data-stat="jp.howto">39</span>), plus Japanese ★☆ posts, posts outside the category, and 11 English posts added by hand.</li>
+      <li>The one-line descriptions summarize what the post says. They are not an evaluation of its quality.</li>
+      <li>Entries from the October 4 follow-up survey were added to "Related resources" of the matching theme (resources) or to "Read next" (Japanese blog posts). "Start here" was not changed. 24 resources are not in any theme.</li>
     </ul>
     </details>
   </footer>

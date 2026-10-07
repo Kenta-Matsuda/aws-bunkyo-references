@@ -243,3 +243,12 @@ details.about-more[open]{display:flex;flex-direction:column;gap:8px}
   .px-card{grid-template-columns:2em minmax(0,1fr)}
 }
 .load-error{margin:0 0 20px;padding:10px 12px;border-left:3px solid var(--jp);background:var(--surface);font-size:14px}
+
+/* 言語: html の lang に合わない data-l の要素は出さない。切り替えは右上の .lang */
+html[lang="en"] [data-l="ja"],html:not([lang="en"]) [data-l="en"]{display:none !important}
+html[lang="en"] .stat::before{content:"Checked: "}
+.topline{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 16px}
+.lang{display:flex;gap:4px;font-family:var(--font-mono);font-size:12px}
+.lang a{padding:3px 9px;border:1px solid var(--rule);border-radius:3px;background:var(--surface);color:var(--ink-soft);text-decoration:none}
+.lang a:hover{border-color:var(--board);color:var(--board)}
+html:not([lang="en"]) .lang a[hreflang="ja"],html[lang="en"] .lang a[hreflang="en"]{background:var(--board);border-color:var(--board);color:var(--on-board)}

@@ -1,6 +1,36 @@
 (function(){
 'use strict';
 
+/* ---------- 言語 ----------
+   html の lang は index.html 先頭のスクリプトが ?lang= と保存した設定から決める。
+   HTML の文言は data-l="ja|en" を CSS で切り替え、属性は data-en-*、スクリプトが組み立てる文言は assets/i18n.js の辞書から取る。
+   データの文言は *_en(note_en、why_en など)があれば使い、無ければ日本語のまま lang="ja" を付けて出す */
+var L = document.documentElement.lang === 'en' ? 'en' : 'ja';
+var S = (window.I18N && window.I18N[L]) || window.I18N.ja;
+function t(key, vars){
+  var s = S[key];
+  if (Object.prototype.toString.call(s) === '[object Array]') s = s[vars && vars.n === 1 ? 0 : 1];
+  if (typeof s !== 'string') return key;
+  return s.replace(/\{(\w+)\}/g, function(m, k){ return vars && vars[k] !== undefined ? vars[k] : m; });
+}
+function tx(o, f){ return L === 'en' && o[f + '_en'] ? o[f + '_en'] : o[f]; }
+function hasTx(o, f){ return L === 'ja' || !!o[f + '_en'] || !o[f]; }
+if (L === 'en') {
+  var es = document.querySelectorAll('[data-en]'), i;
+  for (i = 0; i < es.length; i++) es[i].textContent = es[i].getAttribute('data-en');
+  ['placeholder', 'aria-label', 'title', 'content'].forEach(function(a){
+    var els = document.querySelectorAll('[data-en-' + a + ']');
+    for (var k = 0; k < els.length; k++) els[k].setAttribute(a, els[k].getAttribute('data-en-' + a));
+  });
+}
+/* 言語の切り替えリンクは、いま見ている場所(#picks など)を保つ */
+function langLinks(){
+  var as = document.querySelectorAll('.lang a');
+  for (var i = 0; i < as.length; i++) as[i].href = '?lang=' + as[i].hreflang + location.hash;
+}
+langLinks();
+window.addEventListener('hashchange', langLinks);
+
 /* データは data/ の JSON から読み込む。
    catalog.json: 資料の種類・確認区分の名前と全件の行 / order.json: 読む順の章立て(記事は URL で指す) / picks.json: 厳選 100
    形式は README.md を参照 */
@@ -21,17 +51,23 @@ Promise.all([load('data/catalog.json'), load('data/order.json'), load('data/pick
 
 function main(D, P){
 var PREFIX = ['https://aws.amazon.com/blogs/publicsector/','https://aws.amazon.com/jp/blogs/news/'];
-var BADGE = ['EN','JP','資料'];
+var BADGE = S.badge;
 var SRC_CLASS = ['en','jp','xs'];
 var QUICK = ['Technical How-to','Best Practices','Customer Solutions','Higher education','K12','EdTechs','Research','Generative AI','Security Identity & Compliance','AWS Educate'];
-var MARK_TEXT = ['', 'AWS が Education サブカテゴリに分類した記事', 'タイトル、カテゴリ、要約文の語句から教育・研究機関に関わると判断した記事'];
-var OUT_TEXT = 'カテゴリが付いていない記事(ブログ全体の一覧や検索で見つけたもの)';
+var MARK_TEXT = S.markText;
+var OUT_TEXT = S.outText;
 var NODATE = '0000';
 var CHUNK = 150, BAR_H = 92;
 
 function $(id){ return document.getElementById(id); }
-function fmt(n){ return n.toLocaleString('ja-JP'); }
+function fmt(n){ return n.toLocaleString(L === 'en' ? 'en-US' : 'ja-JP'); }
 function el(tag, cls, text){ var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+/* データの文言を出す。英語表示で *_en が無いものは日本語のまま lang="ja" を付ける */
+function elT(tag, cls, o, f){ var e = el(tag, cls, tx(o, f)); if (!hasTx(o, f)) e.lang = 'ja'; return e; }
+function nameOf(list, listEn, i){ return L === 'en' && listEn && listEn[i] ? listEn[i] : list[i]; }
+function kindName(i){ return nameOf(D.kinds, D.kinds_en, i); }
+function statusName(i){ return nameOf(D.status, D.status_en, i); }
+function nameEl(tag, cls, list, listEn, i){ var e = el(tag, cls, nameOf(list, listEn, i)); if (L === 'en' && !(listEn && listEn[i])) e.lang = 'ja'; return e; }
 
 /* ---------- データ ---------- */
 function normUrl(u){
@@ -57,6 +93,10 @@ var pickByUrl = {};
 P.forEach(function(p){ pickByUrl[normUrl(p.url)] = p.no; });
 D.cats = [];
 var catIndex = {}, catOf = indexer(D.cats, null), kindOf = indexer(D.kinds, 'kinds'), statusOf = indexer(D.status, 'status');
+/* 厳選の kind(「英語ブログ」「日本語ブログ」と資料の種類)の英語名 */
+var KIND_EN = {};
+(D.kinds_en || []).forEach(function(k, i){ if (k) KIND_EN[D.kinds[i]] = k; });
+KIND_EN['英語ブログ'] = S.blog[0]; KIND_EN['日本語ブログ'] = S.blog[1];
 var rowByUrl = {};
 var rows = [];
 D.rows.forEach(function(x, i){
@@ -64,18 +104,18 @@ D.rows.forEach(function(x, i){
   if (s === undefined) { warn('rows[' + i + '] の src が不明: ' + x.src); return; }
   if (rowByUrl[x.url] !== undefined) warn('URL が重複: ' + x.url);
   if (s === 2) {
-    o = { s:2, d:x.date, t:x.title, u:x.url, c:[], cn:[], m:0, g:0, k:kindOf(x.kind), v:statusOf(x.status), n:x.note || '', l:x.lang };
-    o.h = (o.d + ' ' + o.t + ' ' + x.kind + ' ' + x.status + ' ' + o.n + ' ' + o.u).toLowerCase();
+    o = { s:2, d:x.date, t:x.title, u:x.url, c:[], cn:[], m:0, g:0, k:kindOf(x.kind), v:statusOf(x.status), n:x.note || '', n_en:x.note_en || '', l:x.lang };
+    o.h = (o.d + ' ' + o.t + ' ' + x.kind + ' ' + x.status + ' ' + o.n + ' ' + o.n_en + ' ' + o.u).toLowerCase();
   } else {
     var names = x.cats || [];
-    o = { s:s, d:x.date, t:x.title, u:x.url, c:names.map(catOf), cn:names, m:MARK[x.mark] || 0, g:LISTING[x.listing] || 0, k:-1, v:-1, n:'', l:s === 0 ? 'en' : 'ja' };
+    o = { s:s, d:x.date, t:x.title, u:x.url, c:names.map(catOf), cn:names, m:MARK[x.mark] || 0, g:LISTING[x.listing] || 0, k:-1, v:-1, n:'', n_en:'', l:s === 0 ? 'en' : 'ja' };
     /* ブログの URL は共通の前半を除いて検索の対象にする(「jp」などで全件に当たらないように) */
     var slug = o.u.indexOf(PREFIX[s]) === 0 ? o.u.slice(PREFIX[s].length).replace(/\/$/, '') : o.u;
     o.h = (o.d + ' ' + o.t + ' ' + names.join(' ') + ' ' + slug).toLowerCase();
   }
   o.y = o.d ? o.d.slice(0,4) : NODATE;
   o.p = pickByUrl[normUrl(o.u)] || 0;
-  if (o.p) o.h += ' 厳選';
+  if (o.p) o.h += ' 厳選 top 100';
   rowByUrl[o.u] = rows.length;
   rows.push(o);
 });
@@ -89,7 +129,7 @@ function rowOf(url, where){
 function defined(v){ return v !== undefined; }
 D.order.forEach(function(th){
   var where = 'order.json「' + th.name + '」';
-  th.picks = th.picks.map(function(pk){ var i = rowOf(pk.url, where); return i === undefined ? undefined : [i, pk.why]; }).filter(defined);
+  th.picks = th.picks.map(function(pk){ var i = rowOf(pk.url, where); return i === undefined ? undefined : { i:i, why:pk.why, why_en:pk.why_en }; }).filter(defined);
   th.rest = th.rest.map(function(u){ return rowOf(u, where); }).filter(defined);
   th.extras = th.extras.map(function(u){ return rowOf(u, where); }).filter(defined);
 });
@@ -132,8 +172,9 @@ var years = [];
     if (r.c.indexOf(howto[0]) >= 0 || r.c.indexOf(howto[1]) >= 0) inc('howto');
   });
   D.order.forEach(function(th){
-    th.picks.forEach(function(pk){ st['order.picks']++; if (rows[pk[0]].s !== 2) st['order.pickArticles']++; });
-    th.picks.concat(th.rest).forEach(function(x){ if (rows[typeof x === 'number' ? x : x[0]].s !== 2) st['order.articles']++; });
+    th.picks.forEach(function(pk){ st['order.picks']++; if (rows[pk.i].s !== 2) st['order.pickArticles']++; });
+    th.picks.forEach(function(pk){ if (rows[pk.i].s !== 2) st['order.articles']++; });
+    th.rest.forEach(function(i){ if (rows[i].s !== 2) st['order.articles']++; });
   });
   var els = document.querySelectorAll('[data-stat]');
   for (var i = 0; i < els.length; i++) {
@@ -150,11 +191,12 @@ function markEl(p, r){
 }
 function pickBadge(p, r){
   if (!r.p) return;
-  var a = el('a', 'pk-badge', '厳選'); a.href = '#p-' + r.p; a.title = '厳選 ' + P.length + ' の ' + r.p + ' 番を開く';
-  a.setAttribute('aria-label', '厳選 ' + P.length + ' の ' + r.p + ' 番'); p.appendChild(a);
+  var v = { n:P.length, no:r.p };
+  var a = el('a', 'pk-badge', t('pickBadge', v)); a.href = '#p-' + r.p; a.title = t('pickOpen', v);
+  a.setAttribute('aria-label', t('pickLabel', v)); p.appendChild(a);
 }
 function linkEl(r){
-  var a = el('a', null, r.t); a.href = r.u; a.target = '_blank'; a.rel = 'noopener'; if (r.l !== 'ja') a.lang = r.l; return a;
+  var a = el('a', null, r.t); a.href = r.u; a.target = '_blank'; a.rel = 'noopener'; if (r.l !== L) a.lang = r.l; return a;
 }
 function rowEl(r, withTags){
   var li = el('li', 'row');
@@ -163,14 +205,14 @@ function rowEl(r, withTags){
   var main = el('div', 'main'), p = el('p', 'ttl');
   markEl(p, r); pickBadge(p, r); p.appendChild(linkEl(r)); main.appendChild(p);
   if (r.s === 2) {
-    if (r.n) main.appendChild(el('p', 'memo', r.n));
+    if (r.n) main.appendChild(elT('p', 'memo', r, 'n'));
     var tx = el('div', 'tags');
     if (withTags) {
-      var kb = el('button', 'tag' + (state.kinds.indexOf(r.k) >= 0 ? ' on' : ''), D.kinds[r.k]); kb.type = 'button'; kb.dataset.ki = String(r.k); tx.appendChild(kb);
+      var kb = nameEl('button', 'tag' + (state.kinds.indexOf(r.k) >= 0 ? ' on' : ''), D.kinds, D.kinds_en, r.k); kb.type = 'button'; kb.dataset.ki = String(r.k); tx.appendChild(kb);
     } else {
-      tx.appendChild(el('span', 'kindlab', D.kinds[r.k]));
+      tx.appendChild(nameEl('span', 'kindlab', D.kinds, D.kinds_en, r.k));
     }
-    tx.appendChild(el('span', 'stat', D.status[r.v]));
+    tx.appendChild(nameEl('span', 'stat', D.status, D.status_en, r.v));
     main.appendChild(tx);
   } else if (withTags && r.c.length) {
     var tg = el('div', 'tags');
@@ -188,26 +230,26 @@ var themesEl = $('themes'), tnav = $('tnav');
 (function(){
   D.order.forEach(function(th, ti){
     var no = ti + 1;
-    var a = el('a'); a.href = '#t-' + th.id; a.appendChild(el('b', null, String(no))); a.appendChild(document.createTextNode(th.name)); tnav.appendChild(a);
+    var a = el('a'); a.href = '#t-' + th.id; a.appendChild(el('b', null, String(no))); a.appendChild(document.createTextNode(tx(th, 'name'))); if (!hasTx(th, 'name')) a.lang = 'ja'; tnav.appendChild(a);
 
     var sec = el('section', 'theme'); sec.id = 't-' + th.id;
     var head = el('div', 'theme-head');
     head.appendChild(el('span', 'theme-no', (no < 10 ? '0' : '') + no));
-    head.appendChild(el('h2', null, th.name));
-    head.appendChild(el('p', 'theme-lead', th.lead));
+    head.appendChild(elT('h2', null, th, 'name'));
+    head.appendChild(elT('p', 'theme-lead', th, 'lead'));
     sec.appendChild(head);
 
     if (th.picks.length) {
-      sec.appendChild(el('h3', 'sub', 'まず読む'));
+      sec.appendChild(el('h3', 'sub', t('startHere')));
       var ol = el('ol', 'picks');
       th.picks.forEach(function(pk){
-        var r = rows[pk[0]], li = el('li', 'pick'), box = el('div', 'main'), p = el('p', 'ttl');
+        var r = rows[pk.i], li = el('li', 'pick'), box = el('div', 'main'), p = el('p', 'ttl');
         markEl(p, r); p.appendChild(linkEl(r)); box.appendChild(p);
-        box.appendChild(el('p', 'why', pk[1]));
+        box.appendChild(elT('p', 'why', pk, 'why'));
         var by = el('p', 'byline');
-        by.appendChild(el('span', 'b-' + (r.s === 2 ? 'x' : SRC_CLASS[r.s]), r.s === 2 ? D.kinds[r.k] : (r.s === 0 ? '英語ブログ' : '日本語ブログ')));
+        by.appendChild(r.s === 2 ? nameEl('span', 'b-x', D.kinds, D.kinds_en, r.k) : el('span', 'b-' + SRC_CLASS[r.s], S.blog[r.s]));
         if (r.d) by.appendChild(el('span', null, r.d));
-        if (r.s === 2) by.appendChild(el('span', null, '確認: ' + D.status[r.v]));
+        if (r.s === 2) by.appendChild(el('span', null, t('checked', { s:statusName(r.v) })));
         box.appendChild(by);
         li.appendChild(box); ol.appendChild(li);
       });
@@ -216,7 +258,7 @@ var themesEl = $('themes'), tnav = $('tnav');
     function block(label, idxs, hint){
       if (!idxs.length) return;
       var d = el('details', 'more-list'), s = el('summary', null, label);
-      s.appendChild(el('small', null, fmt(idxs.length) + ' 件'));
+      s.appendChild(el('small', null, t('items', { n:idxs.length })));
       d.appendChild(s);
       if (hint) d.appendChild(el('p', 'hint', hint));
       var ul = el('ul', 'rows');
@@ -230,8 +272,8 @@ var themesEl = $('themes'), tnav = $('tnav');
       });
       sec.appendChild(d);
     }
-    block(th.picks.length ? '続けて読む' : 'このテーマの記事', th.rest, 'タイトルとカテゴリで振り分けた記事です。日本語を先に、英語は新しい順に並べています。');
-    block('あわせて使う資料', th.extras, '');
+    block(th.picks.length ? t('readNext') : t('themePosts'), th.rest, t('readNextHint'));
+    block(t('related'), th.extras, '');
     themesEl.appendChild(sec);
   });
 })();
@@ -244,29 +286,30 @@ $('open-all').addEventListener('click', function(){
   var ds = themesEl.querySelectorAll('details.more-list'), anyClosed = false, i;
   for (i = 0; i < ds.length; i++) if (!ds[i].open) anyClosed = true;
   for (i = 0; i < ds.length; i++) ds[i].open = anyClosed;
-  this.textContent = anyClosed ? '「続けて読む」をすべて閉じる' : '「続けて読む」をすべて開く';
+  this.textContent = anyClosed ? t('closeAll') : t('openAll');
 });
 function mdEscape(t){ return t.replace(/([\[\]])/g, '\\$1'); }
 function orderText(){
   var out = [];
   D.order.forEach(function(th, ti){
     if (!th.picks.length) return;
-    out.push('## ' + (ti + 1) + '. ' + th.name);
+    out.push('## ' + (ti + 1) + '. ' + tx(th, 'name'));
     th.picks.forEach(function(pk, k){
-      var r = rows[pk[0]];
-      out.push((k + 1) + '. [' + mdEscape(r.t) + '](' + r.u + ')' + (r.d ? '(' + r.d + ')' : '') + ' ― ' + pk[1]);
+      var r = rows[pk.i];
+      out.push((k + 1) + '. [' + mdEscape(r.t) + '](' + r.u + ')' + (r.d ? '(' + r.d + ')' : '') + S.mdSep + tx(pk, 'why'));
     });
     out.push('');
   });
   return out.join('\n');
 }
+/* ボタンの中身(言語ごとの span)を残して、表示だけ一時的に差し替える */
 function copyText(text, btn, doneLabel, fbId, taId){
-  var label = btn.textContent;
-  function done(){ btn.textContent = doneLabel; setTimeout(function(){ btn.textContent = label; }, 1800); }
+  var label = btn.innerHTML;
+  function done(){ btn.textContent = doneLabel; setTimeout(function(){ btn.innerHTML = label; }, 1800); }
   function fallback(){ var fb = $(fbId), ta = $(taId); fb.hidden = false; ta.value = text; ta.focus(); ta.select(); }
   try { navigator.clipboard.writeText(text).then(done, fallback); } catch (err) { fallback(); }
 }
-$('copy-order').addEventListener('click', function(){ copyText(orderText(), this, 'コピーしました', 'fallback-o', 'fallback-o-text'); });
+$('copy-order').addEventListener('click', function(){ copyText(orderText(), this, t('copied'), 'fallback-o', 'fallback-o-text'); });
 
 /* ====================== 全件索引 ====================== */
 var state = { q:'', tokens:[], src:'all', edu:false, year:null, cats:[], kinds:[], asc:false };
@@ -287,11 +330,11 @@ years.forEach(function(y){
   var order = D.cats.map(function(c,i){ return i; }).sort(function(a,b){ return catCount[b] - catCount[a] || D.cats[a].localeCompare(D.cats[b]); });
   var sel = $('catsel');
   order.forEach(function(ci){
-    var o = document.createElement('option'); o.value = String(ci); o.textContent = D.cats[ci] + '(' + catCount[ci] + ')'; sel.appendChild(o);
+    var o = document.createElement('option'); o.value = String(ci); o.textContent = t('withCount', { name:D.cats[ci], n:catCount[ci] }); sel.appendChild(o);
   });
   var ks = $('kindsel');
   D.kinds.forEach(function(k, ki){
-    var o = document.createElement('option'); o.value = String(ki); o.textContent = k + '(' + kindCount[ki] + ')'; ks.appendChild(o);
+    var o = document.createElement('option'); o.value = String(ki); o.textContent = t('withCount', { name:kindName(ki), n:kindCount[ki] }); ks.appendChild(o);
   });
 })();
 
@@ -321,7 +364,7 @@ function drawYears(base){
     b.el.setAttribute('aria-pressed', on ? 'true' : 'false');
     b.el.classList.toggle('dim', !!state.year && !on);
     b.el.disabled = tot === 0 && !on;
-    b.el.setAttribute('aria-label', y + '年 ' + tot + ' 件(英語 ' + v[0] + '、日本語 ' + v[1] + '、資料 ' + v[2] + ')');
+    b.el.setAttribute('aria-label', t('yearAria', { y:y, t:tot, en:v[0], jp:v[1], x:v[2] }));
   });
 }
 function drawChips(){
@@ -341,14 +384,14 @@ function drawActive(){
   activeEl.textContent = '';
   function pill(label, kind, val){
     var b = el('button', 'pill', label + ' ×'); b.type = 'button'; b.dataset.kind = kind; if (val != null) b.dataset.val = String(val);
-    b.setAttribute('aria-label', label + ' の絞り込みを外す'); activeEl.appendChild(b);
+    b.setAttribute('aria-label', t('removeFilter', { label:label })); activeEl.appendChild(b);
   }
-  if (state.year) pill(state.year + '年', 'year');
+  if (state.year) pill(t('year', { y:state.year }), 'year');
   state.cats.forEach(function(ci){ pill(D.cats[ci], 'cat', ci); });
-  state.kinds.forEach(function(ki){ pill(D.kinds[ki], 'kindf', ki); });
-  if (state.edu) pill('日本語は★☆のみ', 'edu');
+  state.kinds.forEach(function(ki){ pill(kindName(ki), 'kindf', ki); });
+  if (state.edu) pill(t('eduPill'), 'edu');
   if (state.year || state.cats.length || state.kinds.length || state.edu || state.q || state.src !== 'all' || state.asc) {
-    var r = el('button', 'linkbtn', '条件をリセット'); r.type = 'button'; r.dataset.kind = 'reset'; activeEl.appendChild(r);
+    var r = el('button', 'linkbtn', t('reset')); r.type = 'button'; r.dataset.kind = 'reset'; activeEl.appendChild(r);
   }
 }
 function appendChunk(){
@@ -358,7 +401,7 @@ function appendChunk(){
     var r = current[i];
     if (r.y !== lastYear) {
       lastYear = r.y;
-      var h = el('h2', 'yh', r.y === NODATE ? '日付の表示がない資料' : r.y + '年'); h.appendChild(el('small', null, fmt(yearTotals[r.y]) + ' 件')); frag.appendChild(h);
+      var h = el('h2', 'yh', r.y === NODATE ? t('noDate') : t('year', { y:r.y })); h.appendChild(el('small', null, t('items', { n:yearTotals[r.y] }))); frag.appendChild(h);
       curUl = el('ul', 'rows'); frag.appendChild(curUl);
     }
     curUl.appendChild(rowEl(r, true));
@@ -367,7 +410,7 @@ function appendChunk(){
   shown = end;
   var rest = current.length - shown;
   $('more-wrap').hidden = rest <= 0;
-  $('more').textContent = '続きを表示(残り ' + fmt(rest) + ' 件)';
+  $('more').textContent = t('more', { n:fmt(rest) });
 }
 function refresh(){
   var base = rows.filter(function(r){ return match(r, true); });
@@ -380,8 +423,9 @@ function refresh(){
   var n = [0,0,0]; yearTotals = {};
   current.forEach(function(r){ n[r.s]++; yearTotals[r.y] = (yearTotals[r.y] || 0) + 1; });
   var c = $('count'); c.textContent = '';
-  c.appendChild(el('b', null, fmt(current.length) + ' 件'));
-  c.appendChild(document.createTextNode('を表示中(英語 ' + fmt(n[0]) + '・日本語 ' + fmt(n[1]) + '・資料 ' + fmt(n[2]) + ' / 全 ' + fmt(rows.length) + ' 件)'));
+  c.appendChild(document.createTextNode(t('countPre')));
+  c.appendChild(el('b', null, t('countN', { n:fmt(current.length) })));
+  c.appendChild(document.createTextNode(t('countPost', { en:fmt(n[0]), jp:fmt(n[1]), x:fmt(n[2]), all:fmt(rows.length) })));
   list.textContent = ''; shown = 0; lastYear = null; curUl = null;
   $('empty').hidden = current.length > 0;
   $('fallback').hidden = true;
@@ -448,12 +492,12 @@ if ('IntersectionObserver' in window) {
 function buildText(kind){
   return current.map(function(r){
     var mark = (r.m === 1 ? '★' : (r.m === 2 ? '☆' : '')) + (r.g === 2 ? '＋' : '');
-    if (kind === 'md') return '- ' + (r.d ? r.d + ' ' : '') + (mark ? mark + ' ' : '') + '[' + mdEscape(r.t) + '](' + r.u + ')' + (r.s === 2 ? '(' + D.kinds[r.k] + ')' : '');
-    return [r.d, BADGE[r.s], mark, r.t.replace(/\t/g, ' '), r.u, r.s === 2 ? D.kinds[r.k] + ' / ' + D.status[r.v] : r.cn.join(', ')].join('\t');
+    if (kind === 'md') return '- ' + (r.d ? r.d + ' ' : '') + (mark ? mark + ' ' : '') + '[' + mdEscape(r.t) + '](' + r.u + ')' + (r.s === 2 ? '(' + kindName(r.k) + ')' : '');
+    return [r.d, BADGE[r.s], mark, r.t.replace(/\t/g, ' '), r.u, r.s === 2 ? kindName(r.k) + ' / ' + statusName(r.v) : r.cn.join(', ')].join('\t');
   }).join('\n');
 }
-$('copy-md').addEventListener('click', function(){ copyText(buildText('md'), this, fmt(current.length) + ' 件をコピーしました', 'fallback', 'fallback-text'); });
-$('copy-tsv').addEventListener('click', function(){ copyText(buildText('tsv'), this, fmt(current.length) + ' 件をコピーしました', 'fallback', 'fallback-text'); });
+$('copy-md').addEventListener('click', function(){ copyText(buildText('md'), this, t('copiedN', { n:current.length }), 'fallback', 'fallback-text'); });
+$('copy-tsv').addEventListener('click', function(){ copyText(buildText('tsv'), this, t('copiedN', { n:current.length }), 'fallback', 'fallback-text'); });
 
 /* ====================== 厳選 100 ====================== */
 var SECS = [], secByName = {};
@@ -464,43 +508,43 @@ function kindClass(k){ return k === '日本語ブログ' ? 'b-jp' : ((k === '英
 function cardEl(p){
   var li = el('li', 'px-card'); li.id = 'p-' + p.no;
   li.appendChild(el('span', 'px-no', String(p.no)));
-  var box = el('div', 'main'), t = el('p', 'ttl'), a = el('a', null, p.title);
-  a.href = p.url; a.target = '_blank'; a.rel = 'noopener'; if (p.lang !== 'ja') a.lang = p.lang;
-  t.appendChild(a); box.appendChild(t);
+  var box = el('div', 'main'), t0 = el('p', 'ttl'), a = el('a', null, p.title);
+  a.href = p.url; a.target = '_blank'; a.rel = 'noopener'; if (p.lang !== L) a.lang = p.lang;
+  t0.appendChild(a); box.appendChild(t0);
   var by = el('p', 'byline');
   if (p.date) by.appendChild(el('span', null, p.date));
-  by.appendChild(el('span', kindClass(p.kind), p.kind));
-  var lv = el('span', 'lv', 'L' + p.level); lv.title = 'レベル ' + p.level; by.appendChild(lv);
-  if (p.jp) { var j = el('span', 'jpb', 'JP'); j.title = '日本語、または日本の事例'; j.setAttribute('aria-label', '日本語・日本関連'); by.appendChild(j); }
+  var kd = el('span', kindClass(p.kind), L === 'en' && KIND_EN[p.kind] ? KIND_EN[p.kind] : p.kind); if (L === 'en' && !KIND_EN[p.kind]) kd.lang = 'ja'; by.appendChild(kd);
+  var lv = el('span', 'lv', 'L' + p.level); lv.title = t('level', { l:p.level }); by.appendChild(lv);
+  if (p.jp) { var j = el('span', 'jpb', 'JP'); j.title = t('jpTitle'); j.setAttribute('aria-label', t('jpLabel')); by.appendChild(j); }
   box.appendChild(by);
   var dl = el('dl', 'px-body');
-  dl.appendChild(el('dt', null, '学べること')); dl.appendChild(el('dd', null, p.why));
-  dl.appendChild(el('dt', null, 'あらすじ')); dl.appendChild(el('dd', null, p.synopsis));
+  dl.appendChild(el('dt', null, t('learn'))); dl.appendChild(elT('dd', null, p, 'why'));
+  dl.appendChild(el('dt', null, t('synopsis'))); dl.appendChild(elT('dd', null, p, 'synopsis'));
   box.appendChild(dl);
-  if (p.caveat) box.appendChild(el('p', 'px-note', '注: ' + p.caveat));
+  if (p.caveat) { var cv = el('p', 'px-note', t('note', { s:tx(p, 'caveat') })); if (!hasTx(p, 'caveat')) cv.lang = 'ja'; box.appendChild(cv); }
   li.appendChild(box);
   return li;
 }
 (function(){
   P.forEach(function(p){
     var s = secByName[p.section];
-    if (!s) { s = secByName[p.section] = { name:p.section, n:0, items:[] }; SECS.push(s); }
+    if (!s) { s = secByName[p.section] = { name:p.section, name_en:p.section_en, n:0, items:[] }; SECS.push(s); }
     s.n++; s.items.push(p);
     p.g = (p.jp || p.lang === 'ja') ? 'jp' : 'en';
-    p.h = [p.title, p.why, p.synopsis, p.caveat, p.section, p.kind, p.url].join(' ').toLowerCase();
+    p.h = [p.title, p.why, p.synopsis, p.caveat, p.section, p.kind, p.url, p.why_en, p.synopsis_en, p.caveat_en, p.section_en].join(' ').toLowerCase();
   });
   var frag = document.createDocumentFragment();
   SECS.forEach(function(s, si){
     var sec = el('section', 'px-sec'); sec.id = 'ps-' + (si + 1);
     var head = el('div', 'theme-head');
     head.appendChild(el('span', 'theme-no', pad2(si + 1)));
-    var h = el('h2', null, s.name); s.cnt = el('small', null, ''); h.appendChild(s.cnt); head.appendChild(h);
+    var h = elT('h2', null, s, 'name'); s.cnt = el('small', null, ''); h.appendChild(s.cnt); head.appendChild(h);
     sec.appendChild(head);
     var ol = el('ol', 'px-list');
     s.items.forEach(function(p){ p.el = cardEl(p); ol.appendChild(p.el); });
     sec.appendChild(ol); s.el = sec; frag.appendChild(sec);
     var b = el('button', 'chip'); b.type = 'button'; b.dataset.sec = s.name; b.setAttribute('aria-pressed', 'false');
-    b.appendChild(document.createTextNode(s.name)); b.appendChild(el('span', 'cnt', fmt(s.n)));
+    var bn = elT('span', null, s, 'name'); b.appendChild(bn); b.appendChild(el('span', 'cnt', fmt(s.n)));
     s.chip = b; pchips.appendChild(b);
   });
   plist.appendChild(frag);
@@ -521,12 +565,13 @@ function prefresh(){
     var k = 0;
     s.items.forEach(function(p){ var ok = pmatch(p); p.el.hidden = !ok; if (ok) { k++; pshown.push(p); } });
     s.el.hidden = k === 0;
-    s.cnt.textContent = filtered ? k + ' / ' + s.n + ' 件' : s.n + ' 件';
+    s.cnt.textContent = filtered ? t('shownOf', { k:k, n:s.n }) : t('items', { n:s.n });
     s.chip.setAttribute('aria-pressed', ps.secs.indexOf(s.name) >= 0 ? 'true' : 'false');
   });
   var c = $('pcount'); c.textContent = '';
-  c.appendChild(el('b', null, fmt(pshown.length) + ' 件'));
-  c.appendChild(document.createTextNode('を表示中(全 ' + fmt(P.length) + ' 件)'));
+  c.appendChild(document.createTextNode(t('countPre')));
+  c.appendChild(el('b', null, t('countN', { n:fmt(pshown.length) })));
+  c.appendChild(document.createTextNode(t('pcountPost', { all:fmt(P.length) })));
   $('pempty').hidden = pshown.length > 0;
   $('fallback-p').hidden = true;
   var i, bs = document.querySelectorAll('#plevel button');
@@ -534,7 +579,7 @@ function prefresh(){
   bs = document.querySelectorAll('#plang button');
   for (i = 0; i < bs.length; i++) bs[i].setAttribute('aria-pressed', bs[i].dataset.lang === ps.lang ? 'true' : 'false');
   pactive.textContent = '';
-  if (filtered) { var r = el('button', 'linkbtn', '条件をリセット'); r.type = 'button'; r.dataset.kind = 'reset'; pactive.appendChild(r); }
+  if (filtered) { var r = el('button', 'linkbtn', t('reset')); r.type = 'button'; r.dataset.kind = 'reset'; pactive.appendChild(r); }
   if ($('pq').value !== ps.q) $('pq').value = ps.q;
 }
 var pqTimer = null;
@@ -556,9 +601,9 @@ pactive.addEventListener('click', function(e){
   var b = e.target.closest('button'); if (!b) return; preset(); prefresh();
 });
 function picksText(){
-  return pshown.map(function(p){ return '- [' + mdEscape(p.title) + '](' + p.url + ') — ' + p.why; }).join('\n');
+  return pshown.map(function(p){ return '- [' + mdEscape(p.title) + '](' + p.url + ') — ' + tx(p, 'why'); }).join('\n');
 }
-$('copy-picks').addEventListener('click', function(){ copyText(picksText(), this, fmt(pshown.length) + ' 件をコピーしました', 'fallback-p', 'fallback-p-text'); });
+$('copy-picks').addEventListener('click', function(){ copyText(picksText(), this, t('copiedN', { n:pshown.length }), 'fallback-p', 'fallback-p-text'); });
 prefresh();
 
 /* ====================== 表示の切り替え ====================== */
@@ -572,6 +617,7 @@ function setView(v){
 document.querySelector('.views').addEventListener('click', function(e){
   var b = e.target.closest('button'); if (!b) return; setView(b.dataset.view);
   try { history.replaceState(null, '', '#' + b.dataset.view); } catch (err) {}
+  langLinks();
 });
 /* #picks #order #index で表示を選ぶ。#p-12 は厳選の 12 番、#t-… は読む順のテーマへ */
 function fromHash(initial){
